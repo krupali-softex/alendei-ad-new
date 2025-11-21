@@ -482,7 +482,7 @@ const DesignsDetails: React.FC<DesignsDetailsProps> = ({}) => {
                     >
                       <path
                         d="M4.28594 9.79541L9.88594 15.3954L8.46094 16.7954L0.460938 8.79541L8.46094 0.79541L9.88594 2.19541L4.28594 7.79541H16.4609V9.79541H4.28594Z"
-                        fill="#069B49"
+                        fill="#205DAD"
                       />
                     </svg>
                   </Link>

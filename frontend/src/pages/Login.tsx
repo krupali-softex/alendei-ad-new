@@ -76,7 +76,7 @@ const Login: React.FC = () => {
             <div className="d-flex align-items-center justify-content-center flex-column h-100">
               {/* <div className="login-img">
                 <img
-                  src="https://ads.alendei.com/images/login-img.webp"
+                  src="../assets/images/login-img.png"
                   className="w-100"
                   alt="Login Graphic"
                 />
@@ -99,7 +99,7 @@ const Login: React.FC = () => {
           <div className="col-lg-6">
             <div className="login-form">
               <h3 className="mb-2">Welcome to</h3>
-              <h1 className="form-title gradient-title gradient-primary mb-5 bold-text">
+              <h1 className="form-title text-primary mb-5 bold-text">
                 Alendei Ads Platform
               </h1>
               <Formik
@@ -184,7 +184,7 @@ const Login: React.FC = () => {
                       </div>
                       <a
                         href="#"
-                        className="btn btn-link justify-content-md-end mt-2"
+                        className="btn btn-link justify-content-md-end mt-2 ff-semibold"
                       >
                         Forgot password?
                       </a>
@@ -201,7 +201,7 @@ const Login: React.FC = () => {
                     </p>
                     <Link
                       to="/signup"
-                      className="btn btn-secondary btn-login w-100"
+                      className="btn btn-outline-primary btn-login w-100"
                     >
                       Create a new account
                     </Link>
