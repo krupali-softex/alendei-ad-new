@@ -895,7 +895,6 @@ body.landing-bg .btn-primary {
   background: linear-gradient(90deg, #0F6BE3 0%, #5898ED 50%, #0F6BE3 100%);
 }
 
-
 .btn-ad-manually {
   color: #2A3F4D !important;
   background: #fff !important;
@@ -914,29 +913,10 @@ body.landing-bg .btn-primary {
 .btn-ad-ai.disabled,
 .btn-ad-manually.disabled,
 .btn-call-consultant.disabled {
-  background: #8BC5ED;
+  background: #8BC5ED !important;
   color: #fff !important;
 }
 
-.btn-facebook {
-  border: 4px solid #337FFF1A;
-  background: linear-gradient(90deg, #337FFF 0%, #629DFF 50%, #337FFF 100%);
-  --bs-btn-padding-x: 30px;
-}
-
-.btn-facebook:hover {
-  background: transparent;
-  color: #337fff !important;
-  border-color: #337fff;
-}
-
-.btn-facebook img {
-  width: 14px;
-}
-
-.btn-facebook:hover img {
-  content: url(https://ads.alendei.com/images/fb.svg);
-}
 
 .fb-text {
   font-family: 'Manrope-Medium';
@@ -949,9 +929,27 @@ body.landing-bg .btn-primary {
   background: #FFFFFFCC;
   border-radius: 12px;
   border: 1px solid;
-
   border-image-source: linear-gradient(90deg, #FFFFFF 0%, #FFFFFF 100%);
+  padding: 20px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  width: fit-content;
 }
+
+.connect-text {
+  font-family: 'Manrope-SemiBold';
+  font-size: 14px;
+  line-height: 133%;
+  color: #95A0C3;
+}
+
+.btn-facebook {
+  outline: 4px solid #337FFF1A;
+  background: linear-gradient(90deg, #337FFF 0%, #629DFF 50%, #337FFF 100%);
+}
+
 
 input[type="password"]::-ms-reveal,
 input[type="password"]::-ms-clear {
@@ -4808,18 +4806,21 @@ input[type="color"] {
 }
 
 .landing-carousel-container {
-  background-image: url("https://ads.alendei.com/images/landing-carousel-container-bg.webp");
+  background-image: url("/assets/images/landing-carousel-container-bg.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 30px 20px;
+  padding: 34px 16px;
   border-radius: 16px;
-  width: 470px;
-  height: 605px;
+  /* width: 406px; */
+  /* height: 626px; */
   margin: 10px auto;
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
+  z-index: 1;
+  width: 48%;
+  aspect-ratio: 406 / 626;
 }
 
 .landing-carousel-container.login-img {
@@ -4848,8 +4849,10 @@ input[type="color"] {
   height: 100%;
   object-fit: cover;
   max-width: 310px;
+  max-width: 340px;
   position: relative;
-  left: -5px;
+  /* left: -5px; */
+  left: -10px;
 }
 
 .landing-carousel-container.login-img .carousel-card img {
@@ -4987,6 +4990,235 @@ a#navbarDropdownNotification {
   width: 38px;
   height: 38px;
 }
+
+.robot-img {
+  position: absolute;
+  top: -14%;
+  right: 105px;
+}
+
+.robot-img img {
+  width: 77px;
+}
+
+.ring-wrapper,
+.social-wrapper {
+  position: absolute;
+  top: 47%;
+  left: 47%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  height: 75%;
+  pointer-events: none;
+}
+
+.social-wrapper {
+  z-index: 1;
+}
+
+.outer-ring,
+.inner-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+}
+
+.inner-ring {
+  width: 74%;
+}
+
+.outer-ring img {
+  width: 100%;
+  max-width: 650px;
+}
+
+.inner-ring img {
+  width: 100%;
+  max-width: 500px;
+}
+
+.outer-ring {
+  animation: outerSpin 35s linear infinite;
+}
+
+.inner-ring {
+  animation: innerSpin 42s linear infinite;
+}
+
+@keyframes outerSpin {
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes innerSpin {
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+.hero-social-icon {
+  position: absolute;
+}
+
+.hero-social-icon img {
+  width: 100%;
+}
+
+.social-facebook {
+  top: 20%;
+  left: 5.75%;
+  animation: float-fb 4s ease-in-out infinite;
+}
+
+@keyframes float-fb {
+  0% {
+    transform: translate(0px);
+  }
+
+  50% {
+    transform: translate(10px, -20px);
+  }
+
+  100% {
+    transform: translate(0px);
+  }
+}
+
+.social-meta {
+  top: 42%;
+  left: 0%;
+  /* animation: float-meta 6s ease-in-out infinite; */
+}
+
+@keyframes float-meta {
+  0% {
+    transform: translate(0px);
+  }
+
+  50% {
+    transform: translate(-10px, 20px);
+  }
+
+  100% {
+    transform: translate(0px);
+  }
+}
+
+.social-create-ad {
+  top: 82%;
+  left: 0%;
+  animation: zoomPulse 3s ease-in-out infinite;
+}
+
+@keyframes zoomPulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.social-instagram {
+  top: 26%;
+  right: 4%;
+  animation: float-insta 4s ease-in-out infinite;
+}
+
+@keyframes float-insta {
+  0% {
+    transform: translate(0px);
+  }
+
+  50% {
+    transform: translate(15px, 15px);
+  }
+
+  100% {
+    transform: translate(0px);
+  }
+}
+
+.social-location {
+  top: 63%;
+  right: -23%;
+}
+
+.chatbot-wrapper {
+  position: absolute;
+  top: 5%;
+  right: 18%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.chatbot-image {
+  width: 90px;
+  height: auto;
+}
+
+.chatbot-text-bubble {
+  margin-top: -10px;
+  padding: 6px 12px;
+  background: #ffffff;
+  border-radius: 999px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.typing-text {
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  max-width: 0;
+  animation: typing 3.2s steps(24, end) infinite alternate;
+}
+
+.typing-cursor {
+  width: 2px;
+  height: 16px;
+  margin-left: 3px;
+  background: #111827;
+  display: inline-block;
+  animation: blink 0.7s steps(2, start) infinite;
+}
+
+@keyframes typing {
+  from {
+    max-width: 0;
+  }
+
+  to {
+    max-width: 220px;
+  }
+}
+
+@keyframes blink {
+
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
+
+
 
 
 /*---------------- START: Responsive CSS ----------------*/
