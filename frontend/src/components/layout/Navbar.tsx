@@ -354,7 +354,7 @@ const Navbar: React.FC = () => {
               </span> */}
               </Link>
               <div
-                className="dropdown-menu dropdown-caret dropdown-menu-end py-0"
+                className="dropdown-menu dropdown-caret dropdown-menu-end py-0 logout-btn"
                 aria-labelledby="navbarDropdownUser"
               >
                 <div className="p-1">

@@ -85,7 +85,7 @@ const MembersTab: React.FC<MembersTabProps> = ({ members }) => {
         {!showInviteForm && (
           <button
             className={`btn d-flex align-items-center ${
-              showInviteForm ? "btn-outline-danger" : "btn-outline-primary"
+              showInviteForm ? "btn-outline-danger" : "btn-primary"
             }`}
             onClick={() => setShowInviteForm(!showInviteForm)}
           >
@@ -95,7 +95,7 @@ const MembersTab: React.FC<MembersTabProps> = ({ members }) => {
       </div>
 
       {showInviteForm && (
-        <div className="mb-5 mt-2">
+        <div className="mt-4">
           <Formik
             initialValues={{ email: "", role: "member" }}
             validationSchema={inviteSchema}
@@ -108,7 +108,7 @@ const MembersTab: React.FC<MembersTabProps> = ({ members }) => {
               <Form>
                 <div className="row">
                   <div className="col-md-4">
-                    <label>Email</label>
+                    <label className="form-label">Email</label>
                     <Field
                       name="email"
                       type="email"
@@ -123,7 +123,7 @@ const MembersTab: React.FC<MembersTabProps> = ({ members }) => {
                   </div>
                   <div className="col-md-4">
                     <div className="mb-3">
-                      <label>Role</label>
+                      <label className="form-label">Role</label>
                       <Field as="select" name="role" className="form-select">
                         <option value="member">Member</option>
                         <option value="admin">Admin</option>
@@ -161,7 +161,7 @@ const MembersTab: React.FC<MembersTabProps> = ({ members }) => {
         <table className="table table-bordered mt-5">
           <thead>
             <tr>
-              <th className="text-start" style={{ width: "5%" }}>
+              {/* <th className="text-start">
                 <div className="form-check form-check-inline p-0">
                   <input
                     className="form-check-input small me-0 lead-checkAll"
@@ -170,24 +170,18 @@ const MembersTab: React.FC<MembersTabProps> = ({ members }) => {
                     value=""
                   />
                 </div>
-              </th>
-              <th className="text-start" style={{ width: "5%" }}></th>
-              <th className="text-start" style={{ width: "20%" }}>
-                Name
-              </th>
-              <th className="text-start" style={{ width: "25%" }}>
-                Email
-              </th>
+              </th> */}
+              {/* <th className="text-start"></th> */}
+              <th className="text-start">Name</th>
+              <th className="text-start">Email</th>
               <th className="text-start">Role</th>
-              <th className="text-start" style={{ width: "20%" }}>
-                Actions
-              </th>
+              <th className="text-start">Actions</th>
             </tr>
           </thead>
           <tbody>
             {members.map((member) => (
               <tr key={member.id}>
-                <td className="text-start">
+                {/* <td className="text-start">
                   <div className="form-check form-check-inline p-0">
                     <input
                       className="form-check-input small me-0 lead-check"
@@ -196,8 +190,9 @@ const MembersTab: React.FC<MembersTabProps> = ({ members }) => {
                       value=""
                     />
                   </div>
-                </td>
-                <td className="text-start">
+                </td> */}
+
+                <td className="text-start fw-bold">
                   <img
                     src={
                       member.imageUrl
@@ -207,10 +202,10 @@ const MembersTab: React.FC<MembersTabProps> = ({ members }) => {
                     alt="profile"
                     width="36"
                     height="36"
-                    className="rounded-circle"
+                    className="rounded-circle me-2"
                   />
+                  {member.name}
                 </td>
-                <td className="text-start fw-bold">{member.name}</td>
                 <td className="text-start">{member.email}</td>
                 <td className="text-start text-capitalize">{member.role}</td>
                 <td className="text-start text-capitalize">
@@ -235,10 +230,18 @@ const MembersTab: React.FC<MembersTabProps> = ({ members }) => {
                       data-bs-toggle="modal"
                       data-bs-target="#deleteMemberModal"
                     >
-                      <i
-                        className="bi bi-box-arrow-right text-danger"
-                        style={{ cursor: "pointer" }}
-                      ></i>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 29 29"
+                        fill="none"
+                      >
+                        <path
+                          d="M3.81489 28.9326C2.95539 28.9326 2.21987 28.6268 1.60833 28.0153C0.996788 27.4038 0.690495 26.6677 0.689453 25.8072V3.92914C0.689453 3.06965 0.995746 2.33413 1.60833 1.72259C2.22092 1.11105 2.95643 0.804753 3.81489 0.803711H14.7539V3.92914H3.81489V25.8072H14.7539V28.9326H3.81489ZM21.0048 22.6817L18.856 20.4158L22.841 16.4309H10.0658V13.3054H22.841L18.856 9.32052L21.0048 7.05458L28.8184 14.8682L21.0048 22.6817Z"
+                          fill="#CA3E3E"
+                        />
+                      </svg>
                     </a>
                   </div>
                 </td>

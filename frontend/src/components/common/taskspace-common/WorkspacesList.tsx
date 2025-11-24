@@ -154,12 +154,12 @@ const WorkspacesList: React.FC<WorkspacesListProps> = ({
                 </div>
               </div>
               <h5 className="fw-bold mb-1">{workspace.name}</h5>
-              <p className="text-muted mb-3 text-capitalize">
+              <p className="text-primary mb-3 text-capitalize">
                 {workspace.role}
               </p>
 
               <button
-                className="btn btn-outline-success rounded-pill fw-semibold mb-2 text-primary"
+                className="btn btn-outline-success fw-semibold mb-2 text-primary"
                 onClick={() => handleSwitchWorkspace(workspace.id)}
               >
                 Open Workspace <span className="ms-1">▸</span>

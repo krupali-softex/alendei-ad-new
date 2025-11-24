@@ -76,9 +76,9 @@ const TargetAreaCard: React.FC<TargetAreaCardProps> = ({
   };
 
   return (
-    <div className="col-lg-7">
-      <div className="campaign-card h-100">
-        <div className="mb-60">
+    <>
+      <div className="col-lg-5">
+        <div className="campaign-card h-100">
           <h3 className="card-title text-capitalize mb-12">Target areas</h3>
           <p className="text-lightgray mb-40">
             Your ad will be shown in this area. It could be a list of Local
@@ -129,13 +129,15 @@ const TargetAreaCard: React.FC<TargetAreaCardProps> = ({
             </div>
           </div>
         </div>
+      </div>
+      <div className="col-lg-7">
         <AudienceBudget
           formData={formData}
           validationErrors={validationErrors}
           onInputChange={onInputChange}
         />
       </div>
-    </div>
+    </>
   );
 };
 

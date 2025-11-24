@@ -86,12 +86,14 @@ const Taskspace: React.FC<TaskspaceProps> = ({}) => {
                   >
                     <span className="nav-link-icon me-2">
                       <img
-                        src="https://ads.alendei.com/images/profile.svg"
+                        src="assets/images/profile.svg"
                         className="icon-default"
+                        style={{ height: "32px", width: "32px"}}
                       />
                       <img
-                        src="https://ads.alendei.com/images/profile-hover.svg"
+                        src="assets/images/profile-hover.svg"
                         className="icon-hover"
+                        style={{ height: "32px", width: "32px"}}
                       />
                     </span>
                     Profile
@@ -106,12 +108,14 @@ const Taskspace: React.FC<TaskspaceProps> = ({}) => {
                   >
                     <span className="nav-link-icon me-2">
                       <img
-                        src="https://ads.alendei.com/images/Members.svg"
+                        src="assets/images/members.svg"
                         className="icon-default"
+                        style={{ height: "32px", width: "32px"}}
                       />
                       <img
-                        src="https://ads.alendei.com/images/Members-hover.svg"
+                        src="assets/images/members-hover.svg"
                         className="icon-hover"
+                        style={{ height: "32px", width: "32px"}}
                       />
                     </span>
                     Members
@@ -126,12 +130,14 @@ const Taskspace: React.FC<TaskspaceProps> = ({}) => {
                   >
                     <span className="nav-link-icon me-2">
                       <img
-                        src="https://ads.alendei.com/images/Settings.svg"
+                        src="assets/images/settings.svg"
                         className="icon-default"
+                        style={{ height: "32px", width: "32px"}}
                       />
                       <img
-                        src="https://ads.alendei.com/images/Settings-hover.svg"
+                        src="assets/images/settings-hover.svg"
                         className="icon-hover"
+                        style={{ height: "32px", width: "32px"}}
                       />
                     </span>
                     Settings
@@ -144,17 +150,17 @@ const Taskspace: React.FC<TaskspaceProps> = ({}) => {
                 <div className="tab-pane active" id="ProfileTab">
                   <div className="row g-20">
                     <div className="col-lg-3">
-                      <h3 className="card-subtitle mb-40">Update Profile</h3>
+                     
                       {user && <UserProfile user={user} />}
                     </div>
                     <div className="col-lg-9">
                       <div className="d-flex align-items-center justify-content-between mb-4">
-                        <h3 className="card-subtitle mb-40">Your Workspaces</h3>
+                        <h3 className="card-subtitle">Your Workspaces</h3>
                         <button
                           className={`btn d-flex align-items-center w-20 h-20 ${
                             showAddForm
                               ? "btn-outline-danger"
-                              : "btn-outline-primary"
+                              : "btn-primary"
                           }`}
                           onClick={() => setShowAddForm(!showAddForm)}
                         >
@@ -173,9 +179,9 @@ const Taskspace: React.FC<TaskspaceProps> = ({}) => {
                 {/* Members Tab */}
                 <MembersTab members={members} />
                 <div className="tab-pane" id="SettingsTab">
-                  <div className="mb-5">
+                  {/* <div className="mb-5">
                     <h3 className="card-subtitle">Workspace Settings</h3>
-                  </div>
+                  </div> */}
                   <div className="row g-20">
                     <div className="col-lg-3">
                       <DefaultWorkspaceProfileCard

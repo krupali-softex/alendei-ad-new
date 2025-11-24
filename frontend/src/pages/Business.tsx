@@ -21,12 +21,14 @@ const Business: React.FC<BusinessProps> = ({}) => {
                   >
                     <span className="nav-link-icon me-2">
                       <img
-                        src="https://ads.alendei.com/images/campaign.svg"
+                        src="assets/images/campaign.svg"
                         className="icon-default"
+                        style={{ height: "32px", width: "32px"}}
                       />
                       <img
-                        src="https://ads.alendei.com/images/campaign-hover.svg"
+                        src="assets/images/campaign-hover.svg"
                         className="icon-hover"
+                        style={{ height: "32px", width: "32px"}}
                       />
                     </span>
                     Campaign Setting
@@ -40,12 +42,14 @@ const Business: React.FC<BusinessProps> = ({}) => {
                   >
                     <span className="nav-link-icon me-2">
                       <img
-                        src="https://ads.alendei.com/images/billing.svg"
+                        src="assets/images/billing.svg"
                         className="icon-default"
+                        style={{ height: "32px", width: "32px"}}
                       />
                       <img
-                        src="https://ads.alendei.com/images/billing-hover.svg"
+                        src="assets/images/billing-hover.svg"
                         className="icon-hover"
+                        style={{ height: "32px", width: "32px"}}
                       />
                     </span>
                     Billing Details
@@ -59,12 +63,15 @@ const Business: React.FC<BusinessProps> = ({}) => {
                   >
                     <span className="nav-link-icon me-2">
                       <img
-                        src="https://ads.alendei.com/images/payment.svg"
+                        src="assets/images/payement-invoice.svg
+                        "
                         className="icon-default"
+                        style={{ height: "32px", width: "32px"}}
                       />
                       <img
-                        src="https://ads.alendei.com/images/payment-hover.svg"
+                        src="assets/images/payement-invoice-hover.svg"
                         className="icon-hover"
+                        style={{ height: "32px", width: "32px"}}
                       />
                     </span>
                     Payment & Invoices
@@ -78,12 +85,14 @@ const Business: React.FC<BusinessProps> = ({}) => {
                   >
                     <span className="nav-link-icon me-2">
                       <img
-                        src="https://ads.alendei.com/images/support.svg"
+                        src="assets/images/support.svg"
                         className="icon-default"
+                        style={{ height: "32px", width: "32px"}}
                       />
                       <img
-                        src="https://ads.alendei.com/images/support-hover.svg"
+                        src="assets/images/support-hover.svg"
                         className="icon-hover"
+                        style={{ height: "32px", width: "32px"}}
                       />
                     </span>
                     Support
@@ -97,12 +106,14 @@ const Business: React.FC<BusinessProps> = ({}) => {
                   >
                     <span className="nav-link-icon me-2">
                       <img
-                        src="https://ads.alendei.com/images/notification.svg"
+                        src="assets/images/notification.svg"
                         className="icon-default"
+                        style={{ height: "32px", width: "32px"}}
                       />
                       <img
-                        src="https://ads.alendei.com/images/notification-hover.svg"
+                        src="assets/images/notification-hover.svg"
                         className="icon-hover"
+                        style={{ height: "32px", width: "32px"}}
                       />
                     </span>
                     Notification
@@ -116,12 +127,14 @@ const Business: React.FC<BusinessProps> = ({}) => {
                   >
                     <span className="nav-link-icon me-2">
                       <img
-                        src="https://ads.alendei.com/images/terms.svg"
+                        src="assets/images/terms.svg"
                         className="icon-default"
+                        style={{ height: "32px", width: "32px"}}
                       />
                       <img
-                        src="https://ads.alendei.com/images/terms-hover.svg"
+                        src="assets/images/terms-hover.svg"
                         className="icon-hover"
+                        style={{ height: "32px", width: "32px"}}
                       />
                     </span>
                     Terms & Conditions
@@ -135,12 +148,14 @@ const Business: React.FC<BusinessProps> = ({}) => {
                   >
                     <span className="nav-link-icon me-2">
                       <img
-                        src="https://ads.alendei.com/images/privacy.svg"
+                        src="assets/images/privacy.svg"
                         className="icon-default"
+                        style={{ height: "32px", width: "32px"}}
                       />
                       <img
-                        src="https://ads.alendei.com/images/privacy-hover.svg"
+                        src="assets/images/privacy-hover.svg"
                         className="icon-hover"
+                        style={{ height: "32px", width: "32px"}}
                       />
                     </span>
                     Privacy Policy
@@ -231,7 +246,7 @@ const Business: React.FC<BusinessProps> = ({}) => {
                             type="text"
                             className="form-control"
                             id="cardValid"
-                            placeholder="Vaid thru(MM/YY)"
+                            placeholder="Valid thru(MM/YY)"
                           />
                         </div>
                       </div>
@@ -253,7 +268,7 @@ const Business: React.FC<BusinessProps> = ({}) => {
                     </div>
                     <a
                       href="payment-success.html"
-                      className="btn btn-primary btn-lg w-25 mb-32"
+                      className="btn btn-primary d-inline-flex mb-32"
                       type="submit"
                     >
                       Pay now
@@ -512,33 +527,38 @@ const Business: React.FC<BusinessProps> = ({}) => {
                 </div>
                 <div className="tab-pane" id="NotificationTab">
                   <form>
-                    <div className="input-group mb-30">
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="CardNo"
-                        placeholder="Card Number"
-                      />
-                      <span className="input-group-text">
-                        <i className="fa fa-credit-card"></i>
-                      </span>
+                    <div className="row g-20">
+                      <div className="col-md-6 col-xl-4">
+                        <div className="input-group mb-30">
+                          <input
+                            type="text"
+                            className="form-control"
+                            id="CardNo"
+                            placeholder="Card Number"
+                          />
+                          <span className="input-group-text">
+                            <i className="fa fa-credit-card"></i>
+                          </span>
+                        </div>
+                        <div className="mb-30">
+                          <input
+                            type="text"
+                            className="form-control"
+                            id="nameOnCard"
+                            placeholder="Name on card"
+                          />
+                        </div>
+                        <div className="mb-30">
+                          <input
+                            type="text"
+                            className="form-control"
+                            id="cardValid"
+                            placeholder="Valid thru(MM/YY)"
+                          />
+                        </div>
+                      </div>
                     </div>
-                    <div className="mb-30">
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="nameOnCard"
-                        placeholder="Name on card"
-                      />
-                    </div>
-                    <div className="mb-30">
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="cardValid"
-                        placeholder="Vaid thru(MM/YY)"
-                      />
-                    </div>
+
                     <div className="form-check mb-30 ps-0 d-flex align-items-center">
                       <input
                         className="form-check-input small"
@@ -555,7 +575,7 @@ const Business: React.FC<BusinessProps> = ({}) => {
                     </div>
                     <a
                       href="payment-success.html"
-                      className="btn btn-primary btn-lg w-25 mb-32"
+                      className="btn btn-primary d-inline-flex mb-32"
                       type="submit"
                     >
                       Pay now
@@ -567,6 +587,7 @@ const Business: React.FC<BusinessProps> = ({}) => {
                     </p>
                   </form>
                 </div>
+
                 <div className="tab-pane" id="TermsConditionTab">
                   <TermsAndConditions />
                 </div>
