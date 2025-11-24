@@ -70,7 +70,7 @@ const Signup: React.FC = () => {
           <div className="col-lg-6">
             <div className="signup-form">
               <h3 className="mb-2">Register Now</h3>
-              <h1 className="form-title gradient-title gradient-primary mb-5">
+              <h1 className="form-title text-primary mb-5">
                 Alendei Ad Platforms
               </h1>
               <Formik
@@ -226,14 +226,14 @@ const Signup: React.FC = () => {
 
                     <button
                       type="submit"
-                      className="btn btn-secondary btn-login w-100 mb-20"
+                      className="btn btn-primary btn-login w-100 mb-20"
                     >
                       Register Now
                     </button>
 
                     <p className="ff-semibold">
                       Already have an account?{" "}
-                      <Link to="/login" className="text-secondary ff-extrabold">
+                      <Link to="/login" className="text-primary ff-extrabold">
                         Login
                       </Link>
                     </p>

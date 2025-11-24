@@ -22,7 +22,7 @@ const AdPlatformSelection: React.FC<AdPlatformSelectionProps> = ({
   return (
     <div className="col-lg-12">
       <div className="campaign-card d-flex align-items-center justify-content-between">
-        <h3 className="card-title gradient-title">Select Platform for Ad</h3>
+        <h3 className="card-title text-capitalize">Select Platform for Ad</h3>
 
         <div className="d-flex align-items-center gap-2 gap-md-4 flex-wrap">
           <div className="form-check d-flex align-items-center mb-0 ps-0">
@@ -36,7 +36,11 @@ const AdPlatformSelection: React.FC<AdPlatformSelectionProps> = ({
                 value="Facebook"
               />
               <div className="card-content-wrapper">
-                <img src="https://ads.alendei.com/images/fb-round.svg" alt="Facebook" className="me-3" />
+                <img
+                  src="https://ads.alendei.com/images/fb-round.svg"
+                  alt="Facebook"
+                  className="me-3"
+                />
                 Facebook
               </div>
             </label>
@@ -52,13 +56,20 @@ const AdPlatformSelection: React.FC<AdPlatformSelectionProps> = ({
                 value="Instagram"
               />
               <div className="card-content-wrapper">
-                <img src="https://ads.alendei.com/images/insta-round.svg" alt="Instagram" className="me-3" />
+                <img
+                  src="https://ads.alendei.com/images/insta-round.svg"
+                  alt="Instagram"
+                  className="me-3"
+                />
                 Instagram
               </div>
             </label>
           </div>
           <div className="form-check d-flex align-items-center mb-0 ps-0">
-            <label htmlFor="BothPlatforms" className="radio-card cursor-pointer">
+            <label
+              htmlFor="BothPlatforms"
+              className="radio-card cursor-pointer"
+            >
               <input
                 type="radio"
                 name="select_platform"
@@ -76,7 +87,9 @@ const AdPlatformSelection: React.FC<AdPlatformSelectionProps> = ({
 
         {/* Display validation error message if there's an error */}
         {validationErrors.selectPlatform && (
-          <div className="invalid-feedback d-block">{validationErrors.selectPlatform}</div>
+          <div className="invalid-feedback d-block">
+            {validationErrors.selectPlatform}
+          </div>
         )}
       </div>
     </div>

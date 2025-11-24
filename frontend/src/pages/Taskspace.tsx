@@ -144,18 +144,14 @@ const Taskspace: React.FC<TaskspaceProps> = ({}) => {
                 <div className="tab-pane active" id="ProfileTab">
                   <div className="row g-20">
                     <div className="col-lg-3">
-                      <h3 className="card-title mb-40 mt-20 text-center">
-                        Update Profile
-                      </h3>
+                      <h3 className="card-subtitle mb-40">Update Profile</h3>
                       {user && <UserProfile user={user} />}
                     </div>
                     <div className="col-lg-9">
                       <div className="d-flex align-items-center justify-content-between mb-4">
-                        <h1 className="mb-0 section-title gradient-primary">
-                          Your Workspaces
-                        </h1>
+                        <h3 className="card-subtitle mb-40">Your Workspaces</h3>
                         <button
-                          className={`btn d-flex align-items-center ${
+                          className={`btn d-flex align-items-center w-20 h-20 ${
                             showAddForm
                               ? "btn-outline-danger"
                               : "btn-outline-primary"

@@ -10,28 +10,28 @@ import * as Types from "../../../types";
 import { useSession } from "../../../hooks/session/useSession";
 
 type userDataProps = {
-  user: Types.User 
-}
+  user: Types.User;
+};
 
-const UserProfile:React.FC<userDataProps> = ( {user}) => {
-
+const UserProfile: React.FC<userDataProps> = ({ user }) => {
   const dispatch = useDispatch();
-      const { fetchSession } = useSession();
-  
+  const { fetchSession } = useSession();
+
   const [isEditing, setIsEditing] = useState(false);
-  const [image, setImage] = useState<string>("https://ads.alendei.com/images/user.webp");
+  const [image, setImage] = useState<string>(
+    "https://ads.alendei.com/images/user.webp"
+  );
   const [imageFile, setImageFile] = useState<File | null>(null);
   const initialValues = {
     username: user?.username || "",
     imageUrl: user?.imageUrl || "",
   };
 
-useEffect(() => {
+  useEffect(() => {
     if (user?.imageUrl) {
       setImage(user.imageUrl);
     }
   }, [user]);
-
 
   const saveChanges = async (data: Types.userFormData) => {
     let isSessionNeedsUpdate = false;
@@ -54,20 +54,21 @@ useEffect(() => {
           toast.error(res.message || "Failed to update profile.");
         }
       } catch (error: any) {
-        toast.error(error.response?.data?.message || "Error while updating profile.");
+        toast.error(
+          error.response?.data?.message || "Error while updating profile."
+        );
       }
-
     } finally {
       dispatch(setLoading(false));
       imageFile && setImageFile(null);
       setIsEditing(false);
       isSessionNeedsUpdate && fetchSession();
-
     }
   };
 
-
-  const handleImageChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleImageChange = async (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
     if (event.target.files && event.target.files[0]) {
       const imgURL = URL.createObjectURL(event.target.files[0]);
       setImage(imgURL);
@@ -75,19 +76,19 @@ useEffect(() => {
     }
   };
 
-
   const validationSchema = Yup.object({
     username: Yup.string()
       .min(3, "Name must be at least 3 characters")
       .max(50, "Name must be less than 50 characters")
       .required("Name is required"),
-
   });
 
   return (
     <>
       <div
-        className={`p-5 p-lg-3 table-card text-center ${isEditing ? "shadow-lg" : ""}`}
+        className={`p-5 p-lg-3 table-card text-center ${
+          isEditing ? "shadow-lg" : ""
+        }`}
       >
         <div className="user-profile position-relative mb-30">
           <img src={image} alt="user" />
@@ -112,7 +113,7 @@ useEffect(() => {
             initialValues={initialValues}
             validationSchema={validationSchema}
             onSubmit={(touched) => {
-              setIsEditing(false); 
+              setIsEditing(false);
               saveChanges(touched);
             }}
           >
@@ -122,26 +123,40 @@ useEffect(() => {
                   <Field
                     type="text"
                     name="username"
-                    className={`form-control text-center ${touched.username && errors.username ? "is-invalid" : ""}`}
+                    className={`form-control text-center ${
+                      touched.username && errors.username ? "is-invalid" : ""
+                    }`}
                     placeholder="Enter Name"
                   />
-                  <ErrorMessage name="username" component="div" className="invalid-feedback" />
+                  <ErrorMessage
+                    name="username"
+                    component="div"
+                    className="invalid-feedback"
+                  />
                 </div>
 
-                <button type="submit" className="btn btn-sm btn-outline-primary d-inline-flex align-items-center">
+                <button
+                  type="submit"
+                  className="btn btn-sm btn-outline-primary d-inline-flex align-items-center w-30p h-30p"
+                >
                   <i className="bi bi-check"></i>
                 </button>
 
                 <button
                   onClick={() => setIsEditing(false)}
-                  className="btn btn-sm btn-outline-danger ms-2 d-inline-flex align-items-center"
+                  className="btn btn-sm btn-outline-danger ms-2 d-inline-flex align-items-center w-30p h-30p"
                 >
-                  <i className="bi bi-x" onClick={() => {
-                    setIsEditing(false)
-                    setImage(user.imageUrl || "https://ads.alendei.com/images/user.webp");
-                  }} ></i>
+                  <i
+                    className="bi bi-x"
+                    onClick={() => {
+                      setIsEditing(false);
+                      setImage(
+                        user.imageUrl ||
+                          "https://ads.alendei.com/images/user.webp"
+                      );
+                    }}
+                  ></i>
                 </button>
-
               </Form>
             )}
           </Formik>
@@ -156,7 +171,6 @@ useEffect(() => {
             </button>
           </div>
         )}
-
       </div>
     </>
   );

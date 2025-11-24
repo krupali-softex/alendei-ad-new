@@ -23,7 +23,7 @@ const Navbar: React.FC = () => {
               </button>
               <Link to="/" className="d-inline-flex nav-logo">
                 <img
-                  src="https://ads.alendei.com/images/logo.webp"
+                  src="/assets/images/logo.svg"
                   alt="Alendei"
                   width="157"
                   className=""
@@ -53,7 +53,7 @@ const Navbar: React.FC = () => {
                 ></button>
                 <Link to="/" className="d-inline-flex nav-logo">
                   <img
-                    src="https://ads.alendei.com/images/logo.webp"
+                    src="/assets/images/logo.svg"
                     alt="Alendei"
                     width="157"
                     className=""

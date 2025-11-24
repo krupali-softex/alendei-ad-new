@@ -216,22 +216,27 @@ const Business: React.FC<BusinessProps> = ({}) => {
 
                 <div className="tab-pane" id="PaymentInvoicesTab">
                   <form>
-                    <div className="mb-30">
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="nameOnCard"
-                        placeholder="Name on card"
-                      />
+                    <div className="row g-20">
+                      <div className="col-md-6 col-xl-4">
+                        <div className="mb-30">
+                          <input
+                            type="text"
+                            className="form-control"
+                            id="nameOnCard"
+                            placeholder="Name on card"
+                          />
+                        </div>
+                        <div className="mb-30">
+                          <input
+                            type="text"
+                            className="form-control"
+                            id="cardValid"
+                            placeholder="Vaid thru(MM/YY)"
+                          />
+                        </div>
+                      </div>
                     </div>
-                    <div className="mb-30">
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="cardValid"
-                        placeholder="Vaid thru(MM/YY)"
-                      />
-                    </div>
+
                     <div className="form-check mb-30 ps-0 d-flex align-items-center">
                       <input
                         className="form-check-input small"

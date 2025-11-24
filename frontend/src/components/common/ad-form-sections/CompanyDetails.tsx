@@ -4,7 +4,7 @@ import { AdFormState } from "../../../types/index";
 type CompanyDetailsProps = {
   formData: AdFormState;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  validationErrors: any;  // Add validation errors prop
+  validationErrors: any; // Add validation errors prop
   onInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void; // New prop to handle input changes
 };
 
@@ -17,7 +17,7 @@ const CompanyDetails: React.FC<CompanyDetailsProps> = ({
   return (
     <div className="col-lg-12">
       <div className="campaign-card">
-        <h3 className="card-title gradient-title mb-40">Campaign details</h3>
+        <h3 className="card-title mb-40">Campaign details</h3>
         <div className="row g-20">
           <div className="col-md-6">
             <label htmlFor="companyName" className="form-label">
@@ -25,7 +25,9 @@ const CompanyDetails: React.FC<CompanyDetailsProps> = ({
             </label>
             <input
               type="text"
-              className={`form-control ${validationErrors.companyName ? "is-invalid" : ""}`}
+              className={`form-control ${
+                validationErrors.companyName ? "is-invalid" : ""
+              }`}
               id="companyName"
               placeholder="Enter your company name"
               value={formData.companyName}
@@ -35,7 +37,9 @@ const CompanyDetails: React.FC<CompanyDetailsProps> = ({
               }}
             />
             {validationErrors.companyName && (
-              <div className="invalid-feedback">{validationErrors.companyName}</div>
+              <div className="invalid-feedback">
+                {validationErrors.companyName}
+              </div>
             )}
           </div>
           <div className="col-md-6">
@@ -44,7 +48,9 @@ const CompanyDetails: React.FC<CompanyDetailsProps> = ({
             </label>
             <input
               type="text"
-              className={`form-control ${validationErrors.campaignMessage ? "is-invalid" : ""}`}
+              className={`form-control ${
+                validationErrors.campaignMessage ? "is-invalid" : ""
+              }`}
               id="campaignMessage"
               placeholder="Enter your Campaign Message"
               value={formData.campaignMessage}
@@ -54,7 +60,9 @@ const CompanyDetails: React.FC<CompanyDetailsProps> = ({
               }}
             />
             {validationErrors.campaignMessage && (
-              <div className="invalid-feedback">{validationErrors.campaignMessage}</div>
+              <div className="invalid-feedback">
+                {validationErrors.campaignMessage}
+              </div>
             )}
           </div>
         </div>

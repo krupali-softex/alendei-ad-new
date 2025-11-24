@@ -97,87 +97,104 @@ const CampaignSettingTab: React.FC = () => {
         };
     }, [defaultWorkspace]);
     return (
-        <Formik
-            initialValues={{ gender: defaultWorkspace.campaignSetting?.gender || "All" }}
-            validationSchema={Yup.object({
-                gender: Yup.string().required("Gender is required"),
-            })}
-            onSubmit={handleSubmit}
-            key={defaultWorkspace?.id}
-        >
-            {() => (
-                <Form>
-                    <div className="mb-40">
-                        <h3 className="card-title gradient-title mb-4">Select Gender</h3>
-                        <div className="d-flex align-items-center gap-4">
-                            {["All", "Male", "Female"].map((gender) => (
-                                <label key={gender} className="form-check-label ff-semibold" htmlFor={gender}>
-                                    <Field
-                                        className="form-check-input me-10 mt-0"
-                                        id={gender}
-                                        type="radio"
-                                        name="gender"
-                                        value={gender}
-                                    />
-                                    {gender}
-                                </label>
-                            ))}
-                        </div>
-                        <ErrorMessage name="gender" component="div" className="text-danger mt-2" />
-                    </div>
+      <Formik
+        initialValues={{
+          gender: defaultWorkspace.campaignSetting?.gender || "All",
+        }}
+        validationSchema={Yup.object({
+          gender: Yup.string().required("Gender is required"),
+        })}
+        onSubmit={handleSubmit}
+        key={defaultWorkspace?.id}
+      >
+        {() => (
+          <Form>
+            <div className="mb-40">
+              <h3 className="card-title text-capitalize mb-4">Select Gender</h3>
+              <div className="d-flex align-items-center gap-4">
+                {["All", "Male", "Female"].map((gender) => (
+                  <label
+                    key={gender}
+                    className="form-check-label ff-semibold"
+                    htmlFor={gender}
+                  >
+                    <Field
+                      className="form-check-input me-10 mt-0"
+                      id={gender}
+                      type="radio"
+                      name="gender"
+                      value={gender}
+                    />
+                    {gender}
+                  </label>
+                ))}
+              </div>
+              <ErrorMessage
+                name="gender"
+                component="div"
+                className="text-danger mt-2"
+              />
+            </div>
 
-                    <div className="mb-40">
-                        <h3 className="card-title gradient-title mb-12">Target Areas</h3>
-                        <p className="text-lightgray mb-4">
-                            Your ad will be shown in this area. It could be a list of Local Area/City/State or PAN India.
-                        </p>
+            <div className="mb-40">
+              <h3 className="card-title text-capitalize mb-12">Target Areas</h3>
+              <p className="text-lightgray mb-4">
+                Your ad will be shown in this area. It could be a list of Local
+                Area/City/State or PAN India.
+              </p>
 
-                        <label htmlFor="targetArea" className="form-label">Select Target Area</label>
-                        <div className="targetArea-section position-relative">
-                            <input
-                                type="text"
-                                className="form-control"
-                                list="cityOptions"
-                                value={targetAreaInput}
-                                onChange={handleQueryChange}
-                                placeholder="Enter city"
-                            />
-                            <datalist id="cityOptions">
-                                {allCities.map((cityState, index) => (
-                                    <option key={index} value={cityState} />
-                                ))}
-                            </datalist>
-                            <button type="button" className="btn btn-outline-primary" onClick={handleAddArea}>
-                                <i className="fa fa-plus me-2"></i>Add
-                            </button>
-                        </div>
+              <label htmlFor="targetArea" className="form-label">
+                Select Target Area
+              </label>
+              <div className="targetArea-section position-relative">
+                <input
+                  type="text"
+                  className="form-control"
+                  list="cityOptions"
+                  value={targetAreaInput}
+                  onChange={handleQueryChange}
+                  placeholder="Enter city"
+                />
+                <datalist id="cityOptions">
+                  {allCities.map((cityState, index) => (
+                    <option key={index} value={cityState} />
+                  ))}
+                </datalist>
+                <button
+                  type="button"
+                  className="btn btn-outline-primary"
+                  onClick={handleAddArea}
+                >
+                  <i className="fa fa-plus me-2"></i>Add
+                </button>
+              </div>
 
-                        <div className="area-container mt-3">
-                            {targetAreas.length > 0 ? (
-                                targetAreas.map((area, index) => (
-                                    <span key={index} className="areaCard">
-                                        {area}
-                                        <i
-                                            className="bi bi-x fs-3 text-primary ms-2 cursor-pointer"
-                                            onClick={() => handleRemoveArea(area)}
-                                            title="Remove"
-                                        ></i>
-                                    </span>
-                                ))
-                            ) : (
-                                <p className="text-muted">No target areas selected.</p>
-                            )}
-                        </div>
-                    </div>
+              <div className="area-container mt-3">
+                {targetAreas.length > 0 ? (
+                  targetAreas.map((area, index) => (
+                    <span key={index} className="areaCard">
+                      {area}
+                      <i
+                        className="bi bi-x fs-3 text-primary ms-2 cursor-pointer"
+                        onClick={() => handleRemoveArea(area)}
+                        title="Remove"
+                      ></i>
+                    </span>
+                  ))
+                ) : (
+                  <p className="text-muted">No target areas selected.</p>
+                )}
+              </div>
+            </div>
 
-                    <div className="text-center text-md-start">
-                        <button type="submit" className="btn btn-primary d-inline-flex">
-                            Save
-                        </button>
-                    </div>
-                </Form>
-            )}
-        </Formik>
+            <div className="text-center text-md-start">
+              <button type="submit" className="btn btn-primary d-inline-flex">
+                Save
+              </button>
+            </div>
+          </Form>
+        )}
+      </Formik>
     );
 };
 
