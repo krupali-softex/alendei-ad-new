@@ -33,7 +33,7 @@ const AdSchedule: React.FC<AdScheduleProps> = ({
 
   return (
     <div className="campaign-card">
-      <h3 className="card-title gradient-title mb-40">Schedule</h3>
+      <h3 className="card-title mb-40">Schedule</h3>
 
       <label htmlFor="ScheduleStartDate" className="form-label">
         Start Date

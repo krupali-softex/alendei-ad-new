@@ -11,7 +11,7 @@ const Home: React.FC = () => {
   );
 
   const [sliderRef, slider] = useKeenSlider({
-    loop: true,
+    loop: false,
     slides: {
       perView: 1,
       spacing: 16,
@@ -119,6 +119,17 @@ const Home: React.FC = () => {
               <div className="robot-img">
                 <img src="/assets/images/robot.webp" />
               </div>
+              <div className="chatbot-wrapper">
+                <div className="chatbot-bubble">
+                  <div className="bubble-tail"></div>
+
+                  <span className="typing-wrapper">
+                    <span className="typing-text">I can make your ad...!</span>
+                  </span>
+
+                  <span className="typing-cursor"></span>
+                </div>
+              </div>
               <div ref={sliderRef} className="keen-slider landing-carousel">
                 <div className="keen-slider__slide carousel-card">
                   <img
@@ -171,18 +182,6 @@ const Home: React.FC = () => {
                   alt="Location"
                   style={{ width: "88%" }}
                 />
-              </div>
-            </div>
-
-            <div className="chatbot-wrapper">
-              <img
-                src="/assets/images/chatbot-bubble.png"
-                className="chatbot-image"
-                alt="Chatbot"
-              />
-              <div className="chatbot-text-bubble">
-                <span className="typing-text">I can make your ad...!</span>
-                <span className="typing-cursor"></span>
               </div>
             </div>
 

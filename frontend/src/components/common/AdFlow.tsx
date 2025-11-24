@@ -66,7 +66,7 @@ const AdForm: React.FC = () => {
         <div className="campaign-card p-40">
           <div className="ai-ad-chat-container">
             <div className="ai-ad-chat" ref={chatRef}>
-              <h1 className="section-title gradient-title gradient-primary mb-5 text-center">
+              <h1 className="section-title text-primary mb-5 text-center">
                 Hello, {user?.username}
               </h1>
               {messages.map((msg, index) => (

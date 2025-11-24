@@ -15,7 +15,6 @@ type MembersTabProps = {
 };
 
 const MembersTab: React.FC<MembersTabProps> = ({ members }) => {
-
   const dispatch = useDispatch();
 
   const [showInviteForm, setShowInviteForm] = useState(false);
@@ -27,7 +26,6 @@ const MembersTab: React.FC<MembersTabProps> = ({ members }) => {
   });
 
   const onInviteMember = async (email: string, role: string) => {
-
     const data = {
       email,
       roleName: role,
@@ -41,30 +39,41 @@ const MembersTab: React.FC<MembersTabProps> = ({ members }) => {
         setShowInviteForm(false);
       }
     } catch (error: any) {
-      toast.error(error.response.data.message ? error.response.data.message : "Error inviting member");
+      toast.error(
+        error.response.data.message
+          ? error.response.data.message
+          : "Error inviting member"
+      );
     } finally {
       setShowInviteForm(false);
       dispatch(setLoading(false));
     }
-  }
+  };
 
   const handleMemberDelete = (memberId: number) => {
     return async () => {
       try {
         dispatch(setLoading(true));
         const response = await deleteWorkspaceMember(memberId);
-        if (response.success && response.defaultWorkspace && response.defaultWorkspace.members) {
+        if (
+          response.success &&
+          response.defaultWorkspace &&
+          response.defaultWorkspace.members
+        ) {
           dispatch(setDefaultWorkspaceMembers(response.defaultWorkspace));
           toast.success(response.message);
         }
       } catch (error: any) {
-        toast.error(error.response.data.message ? error.response.data.message : "Error deleting member");
+        toast.error(
+          error.response.data.message
+            ? error.response.data.message
+            : "Error deleting member"
+        );
       } finally {
         dispatch(setLoading(false));
       }
     };
-  }
-
+  };
 
   return (
     <div className="tab-pane" id="MembersTab">
@@ -73,14 +82,16 @@ const MembersTab: React.FC<MembersTabProps> = ({ members }) => {
           Workspace Members{" "}
           <span className="text-primary">({members.length})</span>
         </h3>
-        {!showInviteForm &&
+        {!showInviteForm && (
           <button
-            className={`btn d-flex align-items-center ${showInviteForm ? 'btn-outline-danger' : 'btn-outline-primary'}`}
+            className={`btn d-flex align-items-center ${
+              showInviteForm ? "btn-outline-danger" : "btn-outline-primary"
+            }`}
             onClick={() => setShowInviteForm(!showInviteForm)}
           >
             {showInviteForm ? "Cancel" : "+ Invite Member"}
           </button>
-        }
+        )}
       </div>
 
       {showInviteForm && (
@@ -96,7 +107,7 @@ const MembersTab: React.FC<MembersTabProps> = ({ members }) => {
             {() => (
               <Form>
                 <div className="row">
-                  <div className="col-md-5">
+                  <div className="col-md-4">
                     <label>Email</label>
                     <Field
                       name="email"
@@ -107,7 +118,7 @@ const MembersTab: React.FC<MembersTabProps> = ({ members }) => {
                     <ErrorMessage
                       name="email"
                       component="div"
-                      className="text-danger"
+                      className="text-danger f-14"
                     />
                   </div>
                   <div className="col-md-4">
@@ -120,15 +131,23 @@ const MembersTab: React.FC<MembersTabProps> = ({ members }) => {
                       <ErrorMessage
                         name="role"
                         component="div"
-                        className="text-danger"
+                        className="text-danger f-14"
                       />
                     </div>
                   </div>
 
                   <div className="col-auto">
                     <div className="d-flex align-items-center gap-3 mt-4">
-                      <button type="submit" className="btn btn-primary">Send Invite</button>
-                      <button type="submit" onClick={() => setShowInviteForm(!showInviteForm)} className="btn btn-outline-danger">Cancel</button>
+                      <button type="submit" className="btn btn-primary">
+                        Send Invite
+                      </button>
+                      <button
+                        type="submit"
+                        onClick={() => setShowInviteForm(!showInviteForm)}
+                        className="btn btn-outline-danger"
+                      >
+                        Cancel
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -142,7 +161,7 @@ const MembersTab: React.FC<MembersTabProps> = ({ members }) => {
         <table className="table table-bordered mt-5">
           <thead>
             <tr>
-              <th className="text-start" style={{ width: '5%' }}>
+              <th className="text-start" style={{ width: "5%" }}>
                 <div className="form-check form-check-inline p-0">
                   <input
                     className="form-check-input small me-0 lead-checkAll"
@@ -152,11 +171,17 @@ const MembersTab: React.FC<MembersTabProps> = ({ members }) => {
                   />
                 </div>
               </th>
-              <th className="text-start" style={{ width: '5%' }}></th>
-              <th className="text-start" style={{ width: '20%' }}>Name</th>
-              <th className="text-start" style={{ width: '25%' }}>Email</th>
+              <th className="text-start" style={{ width: "5%" }}></th>
+              <th className="text-start" style={{ width: "20%" }}>
+                Name
+              </th>
+              <th className="text-start" style={{ width: "25%" }}>
+                Email
+              </th>
               <th className="text-start">Role</th>
-              <th className="text-start" style={{ width: '20%' }}>Actions</th>
+              <th className="text-start" style={{ width: "20%" }}>
+                Actions
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -174,7 +199,11 @@ const MembersTab: React.FC<MembersTabProps> = ({ members }) => {
                 </td>
                 <td className="text-start">
                   <img
-                    src={member.imageUrl ? member.imageUrl :"https://ads.alendei.com/images/user.webp"}
+                    src={
+                      member.imageUrl
+                        ? member.imageUrl
+                        : "https://ads.alendei.com/images/user.webp"
+                    }
                     alt="profile"
                     width="36"
                     height="36"
@@ -206,9 +235,11 @@ const MembersTab: React.FC<MembersTabProps> = ({ members }) => {
                       data-bs-toggle="modal"
                       data-bs-target="#deleteMemberModal"
                     >
-                      <i className="bi bi-box-arrow-right text-danger" style={{ cursor: "pointer" }}></i>
+                      <i
+                        className="bi bi-box-arrow-right text-danger"
+                        style={{ cursor: "pointer" }}
+                      ></i>
                     </a>
-
                   </div>
                 </td>
               </tr>
@@ -228,7 +259,6 @@ const MembersTab: React.FC<MembersTabProps> = ({ members }) => {
         }}
         confirmText="Yes, Remove"
       />
-
     </div>
   );
 };

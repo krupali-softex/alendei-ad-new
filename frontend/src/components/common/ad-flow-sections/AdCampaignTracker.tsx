@@ -7,49 +7,48 @@ const AdCampaignTracker = () => {
   const adFormData = useSelector((state: RootState) => state.adForm);
 
   // Build base steps
-  const rawSteps = useMemo(() => [
-    {
-      title: "Your Company Name",
-      value: adFormData.companyName,
-      editable: true,
-    },
-    {
-      title: "Category",
-      value: adFormData.category,
-    },
-    {
-      title: "Ad campaign type",
-      value: adFormData.campaignType,
-    },
-    {
-      title: "Date Range",
-      value: adFormData.adDuration,
-    },
-    {
-      title: "Budget",
-      value: adFormData.budget
-        ? `${adFormData.budget} (Life time)`
-        : "",
-    },
-    {
-      title: "Selected Platform",
-      value: adFormData.selectPlatform
-    },
-    {
-      title: "Target Areas",
-      value: adFormData.targetArea || adFormData.targetAreas.join(", "),
-    },
-    {
-      title: "Age Range",
-      value: adFormData.ageRange[0] + " - " + adFormData.ageRange[1],
-    },
-    {
-      title: "Gender",
-      value: adFormData.gender,
-    },
-
-
-  ], [adFormData]);
+  const rawSteps = useMemo(
+    () => [
+      {
+        title: "Your Company Name",
+        value: adFormData.companyName,
+        editable: true,
+      },
+      {
+        title: "Category",
+        value: adFormData.category,
+      },
+      {
+        title: "Ad campaign type",
+        value: adFormData.campaignType,
+      },
+      {
+        title: "Date Range",
+        value: adFormData.adDuration,
+      },
+      {
+        title: "Budget",
+        value: adFormData.budget ? `${adFormData.budget} (Life time)` : "",
+      },
+      {
+        title: "Selected Platform",
+        value: adFormData.selectPlatform,
+      },
+      {
+        title: "Target Areas",
+        value: adFormData.targetArea || adFormData.targetAreas.join(", "),
+      },
+      {
+        title: "Age Range",
+        value: adFormData.ageRange[0] + " - " + adFormData.ageRange[1],
+      },
+      {
+        title: "Gender",
+        value: adFormData.gender,
+      },
+    ],
+    [adFormData]
+  );
 
   // Add status before mount using useMemo
   const stepsWithStatus = useMemo(() => {
@@ -70,7 +69,7 @@ const AdCampaignTracker = () => {
   return (
     <div className="col-xl-4 col-lg-5 col-md-12">
       <div className="campaign-card ai-ad-flow-campaign p-40">
-        <h1 className="section-title gradient-title gradient-primary mb-2 text-start">
+        <h1 className="section-title text-primary mb-2 text-start">
           Your Ad Campaign is Almost Ready...!
         </h1>
         <p className="text-start ff-semibold">Please, complete steps!</p>
@@ -79,12 +78,13 @@ const AdCampaignTracker = () => {
           {stepsWithStatus.map((step) => (
             <div className={`tracking-item ${step.status}`} key={step.title}>
               <div
-                className={`tracking-icon ${step.status === "completed"
-                  ? "status-completed"
-                  : step.status === "intransit"
+                className={`tracking-icon ${
+                  step.status === "completed"
+                    ? "status-completed"
+                    : step.status === "intransit"
                     ? "blinker"
                     : ""
-                  }`}
+                }`}
               ></div>
               <div className="tracking-content">
                 <p className="ff-bold text-black track-title">{step.title}</p>

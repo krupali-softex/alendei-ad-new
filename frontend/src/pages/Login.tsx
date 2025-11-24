@@ -10,7 +10,7 @@ import { setLoading } from "../state/slices/loadingSlice";
 import { login } from "../state/slices/authSlice";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import {   setUser } from "../state/slices/userSlice";
+import { setUser } from "../state/slices/userSlice";
 
 const Login: React.FC = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -32,8 +32,8 @@ const Login: React.FC = () => {
       const res = await loginUser(values);
       if (res.success) {
         dispatch(setUser(res.user));
-        dispatch(login(res)); 
-        navigate(res.user?.isSuperAdmin ?  "/admin" : "/home");
+        dispatch(login(res));
+        navigate(res.user?.isSuperAdmin ? "/admin" : "/home");
       } else {
         toast.error(res.message);
       }
@@ -54,7 +54,7 @@ const Login: React.FC = () => {
       spacing: 16,
     },
   });
-  
+
   useEffect(() => {
     let interval: NodeJS.Timeout;
 
@@ -66,7 +66,6 @@ const Login: React.FC = () => {
 
     return () => clearInterval(interval);
   }, [slider]);
-  
 
   return (
     <main className="main d-flex align-items-center flex-column justify-content-center min-vh-100 py-5 login-bg">
@@ -76,7 +75,7 @@ const Login: React.FC = () => {
             <div className="d-flex align-items-center justify-content-center flex-column h-100">
               {/* <div className="login-img">
                 <img
-                  src="https://ads.alendei.com/images/login-img.webp"
+                  src="../assets/images/login-img.png"
                   className="w-100"
                   alt="Login Graphic"
                 />
@@ -84,13 +83,22 @@ const Login: React.FC = () => {
               <div className="landing-carousel-container login-img">
                 <div ref={sliderRef} className="keen-slider landing-carousel">
                   <div className="keen-slider__slide carousel-card">
-                    <img src="https://ads.alendei.com/images/slider-img-4.webp" alt="SliderImg4" />
+                    <img
+                      src="https://ads.alendei.com/images/slider-img-4.webp"
+                      alt="SliderImg4"
+                    />
                   </div>
                   <div className="keen-slider__slide carousel-card post-card">
-                    <img src="https://ads.alendei.com/images/slider-img-5.webp" alt="SliderImg5" />
+                    <img
+                      src="https://ads.alendei.com/images/slider-img-5.webp"
+                      alt="SliderImg5"
+                    />
                   </div>
                   <div className="keen-slider__slide carousel-card">
-                    <img src="https://ads.alendei.com/images/slider-img-6.webp" alt="SliderImg6" />
+                    <img
+                      src="https://ads.alendei.com/images/slider-img-6.webp"
+                      alt="SliderImg6"
+                    />
                   </div>
                 </div>
               </div>
@@ -99,7 +107,7 @@ const Login: React.FC = () => {
           <div className="col-lg-6">
             <div className="login-form">
               <h3 className="mb-2">Welcome to</h3>
-              <h1 className="form-title gradient-title gradient-primary mb-5 bold-text">
+              <h1 className="form-title text-primary mb-5 bold-text">
                 Alendei Ads Platform
               </h1>
               <Formik
@@ -184,7 +192,7 @@ const Login: React.FC = () => {
                       </div>
                       <a
                         href="#"
-                        className="btn btn-link justify-content-md-end mt-2"
+                        className="btn btn-link justify-content-md-end mt-2 ff-semibold"
                       >
                         Forgot password?
                       </a>
@@ -201,7 +209,173 @@ const Login: React.FC = () => {
                     </p>
                     <Link
                       to="/signup"
-                      className="btn btn-secondary btn-login w-100"
+                      className="btn btn-outline-primary btn-login w-100"
+                    >
+                      Create a new account
+                    </Link>
+                  </Form>
+                )}
+              </Formik>
+            </div>
+          </div>
+        </div>
+        <div className="row g-5">
+          <div className="col-md-6 position-relative ">
+            <div className="landing-carousel-container login-carousel position-relative">
+              <div className="robot-img">
+                <img src="/assets/images/robot.webp" />
+              </div>
+              <div className="chatbot-wrapper">
+                <div className="chatbot-bubble">
+                  <div className="bubble-tail"></div>
+
+                  <span className="typing-wrapper">
+                    <span className="typing-text">I can make your ad...!</span>
+                  </span>
+
+                  <span className="typing-cursor"></span>
+                </div>
+              </div>
+              <div ref={sliderRef} className="keen-slider landing-carousel">
+                <div className="keen-slider__slide carousel-card">
+                  <img
+                    src="/assets/images/slider-img.webp"
+                    alt="slider-img-1"
+                  />
+                </div>
+                <div className="keen-slider__slide carousel-card post-card">
+                  <img
+                    src="/assets/images/slider-img.webp"
+                    alt="slider-img-2"
+                  />
+                </div>
+                <div className="keen-slider__slide carousel-card">
+                  <img
+                    src="/assets/images/slider-img.webp"
+                    alt="slider-img-3"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="social-wrapper">
+              <div className="hero-social-icon social-facebook">
+                <img src="/assets/images/icon-facebook.svg" alt="Facebook" />
+              </div>
+            </div>
+
+            {/* <ul id="progress-bar" className="progressbar">
+              <li className="gradient-title">Select Goal</li>
+              <li className="gradient-title">Pick Platform</li>
+              <li className="gradient-title">Launch Ads</li>
+            </ul> */}
+          </div>
+          <div className="col-lg-6">
+            <div className="login-form">
+              <h3 className="mb-2">Welcome to</h3>
+              <h1 className="form-title text-primary mb-5 bold-text">
+                Alendei Ads Platform
+              </h1>
+              <Formik
+                initialValues={{ email: "", password: "" }}
+                validationSchema={validationSchema}
+                onSubmit={handleLogin}
+              >
+                {({ errors, touched }) => (
+                  <Form>
+                    <div className="mb-3">
+                      <label htmlFor="loginEmail" className="form-label">
+                        E-mail
+                      </label>
+                      <div
+                        className={` input-group ${
+                          errors.email && touched.email ? "is-invalid" : ""
+                        }`}
+                      >
+                        <span className="input-group-text">
+                          <i className="bi bi-envelope-fill"></i>
+                        </span>
+                        <Field
+                          type="email"
+                          className={`form-control ${
+                            errors.email && touched.email ? "is-invalid" : ""
+                          }`}
+                          id="loginEmail"
+                          name="email"
+                          placeholder="Enter your email address"
+                        />
+                      </div>
+                      <ErrorMessage
+                        name="email"
+                        component="div"
+                        className="invalid-feedback"
+                      />
+                    </div>
+
+                    <div className="mb-3">
+                      <label htmlFor="currentPassword" className="form-label">
+                        Password
+                      </label>
+                      <div
+                        className={`input-group password-field ${
+                          errors.password && touched.password
+                            ? "is-invalid"
+                            : ""
+                        }`}
+                      >
+                        <span className="input-group-text">
+                          <i className="bi bi-lock-fill"></i>
+                        </span>
+                        <Field
+                          className={`form-control ${
+                            errors.password && touched.password
+                              ? "is-invalid"
+                              : ""
+                          }`}
+                          id="currentPassword"
+                          name="password"
+                          type={isPasswordVisible ? "text" : "password"}
+                          placeholder="**********"
+                        />
+                        <span
+                          className="input-group-text field-icon toggle-password"
+                          onClick={() =>
+                            setIsPasswordVisible(!isPasswordVisible)
+                          }
+                          style={{ cursor: "pointer" }}
+                        >
+                          {isPasswordVisible ? (
+                            <i className="bi bi-eye-fill"></i>
+                          ) : (
+                            <i className="bi bi-eye-slash-fill"></i>
+                          )}
+                        </span>
+                        <ErrorMessage
+                          name="password"
+                          component="div"
+                          className="invalid-feedback"
+                        />
+                      </div>
+                      <a
+                        href="#"
+                        className="btn btn-link justify-content-md-end mt-2 ff-semibold"
+                      >
+                        Forgot password?
+                      </a>
+                    </div>
+
+                    <button
+                      className="btn btn-primary btn-login w-100 mb-3"
+                      type="submit"
+                    >
+                      Log In
+                    </button>
+                    <p className="ff-semibold text-center mb-2">
+                      Don't have an account?
+                    </p>
+                    <Link
+                      to="/signup"
+                      className="btn btn-outline-primary btn-login w-100"
                     >
                       Create a new account
                     </Link>

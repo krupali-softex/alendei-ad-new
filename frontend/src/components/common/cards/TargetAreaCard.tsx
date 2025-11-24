@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { AdFormState } from "../../../types/index";
 import AudienceBudget from "../ad-form-sections/AudienceBudget";
-import { useRef } from 'react';
+import { useRef } from "react";
 import { fetchCitySuggestions } from "../../../services/apiService";
 
 // Define the props type
@@ -26,7 +26,6 @@ const TargetAreaCard: React.FC<TargetAreaCardProps> = ({
   const [allCities, setAllCities] = useState<string[]>([]);
   const [previousCities, setPreviousCities] = useState<string[]>([]);
 
-
   const validate = () => {
     const trimmed = formData.targetArea.trim();
     if (!formData.targetArea.trim()) {
@@ -35,12 +34,10 @@ const TargetAreaCard: React.FC<TargetAreaCardProps> = ({
     } else if (!previousCities.includes(trimmed)) {
       setError("Please select a valid city from the list.");
       return false;
-    }
-    else if (formData.targetAreas.includes(trimmed)) {
+    } else if (formData.targetAreas.includes(trimmed)) {
       setError("Area already added.");
       return false;
-    }
-    else {
+    } else {
       setError("");
       return true;
     }
@@ -55,7 +52,7 @@ const TargetAreaCard: React.FC<TargetAreaCardProps> = ({
 
   const debounceRef = useRef<NodeJS.Timeout | null>(null);
   const fetchCities = async (query: string) => {
-    if (!query ) return;
+    if (!query) return;
 
     try {
       const data = await fetchCitySuggestions(query);
@@ -66,7 +63,6 @@ const TargetAreaCard: React.FC<TargetAreaCardProps> = ({
       console.error("Error fetching cities:", error);
     }
   };
-
 
   const handleQueryChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     handleChange(e);
@@ -83,7 +79,7 @@ const TargetAreaCard: React.FC<TargetAreaCardProps> = ({
     <div className="col-lg-7">
       <div className="campaign-card h-100">
         <div className="mb-60">
-          <h3 className="card-title gradient-title mb-12">Target Areas</h3>
+          <h3 className="card-title text-capitalize mb-12">Target areas</h3>
           <p className="text-lightgray mb-40">
             Your ad will be shown in this area. It could be a list of Local
             Area/City/State or PAN India.
@@ -112,7 +108,6 @@ const TargetAreaCard: React.FC<TargetAreaCardProps> = ({
                 <i className="fa fa-plus me-2"></i>Add
               </button>
             </div>
-
 
             {error && <p className="text-danger mt-2">{error}</p>}
 

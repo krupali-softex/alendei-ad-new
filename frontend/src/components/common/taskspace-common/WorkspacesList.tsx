@@ -16,14 +16,12 @@ type WorkspacesListProps = {
   setShowForm: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-
 const WorkspaceSchema = Yup.object().shape({
   name: Yup.string()
     .min(3, "Workspace name must be at least 3 characters.")
     .max(50, "Workspace name must be at most 50 characters.")
     .required("Workspace name is required."),
 });
-
 
 const WorkspacesList: React.FC<WorkspacesListProps> = ({
   workspaces,
@@ -33,15 +31,18 @@ const WorkspacesList: React.FC<WorkspacesListProps> = ({
   // const [showForm, setShowForm] = useState(false);
   const dispatch = useDispatch();
   const [showDeleteModal, setShowDeleteModal] = useState(false);
-  const [selectedWorkspace, setSelectedWorkspace] = useState<Workspace | null>(null);
+  const [selectedWorkspace, setSelectedWorkspace] = useState<Workspace | null>(
+    null
+  );
 
-  const { handleSwitchWorkspace, SwitchToNewWorkspaceWithRes } = useWorkspaceSwitcher();
+  const { handleSwitchWorkspace, SwitchToNewWorkspaceWithRes } =
+    useWorkspaceSwitcher();
 
   const onAddWorkspace = async (name: string) => {
     try {
       const params: CreateWorkSpaceParams = {
         workspace_name: name,
-      }
+      };
       const res = await createWorkSpace(params);
       if (res.success && res.workspaceId) {
         handleSwitchWorkspace(res.workspaceId);
@@ -50,7 +51,11 @@ const WorkspacesList: React.FC<WorkspacesListProps> = ({
         toast.error("Failed to create workspace");
       }
     } catch (error: any) {
-      toast.error(error.response.data.message ? error.response.data.message : "Oops! Something went wrong.");
+      toast.error(
+        error.response.data.message
+          ? error.response.data.message
+          : "Oops! Something went wrong."
+      );
     } finally {
       setLoading(false);
     }
@@ -73,13 +78,14 @@ const WorkspacesList: React.FC<WorkspacesListProps> = ({
         toast.error(res.message ?? "Oops! Something went wrong.");
       }
     } catch (error: any) {
-      toast.error(error.response?.data?.message ?? "Oops! Something went wrong.");
+      toast.error(
+        error.response?.data?.message ?? "Oops! Something went wrong."
+      );
     } finally {
       dispatch(setLoading(false));
       setSelectedWorkspace(null);
     }
   };
-
 
   return (
     <div className="workspace-container mt-5 mt-lg-0">
@@ -94,7 +100,7 @@ const WorkspacesList: React.FC<WorkspacesListProps> = ({
             validationSchema={WorkspaceSchema}
             onSubmit={(values) => {
               onAddWorkspace(values.name.trim());
-             setShowForm(false)
+              setShowForm(false);
             }}
           >
             {() => (
@@ -128,18 +134,29 @@ const WorkspacesList: React.FC<WorkspacesListProps> = ({
         </div>
       )}
 
-
       <div className="row">
         {workspaces.map((workspace) => (
-          <div className="col-lg-6 col-md-6 col-xl-4 col-xxl-3 mb-4" key={workspace.id}>
+          <div
+            className="col-lg-6 col-md-6 col-xl-4 col-xxl-3 mb-4"
+            key={workspace.id}
+          >
             <div className="card text-center p-3 h-100 workspace-card">
               <div className="d-flex justify-content-center align-items-center mb-3">
                 <div className="logo-wrapper bg-white">
-                  <img src={workspace.imageUrl ? `${workspace.imageUrl}` : "https://ads.alendei.com/images/mysql.webp"} alt="MySQL" />
+                  <img
+                    src={
+                      workspace.imageUrl
+                        ? `${workspace.imageUrl}`
+                        : "https://ads.alendei.com/images/mysql.webp"
+                    }
+                    alt="MySQL"
+                  />
                 </div>
               </div>
               <h5 className="fw-bold mb-1">{workspace.name}</h5>
-              <p className="text-muted mb-3 text-capitalize">{workspace.role}</p>
+              <p className="text-muted mb-3 text-capitalize">
+                {workspace.role}
+              </p>
 
               <button
                 className="btn btn-outline-success rounded-pill fw-semibold mb-2 text-primary"
@@ -149,7 +166,7 @@ const WorkspacesList: React.FC<WorkspacesListProps> = ({
               </button>
 
               <button
-                className="btn text-danger fw-semibold mb-2 text-decoration-underline"
+                className="btn text-danger fw-semibold text-decoration-underline"
                 onClick={() => {
                   setSelectedWorkspace(workspace);
                   setShowDeleteModal(true);
@@ -169,8 +186,6 @@ const WorkspacesList: React.FC<WorkspacesListProps> = ({
         onConfirm={confirmDelete}
         workspaceName={selectedWorkspace?.name}
       />
-
-
     </div>
   );
 };

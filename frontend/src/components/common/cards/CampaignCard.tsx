@@ -11,7 +11,7 @@ interface CampaignCardProps {
 const CampaignCard: React.FC<CampaignCardProps> = ({ formData, handleChange }) => {
     return (
         <div className="campaign-card mb-20">
-            <h3 className="card-title gradient-title mb-40">Ad Campaign Type</h3>
+            <h3 className="card-title mb-40">Ad Campaign Type</h3>
 
             <div className="form-check m-0 d-flex align-items-center mb-4">
                 <input
