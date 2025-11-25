@@ -117,8 +117,9 @@ const DefaultWorkspaceProfile: React.FC<defaultWorkspaceProps> = ({ defaultWorks
   return (
     <>
       <div
-        className={`p-5 p-lg-3 table-card text-center ${isEditing ? "shadow-lg" : ""}`}
+        className="p-5 bg-profile table-card text-center"
       >
+        <h3 className="card-subtitle mb-40">Workspace Settings</h3>
         <div className="user-profile position-relative mb-30">
           <img src={image} alt="user" />
           {isEditing && (
@@ -158,13 +159,13 @@ const DefaultWorkspaceProfile: React.FC<defaultWorkspaceProps> = ({ defaultWorks
                   <ErrorMessage name="workspaceName" component="div" className="invalid-feedback" />
                 </div>
 
-                <button type="submit" className="btn btn-sm btn-outline-primary d-inline-flex align-items-center">
+                <button type="submit" className="btn btn-sm btn-outline-primary d-inline-flex align-items-center w-30p h-30p">
                   <i className="bi bi-check"></i>
                 </button>
 
                 <button
                   onClick={() => setIsEditing(false)}
-                  className="btn btn-sm btn-outline-danger ms-2 d-inline-flex align-items-center"
+                  className="btn btn-sm btn-outline-danger d-inline-flex align-items-center w-30p h-30p ms-2"
                 >
                   <i className="bi bi-x" onClick={() =>{ 
                     setImage(defaultWorkspace.imageUrl || "https://ads.alendei.com/images/workspace.webp");
@@ -179,7 +180,7 @@ const DefaultWorkspaceProfile: React.FC<defaultWorkspaceProps> = ({ defaultWorks
             <h3 className="username mb-3">{initialValues.workspaceName}</h3>
             <button
               onClick={() => setIsEditing(true)}
-              className="btn btn-outline-primary d-inline-flex"
+              className="btn btn-gradient d-inline-flex"
             >
               Edit
             </button>

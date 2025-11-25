@@ -85,11 +85,8 @@ const UserProfile: React.FC<userDataProps> = ({ user }) => {
 
   return (
     <>
-      <div
-        className={`p-5 p-lg-3 table-card text-center ${
-          isEditing ? "shadow-lg" : ""
-        }`}
-      >
+      <div className="p-5 bg-profile table-card text-center">
+        <h3 className="card-subtitle mb-40">Update Profile</h3>
         <div className="user-profile position-relative mb-30">
           <img src={image} alt="user" />
           {isEditing && (
@@ -165,7 +162,7 @@ const UserProfile: React.FC<userDataProps> = ({ user }) => {
             <h3 className="username mb-3">{initialValues.username}</h3>
             <button
               onClick={() => setIsEditing(true)}
-              className="btn btn-outline-primary d-inline-flex"
+              className="btn btn-gradient d-inline-flex"
             >
               Edit
             </button>

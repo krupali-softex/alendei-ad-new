@@ -20,9 +20,9 @@ const AdPlatformSelection: React.FC<AdPlatformSelectionProps> = ({
   };
 
   return (
-    <div className="col-lg-12">
-      <div className="campaign-card d-flex align-items-center justify-content-between">
-        <h3 className="card-title text-capitalize">Select Platform for Ad</h3>
+    <div className="col-lg-3">
+      <div className="campaign-card d-flex flex-column h-100">
+        <h3 className="card-title text-capitalize mb-40">Select Platform for Ad</h3>
 
         <div className="d-flex align-items-center gap-2 gap-md-4 flex-wrap">
           <div className="form-check d-flex align-items-center mb-0 ps-0">

@@ -281,14 +281,18 @@ const AdForm: React.FC = () => {
           validationErrors={validationErrors}
           onInputChange={handleInputChange} // Pass onInputChange to clear validation errors
         />
+        
         <AdPlatformSelection
           formData={adFormData}
           onChange={handleChange}
           validationErrors={validationErrors}
           onInputChange={handleInputChange}
         />{" "}
-        <div className="col-lg-5">
+        
+        
           <CampaignCard formData={adFormData} handleChange={handleChange} />
+        
+        
           <AdSchedule
             formData={adFormData}
             handleCheckboxChange={handleCheckboxChange}
@@ -297,15 +301,15 @@ const AdForm: React.FC = () => {
             validationErrors={validationErrors}
             onInputChange={onInputChange} // Pass function to clear errors
           />
-        </div>
-        <TargetAreaCard
-          formData={adFormData}
-          handleChange={handleChange}
-          handleAddArea={handleAddArea}
-          handleRemoveArea={handleRemoveArea}
-          validationErrors={validationErrors}
-          onInputChange={handleInputChange}
-        />
+        
+          <TargetAreaCard
+            formData={adFormData}
+            handleChange={handleChange}
+            handleAddArea={handleAddArea}
+            handleRemoveArea={handleRemoveArea}
+            validationErrors={validationErrors}
+            onInputChange={handleInputChange}
+          />
       </div>
       {/* <AdMediaUpload
                 uploadedMedia={adFormData.uploadedMedia}

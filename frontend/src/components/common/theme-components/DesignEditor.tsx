@@ -460,447 +460,516 @@ const DesignsDetails: React.FC<DesignsDetailsProps> = ({}) => {
 
   return (
     <>
-      <div className="content p-5" onClick={() => setEditingId(null)}>
-        <div className="table-card p-5">
-          {/* Design4 Page- Just for reference */}
-          <div>
-            {/* Text-Editor */}
-            <div className="img-design-details">
-              {/* Toolbar */}
-              <div className="d-flex align-items-center flex-wrap gap-3 mb-5 justify-content-between">
-                <div className="toolbar d-flex align-items-center flex-wrap gap-10">
-                  <Link
-                    to="/designs"
-                    className="btn btn-outline-primary btn-toolbar"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="17"
-                      height="17"
-                      viewBox="0 0 17 17"
-                      fill="none"
+      <div className="content p-0 my-5" onClick={() => setEditingId(null)}>
+        <div className="container">
+          <div className="table-card p-5">
+            {/* Design4 Page- Just for reference */}
+            <div>
+              {/* Text-Editor */}
+              <div className="img-design-details">
+                {/* Toolbar */}
+                <div className="d-flex align-items-center flex-wrap gap-3 mb-5 justify-content-between">
+                  <div className="toolbar d-flex align-items-center flex-wrap gap-10">
+                    <Link
+                      to="/designs"
+                      className="btn btn-outline-primary btn-toolbar"
                     >
-                      <path
-                        d="M4.28594 9.79541L9.88594 15.3954L8.46094 16.7954L0.460938 8.79541L8.46094 0.79541L9.88594 2.19541L4.28594 7.79541H16.4609V9.79541H4.28594Z"
-                        fill="#205DAD"
-                      />
-                    </svg>
-                  </Link>
-                </div>
-                <div className="toolbar d-flex align-items-center flex-wrap gap-10">
-                  {editingId === null && (
-                    <>
-                      <div
-                        className="btn btn-outline-secondary px-3"
-                        onClick={() =>
-                          document.getElementById("logoUpload")?.click()
-                        }
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="17"
+                        height="17"
+                        viewBox="0 0 17 17"
+                        fill="none"
                       >
-                        <input
-                          id="logoUpload"
-                          type="file"
-                          accept="image/*"
-                          onChange={handleLogoUpload}
-                          style={{ display: "none" }}
+                        <path
+                          d="M4.28594 9.79541L9.88594 15.3954L8.46094 16.7954L0.460938 8.79541L8.46094 0.79541L9.88594 2.19541L4.28594 7.79541H16.4609V9.79541H4.28594Z"
+                          fill="#205DAD"
                         />
-                        <i className="bi bi-plus-lg me-2"></i>Upload logo
-                      </div>
-                      <button
-                        className="btn btn-outline-secondary px-3"
-                        onClick={() =>
-                          document.getElementById("backgroundUpload")?.click()
-                        }
-                      >
-                        <input
-                          onChange={handleBackgroundUpload}
-                          id="backgroundUpload"
-                          type="file"
-                          accept="image/*"
-                          style={{ display: "none" }}
-                        ></input>
-                        <i className="bi bi-plus-lg me-2"></i>Upload background
-                      </button>
-                      <button
-                        className="btn btn-outline-secondary btn-toolbar"
-                        onClick={addTextElement}
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                        >
-                          <path
-                            d="M0.0546875 0.200684V5.98584H2.64214V2.78814H10.3557V20.8027H6.76742V23.3901H16.5314V20.8027H12.9431V2.78814H20.6567V5.98584H23.2441V0.200684H0.0546875Z"
-                            fill="#585858"
-                          />
-                        </svg>
-                      </button>
-                      <button
-                        className="btn btn-outline-secondary btn-toolbar"
-                        onClick={() =>
-                          document.getElementById("generalImages")?.click()
-                        }
-                      >
-                        <input
-                          onChange={handleImageUpload}
-                          id="generalImages"
-                          type="file"
-                          accept="image/*"
-                          style={{ display: "none" }}
-                        ></input>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="35"
-                          height="24"
-                          viewBox="0 0 35 24"
-                          fill="none"
-                        >
-                          <path
-                            d="M0.5 23.5591L11.0583 9.98417C12.2873 8.41999 14.2425 8.41999 15.4156 9.98417L23.5159 20.4307L25.7504 17.5817C26.9794 16.0175 28.9347 16.0175 30.1078 17.5817L34.8004 23.6149H0.5V23.5591Z"
-                            fill="#585858"
-                          />
-                          <path
-                            d="M29.5499 7.1906C31.5245 7.1906 33.1252 5.5899 33.1252 3.61532C33.1252 1.64075 31.5245 0.0400391 29.5499 0.0400391C27.5753 0.0400391 25.9746 1.64075 25.9746 3.61532C25.9746 5.5899 27.5753 7.1906 29.5499 7.1906Z"
-                            fill="#585858"
-                          />
-                        </svg>
-                      </button>{" "}
-                    </>
-                  )}
+                      </svg>
+                    </Link>
 
-                  {/* <button className="btn redo-undo d-flex justify-content-center gap-2 py-1 px-3">
+                    <div className="toolbar d-flex align-items-center flex-wrap gap-10">
+                      {editingId === null && (
+                        <>
+                          <div
+                            className="btn btn-outline-secondary px-3"
+                            onClick={() =>
+                              document.getElementById("logoUpload")?.click()
+                            }
+                          >
+                            <input
+                              id="logoUpload"
+                              type="file"
+                              accept="image/*"
+                              onChange={handleLogoUpload}
+                              style={{ display: "none" }}
+                            />
+                            <i className="bi bi-plus-lg me-2"></i>Upload logo
+                          </div>
+                          <button
+                            className="btn btn-outline-secondary px-3"
+                            onClick={() =>
+                              document
+                                .getElementById("backgroundUpload")
+                                ?.click()
+                            }
+                          >
+                            <input
+                              onChange={handleBackgroundUpload}
+                              id="backgroundUpload"
+                              type="file"
+                              accept="image/*"
+                              style={{ display: "none" }}
+                            ></input>
+                            <i className="bi bi-plus-lg me-2"></i>Upload
+                            background
+                          </button>
+                          <button
+                            className="btn btn-outline-secondary btn-toolbar"
+                            onClick={addTextElement}
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="18"
+                              height="18"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                            >
+                              <path
+                                d="M0.0546875 0.200684V5.98584H2.64214V2.78814H10.3557V20.8027H6.76742V23.3901H16.5314V20.8027H12.9431V2.78814H20.6567V5.98584H23.2441V0.200684H0.0546875Z"
+                                fill="#585858"
+                              />
+                            </svg>
+                          </button>
+                          <button
+                            className="btn btn-outline-secondary btn-toolbar"
+                            onClick={() =>
+                              document.getElementById("generalImages")?.click()
+                            }
+                          >
+                            <input
+                              onChange={handleImageUpload}
+                              id="generalImages"
+                              type="file"
+                              accept="image/*"
+                              style={{ display: "none" }}
+                            ></input>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="35"
+                              height="24"
+                              viewBox="0 0 35 24"
+                              fill="none"
+                            >
+                              <path
+                                d="M0.5 23.5591L11.0583 9.98417C12.2873 8.41999 14.2425 8.41999 15.4156 9.98417L23.5159 20.4307L25.7504 17.5817C26.9794 16.0175 28.9347 16.0175 30.1078 17.5817L34.8004 23.6149H0.5V23.5591Z"
+                                fill="#585858"
+                              />
+                              <path
+                                d="M29.5499 7.1906C31.5245 7.1906 33.1252 5.5899 33.1252 3.61532C33.1252 1.64075 31.5245 0.0400391 29.5499 0.0400391C27.5753 0.0400391 25.9746 1.64075 25.9746 3.61532C25.9746 5.5899 27.5753 7.1906 29.5499 7.1906Z"
+                                fill="#585858"
+                              />
+                            </svg>
+                          </button>{" "}
+                        </>
+                      )}
+
+                      {/* <button className="btn redo-undo d-flex justify-content-center gap-2 py-1 px-3">
                     <i className="bi bi-arrow-counterclockwise"></i>
                     <div className="icon-separator"></div>
                     <i className="bi bi-arrow-clockwise" disabled></i>
                   </button> */}
 
-                  {editingId !== null &&
-                    elements.find((el) => el.id === editingId)?.type ===
-                      "text" && (
-                      <>
-                        <div
-                          onClick={(e) => e.stopPropagation()}
-                          className="d-flex gap-2 text-editor align-items-center"
-                        >
-                          <select
-                            className="form-select-lg"
-                            value={
-                              elements.find((el) => el.id === editingId)
-                                ?.fontFamily || "Poppins"
-                            }
-                            onChange={(e) =>
-                              handleFontFamilyChange(editingId, e.target.value)
-                            }
-                          >
-                            {systemFonts.map((font) => (
-                              <option
-                                key={font}
-                                value={font}
-                                style={{ fontFamily: font }}
+                      {editingId !== null &&
+                        elements.find((el) => el.id === editingId)?.type ===
+                          "text" && (
+                          <>
+                            <div
+                              onClick={(e) => e.stopPropagation()}
+                              className="d-flex gap-2 text-editor align-items-center"
+                            >
+                              <select
+                                className="form-select-lg"
+                                value={
+                                  elements.find((el) => el.id === editingId)
+                                    ?.fontFamily || "Poppins"
+                                }
+                                onChange={(e) =>
+                                  handleFontFamilyChange(
+                                    editingId,
+                                    e.target.value
+                                  )
+                                }
                               >
-                                {font}
-                              </option>
-                            ))}
-                          </select>
-                          {/* Font Size Controls */}
-                          <button
-                            className="btn btn-outline-secondary py-1 px-3 d-flex gap-2"
-                            onClick={() =>
-                              handleFontSizeChange(editingId, false)
-                            }
-                          >
-                            <i className="bi bi-dash"></i>
-                          </button>
-                          <span>
-                            {
-                              elements.find((el) => el.id === editingId)
-                                ?.fontSize
-                            }
-                          </span>
-                          <button
-                            className="btn btn-outline-secondary py-1 px-3 d-flex gap-2"
-                            onClick={() =>
-                              handleFontSizeChange(editingId, true)
-                            }
-                          >
-                            <i className="bi bi-plus"></i>
-                          </button>
-                          <div className="icon-separator"></div>
+                                {systemFonts.map((font) => (
+                                  <option
+                                    key={font}
+                                    value={font}
+                                    style={{ fontFamily: font }}
+                                  >
+                                    {font}
+                                  </option>
+                                ))}
+                              </select>
+                              {/* Font Size Controls */}
+                              <button
+                                className="btn btn-outline-secondary py-1 px-3 d-flex gap-2"
+                                onClick={() =>
+                                  handleFontSizeChange(editingId, false)
+                                }
+                              >
+                                <i className="bi bi-dash"></i>
+                              </button>
+                              <span>
+                                {
+                                  elements.find((el) => el.id === editingId)
+                                    ?.fontSize
+                                }
+                              </span>
+                              <button
+                                className="btn btn-outline-secondary py-1 px-3 d-flex gap-2"
+                                onClick={() =>
+                                  handleFontSizeChange(editingId, true)
+                                }
+                              >
+                                <i className="bi bi-plus"></i>
+                              </button>
+                              <div className="icon-separator"></div>
 
-                          {/* Text Formatting Buttons */}
-                          <button
-                            className={
-                              "btn btn-link border-0 p-1 " +
-                              (elements.find((el) => el.id === editingId)
-                                ?.isBold
-                                ? "active"
-                                : "")
-                            }
-                            onClick={() => toggleStyle(editingId, "isBold")}
-                          >
-                            <i className="bi bi-type-bold"></i>
-                          </button>
-                          <button
-                            className={
-                              "btn btn-link border-0 p-1 " +
-                              (elements.find((el) => el.id === editingId)
-                                ?.isItalic
-                                ? "active"
-                                : "")
-                            }
-                            onClick={() => toggleStyle(editingId, "isItalic")}
-                          >
-                            <i className="bi bi-type-italic"></i>
-                          </button>
-                          <button
-                            className={
-                              "btn btn-link border-0 p-1 " +
-                              (elements.find((el) => el.id === editingId)
-                                ?.isUnderline
-                                ? "active"
-                                : "")
-                            }
-                            onClick={() =>
-                              toggleStyle(editingId, "isUnderline")
-                            }
-                          >
-                            <i className="bi bi-type-underline"></i>
-                          </button>
-                          <button
-                            className={
-                              "btn btn-link border-0 p-1 " +
-                              (elements.find((el) => el.id === editingId)
-                                ?.isStrikethrough
-                                ? "active"
-                                : "")
-                            }
-                            onClick={() =>
-                              toggleStyle(editingId, "isStrikethrough")
-                            }
-                          >
-                            <i className="bi bi-type-strikethrough"></i>
-                          </button>
-                          <input
-                            type="color"
-                            value={
-                              elements.find((el) => el.id === editingId)
-                                ?.color || "#000000"
-                            }
-                            onChange={(e) =>
-                              handleColorChange(editingId, e.target.value)
-                            }
-                          />
-                          <div className="icon-separator"></div>
+                              {/* Text Formatting Buttons */}
+                              <button
+                                className={
+                                  "btn btn-link border-0 p-1 " +
+                                  (elements.find((el) => el.id === editingId)
+                                    ?.isBold
+                                    ? "active"
+                                    : "")
+                                }
+                                onClick={() => toggleStyle(editingId, "isBold")}
+                              >
+                                <i className="bi bi-type-bold"></i>
+                              </button>
+                              <button
+                                className={
+                                  "btn btn-link border-0 p-1 " +
+                                  (elements.find((el) => el.id === editingId)
+                                    ?.isItalic
+                                    ? "active"
+                                    : "")
+                                }
+                                onClick={() =>
+                                  toggleStyle(editingId, "isItalic")
+                                }
+                              >
+                                <i className="bi bi-type-italic"></i>
+                              </button>
+                              <button
+                                className={
+                                  "btn btn-link border-0 p-1 " +
+                                  (elements.find((el) => el.id === editingId)
+                                    ?.isUnderline
+                                    ? "active"
+                                    : "")
+                                }
+                                onClick={() =>
+                                  toggleStyle(editingId, "isUnderline")
+                                }
+                              >
+                                <i className="bi bi-type-underline"></i>
+                              </button>
+                              <button
+                                className={
+                                  "btn btn-link border-0 p-1 " +
+                                  (elements.find((el) => el.id === editingId)
+                                    ?.isStrikethrough
+                                    ? "active"
+                                    : "")
+                                }
+                                onClick={() =>
+                                  toggleStyle(editingId, "isStrikethrough")
+                                }
+                              >
+                                <i className="bi bi-type-strikethrough"></i>
+                              </button>
+                              <input
+                                type="color"
+                                value={
+                                  elements.find((el) => el.id === editingId)
+                                    ?.color || "#000000"
+                                }
+                                onChange={(e) =>
+                                  handleColorChange(editingId, e.target.value)
+                                }
+                              />
+                              <div className="icon-separator"></div>
 
-                          {/* Text Alignment Buttons */}
-                          {/* Text Alignment Buttons */}
-                          <button
-                            className={
-                              "btn btn-link border-0 p-1" +
-                              (elements.find((el) => el.id === editingId)
-                                ?.textAlign === "left"
-                                ? " active"
-                                : "")
-                            }
-                            onClick={() =>
-                              handleAlignmentChange(editingId, "left")
-                            }
-                          >
-                            <i className="bi bi-text-left"></i>
-                          </button>
-                          <button
-                            className={
-                              "btn btn-link border-0 p-1" +
-                              (elements.find((el) => el.id === editingId)
-                                ?.textAlign === "center"
-                                ? " active"
-                                : "")
-                            }
-                            onClick={() =>
-                              handleAlignmentChange(editingId, "center")
-                            }
-                          >
-                            <i className="bi bi-text-center"></i>
-                          </button>
-                          <button
-                            className={
-                              "btn btn-link border-0 p-1" +
-                              (elements.find((el) => el.id === editingId)
-                                ?.textAlign === "right"
-                                ? " active"
-                                : "")
-                            }
-                            onClick={() =>
-                              handleAlignmentChange(editingId, "right")
-                            }
-                          >
-                            <i className="bi bi-text-right"></i>
-                          </button>
-                          <button
-                            className={
-                              "btn btn-link border-0 p-1" +
-                              (elements.find((el) => el.id === editingId)
-                                ?.textAlign === "justify"
-                                ? " active"
-                                : "")
-                            }
-                            onClick={() =>
-                              handleAlignmentChange(editingId, "justify")
-                            }
-                          >
-                            <i className="bi bi-justify"></i>
-                          </button>
-                        </div>
-                      </>
-                    )}
-                  {editingId !== null &&
-                    elements.find((el) => el.id === editingId)?.type ===
-                      "image" && (
-                      <>
-                        <div
-                          className="toolbar d-flex align-items-center flex-wrap gap-10"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          <div className="d-flex gap-2 text-editor align-items-center">
-                            <button
-                              className="btn btn-link border-0 p-1"
-                              onClick={() =>
-                                handleResize(editingId, "decrease")
-                              }
+                              {/* Text Alignment Buttons */}
+                              {/* Text Alignment Buttons */}
+                              <button
+                                className={
+                                  "btn btn-link border-0 p-1" +
+                                  (elements.find((el) => el.id === editingId)
+                                    ?.textAlign === "left"
+                                    ? " active"
+                                    : "")
+                                }
+                                onClick={() =>
+                                  handleAlignmentChange(editingId, "left")
+                                }
+                              >
+                                <i className="bi bi-text-left"></i>
+                              </button>
+                              <button
+                                className={
+                                  "btn btn-link border-0 p-1" +
+                                  (elements.find((el) => el.id === editingId)
+                                    ?.textAlign === "center"
+                                    ? " active"
+                                    : "")
+                                }
+                                onClick={() =>
+                                  handleAlignmentChange(editingId, "center")
+                                }
+                              >
+                                <i className="bi bi-text-center"></i>
+                              </button>
+                              <button
+                                className={
+                                  "btn btn-link border-0 p-1" +
+                                  (elements.find((el) => el.id === editingId)
+                                    ?.textAlign === "right"
+                                    ? " active"
+                                    : "")
+                                }
+                                onClick={() =>
+                                  handleAlignmentChange(editingId, "right")
+                                }
+                              >
+                                <i className="bi bi-text-right"></i>
+                              </button>
+                              <button
+                                className={
+                                  "btn btn-link border-0 p-1" +
+                                  (elements.find((el) => el.id === editingId)
+                                    ?.textAlign === "justify"
+                                    ? " active"
+                                    : "")
+                                }
+                                onClick={() =>
+                                  handleAlignmentChange(editingId, "justify")
+                                }
+                              >
+                                <i className="bi bi-justify"></i>
+                              </button>
+                            </div>
+                          </>
+                        )}
+                      {editingId !== null &&
+                        elements.find((el) => el.id === editingId)?.type ===
+                          "image" && (
+                          <>
+                            <div
+                              className="toolbar d-flex align-items-center flex-wrap gap-10"
+                              onClick={(e) => e.stopPropagation()}
                             >
-                              <i className="bi bi-dash"></i>
-                            </button>
-                            <div className="icon-separator"></div>
-                            <button
-                              className="btn btn-link border-0 p-1"
-                              onClick={() =>
-                                handleResize(editingId, "increase")
-                              }
-                            >
-                              <i className="bi bi-plus"></i>
-                            </button>
-                          </div>
-                        </div>
-                      </>
-                    )}
-                </div>
+                              <div className="d-flex gap-2 text-editor align-items-center">
+                                <button
+                                  className="btn btn-link border-0 p-1"
+                                  onClick={() =>
+                                    handleResize(editingId, "decrease")
+                                  }
+                                >
+                                  <i className="bi bi-dash"></i>
+                                </button>
+                                <div className="icon-separator"></div>
+                                <button
+                                  className="btn btn-link border-0 p-1"
+                                  onClick={() =>
+                                    handleResize(editingId, "increase")
+                                  }
+                                >
+                                  <i className="bi bi-plus"></i>
+                                </button>
+                              </div>
+                            </div>
+                          </>
+                        )}
+                    </div>
+                  </div>
 
-                <div className="toolbar d-flex align-items-center flex-wrap gap-10">
-                  <button
-                    className="btn btn-primary btn-toolbar min-w-unset"
-                    onClick={downloadAsImage}
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="19"
-                      height="23"
-                      viewBox="0 0 19 23"
-                      fill="none"
+                  <div className="toolbar d-flex align-items-center flex-wrap gap-10">
+                    <button
+                      className="btn btn-primary btn-toolbar min-w-unset"
+                      onClick={downloadAsImage}
                     >
-                      <path
-                        d="M0.888672 22.6929H18.8379V20.1288H0.888672V22.6929ZM18.8379 8.58998H13.7095V0.897461H6.01702V8.58998H0.888672L9.86328 17.5646L18.8379 8.58998Z"
-                        fill="white"
-                      />
-                    </svg>
-                  </button>
-                  {/* <button
-                    type="button"
-                    className="btn btn-outline-danger btn-toolbar"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="17"
-                      height="19"
-                      viewBox="0 0 17 19"
-                      fill="none"
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="19"
+                        height="23"
+                        viewBox="0 0 19 23"
+                        fill="none"
+                      >
+                        <path
+                          d="M0.888672 22.6929H18.8379V20.1288H0.888672V22.6929ZM18.8379 8.58998H13.7095V0.897461H6.01702V8.58998H0.888672L9.86328 17.5646L18.8379 8.58998Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </button>
+
+                    {/* <button
+                      type="button"
+                      className="btn btn-outline-danger btn-toolbar"
                     >
-                      <path
-                        d="M3.95312 18.7954C3.40313 18.7954 2.93246 18.5997 2.54112 18.2084C2.14979 17.8171 1.95379 17.3461 1.95312 16.7954V3.79541H0.953125V1.79541H5.95312V0.79541H11.9531V1.79541H16.9531V3.79541H15.9531V16.7954C15.9531 17.3454 15.7575 17.8164 15.3661 18.2084C14.9748 18.6004 14.5038 18.7961 13.9531 18.7954H3.95312ZM5.95312 14.7954H7.95312V5.79541H5.95312V14.7954ZM9.95312 14.7954H11.9531V5.79541H9.95312V14.7954Z"
-                        fill="#CA3E3E"
-                      />
-                    </svg>
-                  </button> */}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="17"
+                        height="19"
+                        viewBox="0 0 17 19"
+                        fill="none"
+                      >
+                        <path
+                          d="M3.95312 18.7954C3.40313 18.7954 2.93246 18.5997 2.54112 18.2084C2.14979 17.8171 1.95379 17.3461 1.95312 16.7954V3.79541H0.953125V1.79541H5.95312V0.79541H11.9531V1.79541H16.9531V3.79541H15.9531V16.7954C15.9531 17.3454 15.7575 17.8164 15.3661 18.2084C14.9748 18.6004 14.5038 18.7961 13.9531 18.7954H3.95312ZM5.95312 14.7954H7.95312V5.79541H5.95312V14.7954ZM9.95312 14.7954H11.9531V5.79541H9.95312V14.7954Z"
+                          fill="#CA3E3E"
+                        />
+                      </svg>
+                    </button> */}
+
+                    <button
+                      className="btn btn-outline-primary"
+                      onClick={handlePreviewAd}
+                      data-bs-target="#adPreviewModal"
+                    >
+                      Preview
+                    </button>
+
+                    <button
+                      // className="btn btn-secondary"
+                      // disabled={!validateAdFormData(adFormData)}
+                      // onClick={() => {
+                      //   proceedToPayment();
+                      // }}
+
+                      className={`btn btn-ad-ai ${
+                        !validateAdFormData(adFormData) ? "disabled" : ""
+                      }`}
+                      onClick={(e) => {
+                        if (!validateAdFormData(adFormData)) {
+                          e.preventDefault(); // stop click
+                          return;
+                        }
+                        proceedToPayment();
+                      }}
+                    >
+                      Launch Campaign
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Img */}
-            <div className="d-flex justify-content-center">
-              <div
-                id="design-area"
-                onClick={(e) => e.stopPropagation()}
-                style={{
-                  position: "relative",
-                  width: "500px",
-                  height: "500px",
-                  background: background
-                    ? `url(${background}) center/cover no-repeat`
-                    : "#f5f5f5",
-                  overflow: "hidden",
-                }}
-              >
-                {logo.url && (
-                  <Draggable
-                    bounds="parent"
-                    position={{ x: logo.x, y: logo.y }}
-                    onStop={handleLogoDragStop}
-                  >
-                    <div style={{ position: "absolute", cursor: "move" }}>
-                      <img
-                        src={logo.url}
-                        alt="Logo"
-                        crossOrigin="anonymous"
-                        style={{ width: `${logo.width}px`, height: "auto" }}
-                      />
+              {/* Img */}
+              <div className="d-flex justify-content-center">
+                <div
+                  id="design-area"
+                  onClick={(e) => e.stopPropagation()}
+                  style={{
+                    position: "relative",
+                    width: "500px",
+                    height: "500px",
+                    background: background
+                      ? `url(${background}) center/cover no-repeat`
+                      : "#f5f5f5",
+                    overflow: "hidden",
+                  }}
+                >
+                  {logo.url && (
+                    <Draggable
+                      bounds="parent"
+                      position={{ x: logo.x, y: logo.y }}
+                      onStop={handleLogoDragStop}
+                    >
+                      <div style={{ position: "absolute", cursor: "move" }}>
+                        <img
+                          src={logo.url}
+                          alt="Logo"
+                          crossOrigin="anonymous"
+                          style={{ width: `${logo.width}px`, height: "auto" }}
+                        />
+                        <div
+                          style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            marginTop: "5px",
+                          }}
+                        ></div>
+                      </div>
+                    </Draggable>
+                  )}
+                  {elements.map((el) => (
+                    <Draggable
+                      key={el.id}
+                      bounds="parent"
+                      position={{ x: el.x, y: el.y }}
+                      onStop={(_, data) => handleDragStop(el.id, data)}
+                    >
                       <div
                         style={{
-                          display: "flex",
-                          justifyContent: "center",
-                          marginTop: "5px",
+                          position: "absolute",
+                          cursor: "move",
                         }}
-                      ></div>
-                    </div>
-                  </Draggable>
-                )}
-                {elements.map((el) => (
-                  <Draggable
-                    key={el.id}
-                    bounds="parent"
-                    position={{ x: el.x, y: el.y }}
-                    onStop={(_, data) => handleDragStop(el.id, data)}
-                  >
-                    <div
-                      style={{
-                        position: "absolute",
-                        cursor: "move",
-                      }}
-                      onClick={() => setEditingId(el.id)}
-                    >
-                      {/* Render Text Element */}
-                      {el.type === "text" ? (
-                        editingId === el.id ? (
-                          <>
-                            <textarea
-                              value={el.text}
-                              onChange={(e) =>
-                                handleTextChange(el.id, e.target.value)
-                              }
-                              autoFocus
-                              className="form-control position-relative"
+                        onClick={() => setEditingId(el.id)}
+                      >
+                        {/* Render Text Element */}
+                        {el.type === "text" ? (
+                          editingId === el.id ? (
+                            <>
+                              <textarea
+                                value={el.text}
+                                onChange={(e) =>
+                                  handleTextChange(el.id, e.target.value)
+                                }
+                                autoFocus
+                                className="form-control position-relative"
+                                style={{
+                                  fontSize: `${el.fontSize}px`,
+                                  fontFamily: el.fontFamily,
+                                  color: el.color,
+                                  lineHeight: `${
+                                    el.fontSize ? el.fontSize : 1 * 1.2
+                                  }px`, // Line height based on font size
+                                  width: "100%",
+                                  height: "auto",
+                                  overflow: "hidden",
+                                  border: "1px dashed #CDCDCD",
+                                  resize: "none",
+                                  fontWeight: el.isBold ? "bold" : "normal",
+                                  fontStyle: el.isItalic ? "italic" : "normal",
+                                  textDecoration: `${
+                                    el.isUnderline ? "underline" : ""
+                                  } ${
+                                    el.isStrikethrough ? "line-through" : ""
+                                  }`.trim(),
+                                }}
+                                onInput={(e) => {
+                                  const target =
+                                    e.target as HTMLTextAreaElement;
+                                  target.style.height = "auto"; // Reset height to recalculate
+                                  target.style.height = `${target.scrollHeight}px`; // Set height to fit content
+                                }}
+                              />
+                              <button
+                                className="btn-close fs-7 p-1 position-absolute btn-delete-close"
+                                onClick={() => removeTextElement(el.id)}
+                              ></button>
+                            </>
+                          ) : (
+                            <div
                               style={{
+                                width: "auto",
+                                height: "50px",
                                 fontSize: `${el.fontSize}px`,
                                 fontFamily: el.fontFamily,
+                                textAlign: el.textAlign || "left",
                                 color: el.color,
-                                lineHeight: `${
-                                  el.fontSize ? el.fontSize : 1 * 1.2
-                                }px`, // Line height based on font size
-                                width: "100%",
-                                height: "auto",
-                                overflow: "hidden",
-                                border: "1px dashed #CDCDCD",
-                                resize: "none",
                                 fontWeight: el.isBold ? "bold" : "normal",
                                 fontStyle: el.isItalic ? "italic" : "normal",
                                 textDecoration: `${
@@ -908,92 +977,47 @@ const DesignsDetails: React.FC<DesignsDetailsProps> = ({}) => {
                                 } ${
                                   el.isStrikethrough ? "line-through" : ""
                                 }`.trim(),
+                                lineHeight: `${
+                                  el.fontSize ? el.fontSize : 1 * 1.2
+                                }px`, // Line height based on font size
                               }}
-                              onInput={(e) => {
-                                const target = e.target as HTMLTextAreaElement;
-                                target.style.height = "auto"; // Reset height to recalculate
-                                target.style.height = `${target.scrollHeight}px`; // Set height to fit content
-                              }}
-                            />
-                            <button
-                              className="btn-close fs-7 p-1 position-absolute btn-delete-close"
-                              onClick={() => removeTextElement(el.id)}
-                            ></button>
-                          </>
+                            >
+                              {el.text}
+                            </div>
+                          )
                         ) : (
-                          <div
-                            style={{
-                              width: "auto",
-                              height: "50px",
-                              fontSize: `${el.fontSize}px`,
-                              fontFamily: el.fontFamily,
-                              textAlign: el.textAlign || "left",
-                              color: el.color,
-                              fontWeight: el.isBold ? "bold" : "normal",
-                              fontStyle: el.isItalic ? "italic" : "normal",
-                              textDecoration: `${
-                                el.isUnderline ? "underline" : ""
-                              } ${
-                                el.isStrikethrough ? "line-through" : ""
-                              }`.trim(),
-                              lineHeight: `${
-                                el.fontSize ? el.fontSize : 1 * 1.2
-                              }px`, // Line height based on font size
-                            }}
-                          >
-                            {el.text}
-                          </div>
-                        )
-                      ) : (
-                        // Render Image Element
-                        el.type === "image" &&
-                        el.imageUrl && (
-                          <div style={{ position: "relative" }}>
-                            <img
-                              src={el.imageUrl}
-                              alt="Uploaded"
-                              crossOrigin="anonymous"
-                              style={{
-                                width: `${el.width}px`,
-                                height: `${el.height}px`,
-                                transform: `rotate(${el.rotate ?? 0}deg)`,
-                                opacity: el.opacity ?? 1,
-                              }}
-                            />
-                            {editingId === el.id && (
-                              <button
-                                className="btn-close fs-7 p-1 position-absolute btn-delete-close"
-                                onClick={() => removeImageElement(el.id)} // works for both text and image
-                                style={{ top: "-8px", right: "-8px" }}
-                              ></button>
-                            )}
-                          </div>
-                        )
-                      )}
-                    </div>
-                  </Draggable>
-                ))}
+                          // Render Image Element
+                          el.type === "image" &&
+                          el.imageUrl && (
+                            <div style={{ position: "relative" }}>
+                              <img
+                                src={el.imageUrl}
+                                alt="Uploaded"
+                                crossOrigin="anonymous"
+                                style={{
+                                  width: `${el.width}px`,
+                                  height: `${el.height}px`,
+                                  transform: `rotate(${el.rotate ?? 0}deg)`,
+                                  opacity: el.opacity ?? 1,
+                                }}
+                              />
+                              {editingId === el.id && (
+                                <button
+                                  className="btn-close fs-7 p-1 position-absolute btn-delete-close"
+                                  onClick={() => removeImageElement(el.id)} // works for both text and image
+                                  style={{ top: "-8px", right: "-8px" }}
+                                ></button>
+                              )}
+                            </div>
+                          )
+                        )}
+                      </div>
+                    </Draggable>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="text-center text-md-end mt-2">
-          <button
-            className="btn btn-outline-primary d-inline-flex me-3"
-            onClick={handlePreviewAd}
-            data-bs-target="#adPreviewModal"
-          >
-            Preview
-          </button>
-          <button
-            className="btn btn-secondary d-inline-flex "
-            disabled={!validateAdFormData(adFormData)}
-            onClick={() => {
-              proceedToPayment();
-            }}
-          >
-            Launch Campaign
-          </button>
         </div>
       </div>
 
