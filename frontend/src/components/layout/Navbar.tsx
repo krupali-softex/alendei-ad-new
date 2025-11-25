@@ -32,6 +32,7 @@ const Navbar: React.FC = () => {
   return (
     <>
       <StickyHeader />
+
       <nav className="navbar header-navbar">
         <div className="container">
           {decoded?.isSuperAdmin ? (
@@ -78,7 +79,7 @@ const Navbar: React.FC = () => {
                         />
                       </svg>
                     </span>
-                    {/* <span>Admin </span> */}
+                    <span className="nav-text">Admin </span>
                   </Link>
                 </li>
               </ul>
@@ -105,7 +106,7 @@ const Navbar: React.FC = () => {
                         />
                       </svg>
                     </span>
-                    {/* <span>Home </span> */}
+                    <span className="nav-text">Home </span>
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -129,7 +130,7 @@ const Navbar: React.FC = () => {
                         />
                       </svg>
                     </span>
-                    {/* <span>Designs</span> */}
+                    <span className="nav-text">Designs</span>
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -153,7 +154,7 @@ const Navbar: React.FC = () => {
                         />
                       </svg>
                     </span>
-                    {/* <span>Grow</span> */}
+                    <span className="nav-text">Grow</span>
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -177,7 +178,7 @@ const Navbar: React.FC = () => {
                         />
                       </svg>
                     </span>
-                    {/* <span>Leads</span> */}
+                    <span className="nav-text">Leads</span>
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -213,7 +214,7 @@ const Navbar: React.FC = () => {
                         />
                       </svg>
                     </span>
-                    {/* <span>Business</span> */}
+                    <span className="nav-text">Business</span>
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -241,7 +242,7 @@ const Navbar: React.FC = () => {
                         />
                       </svg>
                     </span>
-                    {/* <span>Workspace</span> */}
+                    <span className="nav-text">Workspace</span>
                   </Link>
                 </li>
               </ul>

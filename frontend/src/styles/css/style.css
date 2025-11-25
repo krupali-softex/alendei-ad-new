@@ -101,11 +101,12 @@ body {
 
 [page="Landing"] body,
 .landing-bg {
-  background-image: url(https://ads.alendei.com/images/landing-bg.webp);
+  background-image: url(/assets/images/home-bg.webp);
   background-repeat: no-repeat;
   /* background-attachment: scroll; */
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 }
 
 [page="Login"] body,
@@ -114,12 +115,14 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 }
 
 [page="Home"] body,
 .home-bg {
   background: url(/assets/images/home-bg.webp) no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .body-normal {
@@ -1140,8 +1143,8 @@ select#timezone {
 
 /* Prevent light-blue background on autofilled input elements */
 input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0px 1000px #fff inset !important;
-  box-shadow: 0 0 0px 1000px #fff inset !important;
+  -webkit-box-shadow: 0 0 0px 1000px #EAF7FF inset !important;
+  box-shadow: 0 0 0px 1000px #EAF7FF inset !important;
   /* -webkit-text-fill-color: #fff !important; */
 }
 
@@ -3569,13 +3572,14 @@ label.radio-card .card-content-wrapper img {
 }
 
 .login-form {
-  max-width: 623px;
+  max-width: 560px;
   border: 1px solid #ebe5f0;
   background: linear-gradient(180deg,
       rgba(255, 255, 255, 0.5) 0%,
       #ffffff 100%);
   border-radius: 24px;
-  padding: 35px;
+  padding: 70px 60px;
+  margin: 0 auto;
 }
 
 .signup-form {
@@ -3586,6 +3590,7 @@ label.radio-card .card-content-wrapper img {
       #ffffff 100%);
   border-radius: 24px;
   padding: 35px;
+  margin: 0 auto;
 }
 
 /*---------------------------------*/
@@ -4814,7 +4819,7 @@ input[type="color"] {
 }
 
 .landing-carousel-container {
-  background-image: url("/assets/images/landing-carousel-container-bg.webp");
+  background-image: url("/assets/images/landing-carousel-container-bg.png");
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -4826,6 +4831,7 @@ input[type="color"] {
   display: flex;
   align-items: start;
   justify-content: center;
+  position: relative;
   z-index: 1;
   width: 45%;
   aspect-ratio: 384 / 605;
@@ -4835,6 +4841,31 @@ input[type="color"] {
   /* background-image: url("https://ads.alendei.com/images/login-img-bg.webp") !important; */
   /* min-width: 530px !important; */
   /* height: 552px !important; */
+  background: none;
+  aspect-ratio: 406 / 626;
+  max-width: 330px;
+  width: auto;
+  margin-top: 50px;
+  z-index: 3;
+}
+
+.login-carousel .login-carousel-bg {
+  position: absolute;
+  max-width: 330px;
+}
+
+.login-carousel-robot {
+  padding: 34px 16px;
+  border-radius: 16px;
+  margin: 10px auto;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  position: absolute;
+  inset: 0;
+  top: 50px;
+  z-index: 2;
+  width: 45%;
   aspect-ratio: 330 / 521;
 }
 
@@ -4857,20 +4888,18 @@ input[type="color"] {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  max-width: 310px;
+  max-width: 340px;
   position: relative;
   /* left: -5px; */
   left: -10px;
   margin-top: 24px;
 }
 
-.landing-carousel-container.login-img .carousel-card img {
-  max-width: 270px;
-  right: 6px;
-  left: unset;
+.login-carousel .carousel-card img {
+  max-width: 272px;
 }
 
-.landing-carousel-container.login-img .keen-slider.landing-carousel {
+.login-carousel .keen-slider.landing-carousel {
   margin-top: 35px;
 }
 
@@ -4996,22 +5025,43 @@ a#navbarDropdownNotification {
   height: 38px;
 }
 
+.top-nav span.nav-text {
+  font-family: 'Manrope-Bold';
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: -0.03em;
+  text-align: center;
+  color: #2A3F4D;
+  position: absolute;
+  top: auto;
+  bottom: -5px;
+  display: none;
+}
+
+.top-nav .nav-link.active span.nav-text {
+  display: block;
+}
+
 .robot-img {
   position: absolute;
   top: -14%;
   right: 105px;
+  z-index: -1;
 }
 
-.login-carousel .robot-img {
+.login-carousel-robot .robot-img {
   top: auto;
-  bottom: 10px;
+  bottom: 56px;
   right: -40px;
-  transform: rotate(10deg);
-
+  transform: rotate(9.51deg);
 }
 
 .robot-img img {
   width: 77px;
+}
+
+.login-carousel-robot .robot-img img {
+  width: 110px;
 }
 
 .ring-wrapper,
@@ -5031,6 +5081,15 @@ a#navbarDropdownNotification {
 
 .social-wrapper {
   z-index: 1;
+}
+
+.login-carousel~.social-wrapper {
+  width: 100%;
+  /* background: aqua; */
+  height: 100%;
+  inset: 0;
+  transform: unset;
+  top: 50px;
 }
 
 .outer-ring,
@@ -5166,8 +5225,57 @@ a#navbarDropdownNotification {
 
 .social-location {
   top: 63%;
-  right: -23%;
+  right: -19%;
 }
+
+.icon-msg {
+  top: -95px;
+  left: 15px;
+}
+
+.icon-ratio {
+  top: -132px;
+  left: 47%;
+  width: 155px;
+  /* animation: float-meta 6s 
+ease-in-out infinite; */
+}
+
+.icon-profile {
+  top: 21px;
+  right: 71px;
+  width: 100px;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.icon-video {
+  top: 230px;
+  left: 98px;
+  width: 100px;
+  animation: float-fb 4s ease-in-out infinite;
+}
+
+.dotted-line {
+  top: -83px;
+  left: 88px;
+  width: 80%;
+  z-index: -1;
+}
+
 
 .chatbot-wrapper {
   position: absolute;
@@ -5179,10 +5287,10 @@ a#navbarDropdownNotification {
   gap: 4px;
 }
 
-.login-carousel .chatbot-wrapper {
+.login-carousel-robot .chatbot-wrapper {
   top: auto;
-  bottom: 32%;
-  left: 98%;
+  bottom: 46%;
+  left: 95%;
 }
 
 .chatbot-bubble {
@@ -5195,6 +5303,7 @@ a#navbarDropdownNotification {
   align-items: center;
   font-size: 16px;
   font-weight: 500;
+  font-family: 'Manrope-SemiBold';
 }
 
 .bubble-tail {
@@ -5209,10 +5318,15 @@ a#navbarDropdownNotification {
   border-right: 20px solid #ffffffee;
 }
 
-.login-carousel .bubble-tail {
+.login-carousel-robot .bubble-tail {
   transform: unset;
-  bottom: 0;
+  left: 15px;
+  bottom: -15px;
   top: auto;
+  border-top: 0px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 12px solid #ffffffee;
+  border-right: 0;
 }
 
 /* Typing wrapper controls animation width */
@@ -5272,8 +5386,6 @@ a#navbarDropdownNotification {
 
 
 
-
-
 /* --------------- Style: RP ------------- */
 .bi.bi-envelope-fill,
 .bi.bi-lock-fill,
@@ -5293,6 +5405,17 @@ a#navbarDropdownNotification {
 
 
 /*---------------- START: Responsive CSS ----------------*/
+@media (min-width: 1600px) {
+
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 1580px;
+  }
+}
 
 @media (max-width: 1600px) {
   .login-form {
@@ -5317,19 +5440,16 @@ a#navbarDropdownNotification {
   .address-sec p {
     font-size: 14px !important;
   }
-}
 
-@media (min-width: 1600px) {
+  .carousel-card img {
+    max-width: 310px;
+  }
 
-  .container,
-  .container-lg,
-  .container-md,
-  .container-sm,
-  .container-xl,
-  .container-xxl {
-    max-width: 1580px;
+  .social-location {
+    right: -23%;
   }
 }
+
 
 @media (max-width: 1540px) {
 

@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 // import { Link } from "react-router-dom";
 
 import Navbar from "../components/landing-page/Navbar";
@@ -7,9 +7,7 @@ import { Link } from "react-router-dom";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 
-
 const LandingPage: React.FC = () => {
-
   const [sliderRef, slider] = useKeenSlider({
     loop: true,
     slides: {
@@ -17,7 +15,7 @@ const LandingPage: React.FC = () => {
       spacing: 16,
     },
   });
-  
+
   useEffect(() => {
     let interval: NodeJS.Timeout;
 
@@ -30,7 +28,6 @@ const LandingPage: React.FC = () => {
     return () => clearInterval(interval);
   }, [slider]);
 
-  
   return (
     <>
       <main className="main landing-bg">
@@ -74,35 +71,136 @@ const LandingPage: React.FC = () => {
                     className="mt-12"
                   />
                 </div>
-                {/* <img
-                  src="https://ads.alendei.com/images/hero-content-img.webp"
-                  alt="Ad Screen"
-                  className="mb-32"
-                /> */}
-                <div className="landing-carousel-container">
-                  <div ref={sliderRef} className="keen-slider landing-carousel">
-                    <div className="keen-slider__slide carousel-card">
-                      <img src="https://ads.alendei.com/images/slider-img-1.webp" alt="SliderImg1" />
-                    </div>
-                    <div className="keen-slider__slide carousel-card post-card">
-                      <img src="https://ads.alendei.com/images/slider-img-2.webp" alt="SliderImg2" />
-                    </div>
-                    <div className="keen-slider__slide carousel-card">
-                      <img src="https://ads.alendei.com/images/slider-img-3.webp" alt="SliderImg3" />
+                <div className="login-carousel-robot">
+                  <div className="robot-img">
+                    <img src="/assets/images/robot.webp" />
+                  </div>
+                  <div className="chatbot-wrapper">
+                    <div className="chatbot-bubble">
+                      <div className="bubble-tail"></div>
+
+                      <span className="typing-wrapper">
+                        <span className="typing-text">
+                          I can make your ad...!
+                        </span>
+                      </span>
+
+                      <span className="typing-cursor"></span>
                     </div>
                   </div>
                 </div>
-                <div className="button-group d-flex align-items-center justify-content-center gap-3 position-relative">
-                  <img src="https://ads.alendei.com/images/Hand.svg" className="hand-img" />
+
+                <div className="landing-carousel-container position-relative">
+                  <div ref={sliderRef} className="keen-slider landing-carousel">
+                    <div className="keen-slider__slide carousel-card">
+                      <img
+                        src="/assets/images/slider-img-1.webp"
+                        alt="slider-img-1"
+                      />
+                    </div>
+                    <div className="keen-slider__slide carousel-card post-card">
+                      <img
+                        src="/assets/images/slider-img-2.webp"
+                        alt="slider-img-2"
+                      />
+                    </div>
+                    <div className="keen-slider__slide carousel-card">
+                      <img
+                        src="/assets/images/slider-img-3.webp"
+                        alt="slider-img-3"
+                      />
+                    </div>
+                    <div className="keen-slider__slide carousel-card">
+                      <img
+                        src="/assets/images/slider-img-4.webp"
+                        alt="slider-img-4"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="ring-wrapper">
+                  <div className="outer-ring">
+                    <img src="/assets/images/outer-ring.svg" alt="" />
+                  </div>
+                  <div className="inner-ring">
+                    <img src="/assets/images/inner-ring.svg" alt="" />
+                  </div>
+                </div>
+                <div className="social-wrapper">
+                  <div className="hero-social-icon social-facebook">
+                    <img
+                      src="/assets/images/icon-facebook.svg"
+                      alt="Facebook"
+                    />
+                  </div>
+
+                  <div className="hero-social-icon social-meta">
+                    <img src="/assets/images/icon-meta.svg" alt="Meta" />
+                  </div>
+
+                  <div className="hero-social-icon social-create-ad">
+                    <img
+                      src="/assets/images/icon-create-ad.svg"
+                      alt="Create Ad"
+                    />
+                  </div>
+
+                  <div className="hero-social-icon social-instagram">
+                    <img
+                      src="/assets/images/icon-instagram.svg"
+                      alt="Instagram"
+                    />
+                  </div>
+                </div>
+
+                {/* <div className="landing-carousel-container">
+                  <div ref={sliderRef} className="keen-slider landing-carousel">
+                    <div className="keen-slider__slide carousel-card">
+                      <img
+                        src="https://ads.alendei.com/images/slider-img-1.webp"
+                        alt="SliderImg1"
+                      />
+                    </div>
+                    <div className="keen-slider__slide carousel-card post-card">
+                      <img
+                        src="https://ads.alendei.com/images/slider-img-2.webp"
+                        alt="SliderImg2"
+                      />
+                    </div>
+                    <div className="keen-slider__slide carousel-card">
+                      <img
+                        src="https://ads.alendei.com/images/slider-img-3.webp"
+                        alt="SliderImg3"
+                      />
+                    </div>
+                    <div className="keen-slider__slide carousel-card">
+                      <img
+                        src="https://ads.alendei.com/images/slider-img-4.webp"
+                        alt="SliderImg4"
+                      />
+                    </div>
+                  </div>
+                </div> */}
+                {/* <div className="button-group d-flex align-items-center justify-content-center gap-3 position-relative">
+                  <img
+                    src="https://ads.alendei.com/images/Hand.svg"
+                    className="hand-img"
+                  />
                   <Link to="/" className="btn btn-ad btn-ad-fb">
-                    <img src="https://ads.alendei.com/images/fb.svg" className="me-4" />
+                    <img
+                      src="https://ads.alendei.com/images/fb.svg"
+                      className="me-4"
+                    />
                     Ad Run in Facebook
                   </Link>
                   <Link to="/" className="btn btn-ad btn-ad-insta">
-                    <img src="https://ads.alendei.com/images/insta.svg" className="me-4" />
+                    <img
+                      src="https://ads.alendei.com/images/insta.svg"
+                      className="me-4"
+                    />
                     Ad Run in Instagram
                   </Link>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -188,9 +286,7 @@ const LandingPage: React.FC = () => {
             <div className="scaleAd-box d-flex align-items-center justify-content-between">
               <div>
                 Scale your ads with{" "}
-                <span className="ff-bold text-white">
-                  Alendei’s Ai now.
-                </span>
+                <span className="ff-bold text-white">Alendei’s Ai now.</span>
               </div>
               <Link to="" className="btn btn-primary">
                 Book a demo
@@ -205,7 +301,10 @@ const LandingPage: React.FC = () => {
               <h1 className="section-title gradient-title">3 Simple Steps</h1>
               <h3 className="subtitle mb-4 ">
                 to Launch Your Ads{" "}
-                <img src="https://ads.alendei.com/images/launch.svg" className="ms-3" />
+                <img
+                  src="https://ads.alendei.com/images/launch.svg"
+                  className="ms-3"
+                />
               </h3>
               <p className="subheading-text text-capitalize">
                 Accelerate your business growth with AI-driven campaigns,
@@ -363,7 +462,10 @@ const LandingPage: React.FC = () => {
             <div className="text-center mb-60">
               <h1 className="section-title gradient-title gradient-primary d-flex align-items-center justify-content-center">
                 Beloved by Customers,
-                <img src="https://ads.alendei.com/images/smiley.gif" className="smiley-gif" />
+                <img
+                  src="https://ads.alendei.com/images/smiley.gif"
+                  className="smiley-gif"
+                />
               </h1>
               <h3 className="subtitle mb-4 ">Trusted by All !</h3>
               <p className="subheading-text text-capitalize content-box-sm">
@@ -414,13 +516,17 @@ const LandingPage: React.FC = () => {
                 <h5>Useful Links</h5>
                 <ul className="list-unstyled footer-list">
                   <li>
-                    <a href="/privacy" target="_blank" rel="noopener noreferrer">
+                    <a
+                      href="/privacy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       Privacy Policy
                     </a>
                   </li>
                   <li>
                     <a href="/terms" target="_blank" rel="noopener noreferrer">
-                     Terms and Condition
+                      Terms and Condition
                     </a>
                   </li>
                   <li>
@@ -454,8 +560,7 @@ const LandingPage: React.FC = () => {
                 <div className="col-md-6 text-center text-md-start">
                   <div>Copyright © 2024 Alendei App</div>
                 </div>
-                <div className="col-md-6 text-center text-md-end">
-                </div>
+                <div className="col-md-6 text-center text-md-end"></div>
               </div>
             </div>
           </div>
