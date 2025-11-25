@@ -282,12 +282,12 @@ const Taskspace: React.FC<TaskspaceProps> = ({}) => {
                                     </label>
                                     <div className="form-check ps-0">
                                       <Field
-                                        className="form-check-input"
+                                        className="form-check-input me-2"
                                         type="checkbox"
                                         name="enable_notification"
                                         checked={values.enable_notification}
                                       />
-                                      <label className="form-check-label ms-2">
+                                      <label className="form-check-label">
                                         {values.enable_notification
                                           ? "Enabled"
                                           : "Disabled"}

@@ -1516,7 +1516,7 @@ a.forgotPassword,
 }
 
 .sidenav .scrollbar::-webkit-scrollbar-thumb {
-  background-color: #85c5a2;
+  background-color: var(--bs-primary);
 }
 
 .scrollbar::-webkit-scrollbar-thumb:hover {
@@ -4225,7 +4225,7 @@ p.user-location {
 
 .ai-ad-flow-campaign {
   position: relative;
-  height: 705px;
+  height: 696px;
   display: flex;
   flex-direction: column;
 }
@@ -5044,10 +5044,9 @@ input[type="color"] {
 
 /*---------------------------- New CSS --------------------------*/
 a#navbarDropdownNotification {
-  background-color: #fff;
-  border: 1px solid #2ad2765e;
-  width: 47px;
-  height: 47px;
+  border: 1px solid var(--bs-primary);
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   display: flex;
   align-items: center;

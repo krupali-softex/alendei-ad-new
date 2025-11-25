@@ -341,10 +341,10 @@ const Navbar: React.FC = () => {
                     user?.imageUrl || "https://ads.alendei.com/images/user.webp"
                   }
                   alt="User Avatar"
-                  width="53"
-                  height="53"
+                  width="45"
+                  height="45"
                   className="rounded-circle"
-                  style={{ border: "1px solid #FFFFFF" }}
+                  style={{ border: "1px solid var(--bs-primary)" }}
                 />{" "}
                 {/* <span>
                 <img
