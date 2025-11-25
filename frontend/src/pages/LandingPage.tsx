@@ -37,41 +37,38 @@ const LandingPage: React.FC = () => {
             <div className="row g-4 align-items-center">
               <div className="col-lg-6 text-center text-md-start">
                 <div className="hero-content">
-                  <h2 className="text-capitalize mb-3 mb-xl-4">
-                    Transform Your Advertising with
+                  <h2 className="text-capitalize mb-3">
+                    Where Advertising Turns
                   </h2>
-                  <h1 className="gradient-title mb-3 mb-md-40">
-                    Alendei’s Magic.
-                  </h1>
+                  <h1 className="ff-bold mb-3 mb-md-40">Smarter & Sharper</h1>
                   <p className="text-capitalize">
-                    Let Alendei Drive Your Ads with AI, Reaching the Right
-                    Audience, Every Time!
+                    Let intelligent automation push your ads to the audience
+                    that actually matters.
                   </p>
                   <div className="button-group d-inline-flex gap-3">
-                    <Link to="#" className="btn btn-primary">
+                    <Link to="#" className="btn btn-light">
                       Book a demo
                     </Link>
-                    <Link to="#" className="btn btn-secondary">
-                      Try Automate with Ai
+                    <Link to="#" className="btn btn-gradient">
+                      Try Automate with Ai{" "}
+                      <img
+                        src="https://ads.alendei.com/images/stars.svg"
+                        alt="Stars"
+                        className="ms-2"
+                      />
                     </Link>
                   </div>
                 </div>
               </div>
-              <div className="col-lg-6 text-center ad-screen-ring">
+              <div className="col-lg-6 text-center hero-carousel position-relative">
                 <div className="effective-ad">
                   Do you run ad fast and effectively?
-                  <div className="text-end mt-12">
-                    <img src="https://ads.alendei.com/images/hero-arrow-blue.webp" />
+                  <div className="mt-12">
+                    <img src="/assets/images/hero-arrow-blue.svg" />
                   </div>
                 </div>
-                <div className="free-ad">
-                  Make try for free
-                  <img
-                    src="https://ads.alendei.com/images/hero-arrow-green.webp"
-                    className="mt-12"
-                  />
-                </div>
-                <div className="login-carousel-robot">
+
+                <div className="hero-carousel-robot">
                   <div className="robot-img">
                     <img src="/assets/images/robot.webp" />
                   </div>
@@ -152,55 +149,6 @@ const LandingPage: React.FC = () => {
                     />
                   </div>
                 </div>
-
-                {/* <div className="landing-carousel-container">
-                  <div ref={sliderRef} className="keen-slider landing-carousel">
-                    <div className="keen-slider__slide carousel-card">
-                      <img
-                        src="https://ads.alendei.com/images/slider-img-1.webp"
-                        alt="SliderImg1"
-                      />
-                    </div>
-                    <div className="keen-slider__slide carousel-card post-card">
-                      <img
-                        src="https://ads.alendei.com/images/slider-img-2.webp"
-                        alt="SliderImg2"
-                      />
-                    </div>
-                    <div className="keen-slider__slide carousel-card">
-                      <img
-                        src="https://ads.alendei.com/images/slider-img-3.webp"
-                        alt="SliderImg3"
-                      />
-                    </div>
-                    <div className="keen-slider__slide carousel-card">
-                      <img
-                        src="https://ads.alendei.com/images/slider-img-4.webp"
-                        alt="SliderImg4"
-                      />
-                    </div>
-                  </div>
-                </div> */}
-                {/* <div className="button-group d-flex align-items-center justify-content-center gap-3 position-relative">
-                  <img
-                    src="https://ads.alendei.com/images/Hand.svg"
-                    className="hand-img"
-                  />
-                  <Link to="/" className="btn btn-ad btn-ad-fb">
-                    <img
-                      src="https://ads.alendei.com/images/fb.svg"
-                      className="me-4"
-                    />
-                    Ad Run in Facebook
-                  </Link>
-                  <Link to="/" className="btn btn-ad btn-ad-insta">
-                    <img
-                      src="https://ads.alendei.com/images/insta.svg"
-                      className="me-4"
-                    />
-                    Ad Run in Instagram
-                  </Link>
-                </div> */}
               </div>
             </div>
           </div>
@@ -288,7 +236,7 @@ const LandingPage: React.FC = () => {
                 Scale your ads with{" "}
                 <span className="ff-bold text-white">Alendei’s Ai now.</span>
               </div>
-              <Link to="" className="btn btn-primary">
+              <Link to="" className="btn btn-light">
                 Book a demo
               </Link>
             </div>
@@ -558,7 +506,7 @@ const LandingPage: React.FC = () => {
             <div className="container">
               <div className="row g-3 g-lg-2">
                 <div className="col-md-6 text-center text-md-start">
-                  <div>Copyright © 2024 Alendei App</div>
+                  Copyright © {new Date().getFullYear()} Alendei App
                 </div>
                 <div className="col-md-6 text-center text-md-end"></div>
               </div>
