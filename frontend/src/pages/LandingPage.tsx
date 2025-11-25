@@ -35,7 +35,7 @@ const LandingPage: React.FC = () => {
         <div className="hero-section">
           <div className="container">
             <div className="row g-4 align-items-center">
-              <div className="col-lg-6 text-center text-md-start">
+              <div className="col-xl-6 text-center text-md-start">
                 <div className="hero-content">
                   <h2 className="text-capitalize mb-3">
                     Where Advertising Turns
@@ -60,12 +60,10 @@ const LandingPage: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-lg-6 text-center hero-carousel position-relative">
-                <div className="effective-ad">
+              <div className="col-xl-6 text-center hero-carousel position-relative">
+                <div className="effective-ad d-flex align-items-center flex-column">
                   Do you run ad fast and effectively?
-                  <div className="mt-12">
-                    <img src="/assets/images/hero-arrow-blue.svg" />
-                  </div>
+                  <img src="/assets/images/hero-arrow-blue.svg" />
                 </div>
 
                 <div className="hero-carousel-robot">
@@ -261,12 +259,12 @@ const LandingPage: React.FC = () => {
             </div>
             <div className="row g-20">
               <div className="col-md-4">
-                <div className="card bordered-card step-card h-100">
-                  <span className="badge mb-2 d-inline-block">Step 1</span>
-                  <h3 className="subtitle gradient-title mb-30">
+                <div className="card step-card h-100 shadow-sm">
+                  <span className="step-badge">Step 1</span>
+                  <h3 className="text-primary mb-20 ff-semibold">
                     Select Your Goal
                   </h3>
-                  <p className="mb-4">
+                  <p className="mb-40">
                     Experience tailored advertising solutions designed to meet
                     your specific business needs, including branding, lead
                     generation, calls, app installs, and much more.
@@ -280,12 +278,12 @@ const LandingPage: React.FC = () => {
                 </div>
               </div>
               <div className="col-md-4">
-                <div className="card bordered-card step-card h-100">
-                  <span className="badge mb-2 d-inline-block">Step 2</span>
-                  <h3 className="subtitle gradient-title mb-30">
+                <div className="card step-card h-100 shadow-sm">
+                  <span className="step-badge">Step 2</span>
+                  <h3 className="text-primary mb-20 ff-semibold">
                     Pick the Platform & Budget
                   </h3>
-                  <p className="mb-4">
+                  <p className="mb-40">
                     Effortlessly choose your platform and budget with options
                     tailored to your unique business category, preferences, or
                     goals, ensuring a customized advertising strategy that
@@ -300,12 +298,12 @@ const LandingPage: React.FC = () => {
                 </div>
               </div>
               <div className="col-md-4">
-                <div className="card bordered-card step-card h-100">
-                  <span className="badge mb-2 d-inline-block">Step 3</span>
-                  <h3 className="subtitle gradient-title mb-30">
+                <div className="card step-card h-100 shadow-sm">
+                  <span className="step-badge">Step 3</span>
+                  <h3 className="text-primary mb-20 ff-semibold">
                     Launch Ads on Multiple Platforms
                   </h3>
-                  <p className="mb-4">
+                  <p className="mb-40">
                     With a single click, launch your ad campaigns across
                     multiple platforms And seamlessly track performance,
                     insights, And results from one centralized dashboard htmlFor
