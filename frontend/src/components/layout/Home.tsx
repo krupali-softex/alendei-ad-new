@@ -133,20 +133,26 @@ const Home: React.FC = () => {
               <div ref={sliderRef} className="keen-slider landing-carousel">
                 <div className="keen-slider__slide carousel-card">
                   <img
-                    src="/assets/images/slider-img.webp"
+                    src="/assets/images/slider-img-1.webp"
                     alt="slider-img-1"
                   />
                 </div>
                 <div className="keen-slider__slide carousel-card post-card">
                   <img
-                    src="/assets/images/slider-img.webp"
+                    src="/assets/images/slider-img-2.webp"
                     alt="slider-img-2"
                   />
                 </div>
                 <div className="keen-slider__slide carousel-card">
                   <img
-                    src="/assets/images/slider-img.webp"
+                    src="/assets/images/slider-img-3.webp"
                     alt="slider-img-3"
+                  />
+                </div>
+                <div className="keen-slider__slide carousel-card">
+                  <img
+                    src="/assets/images/slider-img-4.webp"
+                    alt="slider-img-4"
                   />
                 </div>
               </div>

@@ -29,141 +29,145 @@ const AudienceBudget: React.FC<AudienceBudgetProps> = ({
   );
 
   return (
-    <div className="audience-block">
-      <h3 className="card-title text-capitalize mb-4">Audience & Budget</h3>
+    <div className="campaign-card h-100">
+      <div className="audience-block">
+        <h3 className="card-title text-capitalize mb-4">Audience & Budget</h3>
 
-      <div className="mb-40">
-        <label htmlFor="age" className="form-label mb-3">
-          Age
-        </label>
-        <div className="select-group">
-          <select
-            className="form-select w-30"
-            value={ageRange[0]}
-            onChange={(e) =>
-              dispatch(setAgeRange([Number(e.target.value), ageRange[1]]))
-            }
-          >
-            {ageOptionsAscending.map((age) => (
-              <option key={age} value={age}>
-                {age}
-              </option>
-            ))}
-          </select>
-
-          <select
-            className="form-select w-30"
-            value={ageRange[1]}
-            onChange={(e) =>
-              dispatch(setAgeRange([ageRange[0], Number(e.target.value)]))
-            }
-          >
-            {ageOptionsDescending.map((age) => (
-              <option key={age} value={age}>
-                {age}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
-
-      <div className="mb-40 d-flex align-items-center gap-5">
-        {["All", "Male", "Female"].map((g) => (
-          <div key={g} className="form-check">
-            <input
-              className="form-check-input me-10 mt-0"
-              type="radio"
-              id={g}
-              name="gender"
-              value={g}
-              checked={gender === g}
-              onChange={() =>
-                dispatch(setGender(g as "All" | "Male" | "Female"))
+        <div className="mb-40">
+          <label htmlFor="age" className="form-label mb-3">
+            Age
+          </label>
+          <div className="select-group">
+            <select
+              className="form-select w-30"
+              value={ageRange[0]}
+              onChange={(e) =>
+                dispatch(setAgeRange([Number(e.target.value), ageRange[1]]))
               }
-            />
-            <label className="form-check-label ff-semibold" htmlFor={g}>
-              {g}
-            </label>
+            >
+              {ageOptionsAscending.map((age) => (
+                <option key={age} value={age}>
+                  {age}
+                </option>
+              ))}
+            </select>
+
+            <select
+              className="form-select w-30"
+              value={ageRange[1]}
+              onChange={(e) =>
+                dispatch(setAgeRange([ageRange[0], Number(e.target.value)]))
+              }
+            >
+              {ageOptionsDescending.map((age) => (
+                <option key={age} value={age}>
+                  {age}
+                </option>
+              ))}
+            </select>
           </div>
-        ))}
-      </div>
+        </div>
 
-      <div className="mb-40">
-        <label htmlFor="Budget" className="form-label mb-3">
-          Budget
-        </label>
-        <div className="select-group">
-          <select
-            className="form-select w-30 align-self-start"
-            onChange={(e) =>
-              dispatch(
-                setBudgetType(
-                  e.target.value as "daily_budget" | "lifetime_budget"
-                )
-              )
-            }
-          >
-            <option value="daily_budget">Daily Budget</option>
-            <option value="lifetime_budget">Life Time Budget</option>
-          </select>
-          <div className="input-group w-70">
-            <input
-              type="number"
-              id="budget"
-              min="0"
-              className={`form-control ${
-                validationErrors.budget ? "is-invalid" : ""
-              }`}
-              placeholder="₹1000.00"
-              value={budget ? budget : ""}
-              onKeyDown={(e) => {
-                // Prevent typing negative sign or "e" or "+" for safety
-                if (["-", "e", "+"].includes(e.key)) {
-                  e.preventDefault();
+        <div className="mb-40 d-flex align-items-center gap-5">
+          {["All", "Male", "Female"].map((g) => (
+            <div key={g} className="form-check">
+              <input
+                className="form-check-input me-10 mt-0"
+                type="radio"
+                id={g}
+                name="gender"
+                value={g}
+                checked={gender === g}
+                onChange={() =>
+                  dispatch(setGender(g as "All" | "Male" | "Female"))
                 }
-              }}
-              onChange={(e) => {
-                dispatch(setBudget(Number(e.target.value)));
-                onInputChange(e);
-              }}
-            />
+              />
+              <label className="form-check-label ff-semibold" htmlFor={g}>
+                {g}
+              </label>
+            </div>
+          ))}
+        </div>
 
-            <span className="input-group-text text-body">INR</span>
-            {validationErrors.budget && (
-              <div className="invalid-feedback">{validationErrors.budget}</div>
+        <div className="mb-40">
+          <label htmlFor="Budget" className="form-label mb-3">
+            Budget
+          </label>
+          <div className="select-group">
+            <select
+              className="form-select w-30"
+              onChange={(e) =>
+                dispatch(
+                  setBudgetType(
+                    e.target.value as "daily_budget" | "lifetime_budget"
+                  )
+                )
+              }
+            >
+              <option value="daily_budget">Daily Budget</option>
+              <option value="lifetime_budget">Life Time Budget</option>
+            </select>
+            <div className="input-group w-70">
+              <input
+                type="number"
+                id="budget"
+                min="0"
+                className={`form-control ${
+                  validationErrors.budget ? "is-invalid" : ""
+                }`}
+                placeholder="₹1000.00"
+                value={budget ? budget : ""}
+                onKeyDown={(e) => {
+                  // Prevent typing negative sign or "e" or "+" for safety
+                  if (["-", "e", "+"].includes(e.key)) {
+                    e.preventDefault();
+                  }
+                }}
+                onChange={(e) => {
+                  dispatch(setBudget(Number(e.target.value)));
+                  onInputChange(e);
+                }}
+              />
+
+              <span className="input-group-text text-body">INR</span>
+              {validationErrors.budget && (
+                <div className="invalid-feedback">
+                  {validationErrors.budget}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {campaignType === "Traffic" && (
+          <div>
+            <label htmlFor="Website URL" className="form-label mb-3">
+              Website URL
+            </label>
+            <div
+              className={`input-group ${
+                validationErrors.websiteURL ? "is-invalid" : ""
+              }`}
+            >
+              <span className="input-group-text">
+                <i className="bi bi-link"></i>
+              </span>
+              <input
+                type="text"
+                className={`form-control `}
+                value={websiteURL}
+                onChange={(e) => dispatch(setWebsiteURL(e.target.value))}
+                placeholder="www.example.com"
+              />
+            </div>
+            {validationErrors.websiteURL && (
+              <div className="invalid-feedback">
+                {validationErrors.websiteURL}
+              </div>
             )}
           </div>
-        </div>
+        )}
       </div>
-
-      {campaignType === "Traffic" && (
-        <div>
-          <label htmlFor="Website URL" className="form-label mb-3">
-            Website URL
-          </label>
-          <div
-            className={`input-group ${
-              validationErrors.websiteURL ? "is-invalid" : ""
-            }`}
-          >
-            <span className="input-group-text">
-              <i className="bi bi-link"></i>
-            </span>
-            <input
-              type="text"
-              className={`form-control `}
-              value={websiteURL}
-              onChange={(e) => dispatch(setWebsiteURL(e.target.value))}
-              placeholder="www.example.com"
-            />
-          </div>
-          {validationErrors.websiteURL && (
-            <div className="invalid-feedback">
-              {validationErrors.websiteURL}
-            </div>
-          )}
-        </div>
-      )}
     </div>
   );
 };

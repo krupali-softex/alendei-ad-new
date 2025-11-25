@@ -14,9 +14,7 @@ const Signup: React.FC = () => {
   const navigate = useNavigate();
 
   const validationSchema = Yup.object().shape({
-    workspaceName: Yup.string()
-      .trim()
-      .required("Workspace name is required"),
+    workspaceName: Yup.string().trim().required("Workspace name is required"),
     name: Yup.string().trim().required("Name is required"),
     email: Yup.string()
       .email("Invalid email format")
@@ -58,7 +56,7 @@ const Signup: React.FC = () => {
     <main className="main d-flex align-items-center flex-column justify-content-center min-vh-100 py-5 py-xxl-0 login-bg signup-page">
       <div className="container">
         <div className="row g-5">
-          <div className="col-lg-6 text-center d-none d-md-block align-self-center">
+          <div className="col-lg-5 col-xl-6 d-none d-lg-block">
             <div className="login-img">
               <img
                 src="https://ads.alendei.com/images/signup-img.webp"
@@ -67,7 +65,8 @@ const Signup: React.FC = () => {
               />
             </div>
           </div>
-          <div className="col-lg-6">
+          <div className="col-xl-1 d-none d-xl-block"></div>
+          <div className="col-lg-7 col-xl-5">
             <div className="signup-form">
               <h3 className="mb-2">Register Now</h3>
               <h1 className="form-title text-primary mb-5">
@@ -95,7 +94,9 @@ const Signup: React.FC = () => {
                           type="text"
                           name="workspaceName"
                           className={`form-control ${
-                            errors.workspaceName && touched.workspaceName ? "is-invalid" : ""
+                            errors.workspaceName && touched.workspaceName
+                              ? "is-invalid"
+                              : ""
                           }`}
                           placeholder="Enter your Workspace Name"
                         />
@@ -105,7 +106,7 @@ const Signup: React.FC = () => {
                           className="invalid-feedback"
                         />
                       </div>
-                      
+
                       <div className="col-md-6 col-lg-12 col-xxl-6">
                         <label className="form-label">Name</label>
                         <Field

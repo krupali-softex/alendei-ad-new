@@ -88,7 +88,7 @@ const PaymentPage: React.FC<PaymentPageProps> = ({}) => {
                             type="text"
                             className="form-control"
                             id="cardValid"
-                            placeholder="Vaid thru(MM/YY)"
+                            placeholder="Valid thru(MM/YY)"
                           />
                         </div>
                       </div>
@@ -110,7 +110,7 @@ const PaymentPage: React.FC<PaymentPageProps> = ({}) => {
                     </div>
                     <a
                       href="payment-success.html"
-                      className="btn btn-primary btn-lg w-25 mb-32"
+                      className="btn btn-primary d-inline-flex mb-32"
                       type="submit"
                     >
                       Pay now
@@ -122,6 +122,7 @@ const PaymentPage: React.FC<PaymentPageProps> = ({}) => {
                     </p>
                   </form>
                 </div>
+
                 <div
                   className="tab-pane"
                   id="DebitCard"
@@ -155,7 +156,7 @@ const PaymentPage: React.FC<PaymentPageProps> = ({}) => {
                             type="text"
                             className="form-control"
                             id="cardValid"
-                            placeholder="Vaid thru(MM/YY)"
+                            placeholder="Valid thru(MM/YY)"
                           />
                         </div>
                       </div>
@@ -177,7 +178,7 @@ const PaymentPage: React.FC<PaymentPageProps> = ({}) => {
                     </div>
                     <a
                       href="payment-success.html"
-                      className="btn btn-primary btn-lg w-25 mb-32"
+                      className="btn btn-primary d-inline-flex mb-32"
                       type="submit"
                     >
                       Pay now
