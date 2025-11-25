@@ -1169,8 +1169,8 @@ select#timezone {
 
 /* Prevent light-blue background on autofilled input elements */
 input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0px 1000px #EAF7FF inset !important;
-  box-shadow: 0 0 0px 1000px #EAF7FF inset !important;
+  -webkit-box-shadow: 0 0 0px 1000px #eaf7ff inset !important;
+  box-shadow: 0 0 0px 1000px #eaf7ff inset !important;
   /* -webkit-text-fill-color: #fff !important; */
 }
 
@@ -5120,12 +5120,12 @@ a#navbarDropdownNotification {
 }
 
 .top-nav span.nav-text {
-  font-family: 'Manrope-Bold';
+  font-family: "Manrope-Bold";
   font-size: 14px;
   line-height: 100%;
   letter-spacing: -0.03em;
   text-align: center;
-  color: #2A3F4D;
+  color: #2a3f4d;
   position: absolute;
   top: auto;
   bottom: -5px;
@@ -5177,7 +5177,7 @@ a#navbarDropdownNotification {
   z-index: 1;
 }
 
-.login-carousel~.social-wrapper {
+.login-carousel ~ .social-wrapper {
   width: 100%;
   /* background: aqua; */
   height: 100%;
@@ -5370,7 +5370,6 @@ ease-in-out infinite; */
   z-index: -1;
 }
 
-
 .chatbot-wrapper {
   position: absolute;
   top: -12%;
@@ -5397,7 +5396,7 @@ ease-in-out infinite; */
   align-items: center;
   font-size: 16px;
   font-weight: 500;
-  font-family: 'Manrope-SemiBold';
+  font-family: "Manrope-SemiBold";
 }
 
 .bubble-tail {
@@ -5475,10 +5474,6 @@ ease-in-out infinite; */
   }
 }
 
-
-
-
-
 /* --------------- Style: RP ------------- */
 .bi.bi-envelope-fill,
 .bi.bi-lock-fill,
@@ -5508,7 +5503,6 @@ ease-in-out infinite; */
 
 /*---------------- START: Responsive CSS ----------------*/
 @media (min-width: 1600px) {
-
   .container,
   .container-lg,
   .container-md,
@@ -5551,7 +5545,6 @@ ease-in-out infinite; */
     right: -23%;
   }
 }
-
 
 @media (max-width: 1540px) {
   .container,

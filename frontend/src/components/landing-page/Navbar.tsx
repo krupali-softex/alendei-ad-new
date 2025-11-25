@@ -7,11 +7,11 @@ const Navbar: React.FC = () => {
     <>
       <StickyHeader />
       <header className="navbar navbar-top navbar-expand-lg">
-        <div className="container">
+        <div className="container mx-2 mx-xl-auto">
           <div className="d-flex align-items-center justify-content-between w-100 w-lg-auto">
             <div className="d-flex align-items-center">
               <button
-                className="navbar-toggler me-3 border-0 p-0"
+                className="navbar-toggler me-4 border-0 p-0"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarNav"

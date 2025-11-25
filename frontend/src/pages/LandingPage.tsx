@@ -388,7 +388,7 @@ const LandingPage: React.FC = () => {
               <div className="col-md-6">
                 <div className="benefit-sectionImg text-center">
                   <img
-                    src="https://ads.alendei.com/images/benifit-img1.webp"
+                    src="/assets/images/benifit-img1.webp"
                     alt="AI campaign"
                     className="w-100"
                   />
@@ -436,7 +436,7 @@ const LandingPage: React.FC = () => {
               <div className="col-md-6">
                 <div className="benefit-sectionImg text-center">
                   <img
-                    src="https://ads.alendei.com/images/benifit-img3.webp"
+                    src="/assets/images/benifit-img3.webp"
                     alt="Performance with Alendei AI"
                     className="w-100"
                   />
