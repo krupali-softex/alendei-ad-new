@@ -660,12 +660,37 @@ body.landing-bg .btn-primary {
   z-index: 1;
   outline: 5px solid #ffffff4d;
   border: none;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+
 }
 
 .btn-gradient:hover {
-  background: linear-gradient(270deg, #0f6be3 0%, #5898ed 50%);
-  background: linear-gradient(90deg, #0f6be3 0%, #0f6be3 50%, #0f6be3 100%);
+  /* background: linear-gradient(90deg, #0f6be3 0%, #0f6be3 50%, #0f6be3 100%); */
+  background: linear-gradient(90deg, rgba(15, 107, 227, 0.55) 0%, rgba(88, 152, 237, 0.55) 50%, rgba(15, 107, 227, 0.55) 100%);
   color: #fff;
+
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 0 20px rgba(15, 107, 227, 0.4), 0 0 30px rgba(88, 152, 237, 0.4);
+}
+
+.btn-gradient:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: inherit;
+  opacity: 0.2;
+  filter: blur(20px);
+  z-index: -1;
 }
 
 .btn-light {
@@ -3433,6 +3458,10 @@ label.radio-card .card-content-wrapper img {
   letter-spacing: 0;
 }
 
+.effective-ad img {
+  margin-top: 12px;
+  z-index: 1;
+}
 
 .free-ad {
   line-height: 16.48px;
@@ -5149,7 +5178,7 @@ a#navbarDropdownNotification {
   z-index: 1;
 }
 
-.login-carousel ~ .social-wrapper {
+.login-carousel~.social-wrapper {
   width: 100%;
   /* background: aqua; */
   height: 100%;
@@ -5483,6 +5512,7 @@ ease-in-out infinite; */
 
 /*---------------- START: Responsive CSS ----------------*/
 @media (min-width: 1600px) {
+
   .container,
   .container-lg,
   .container-md,
@@ -5523,6 +5553,27 @@ ease-in-out infinite; */
 
   .social-location {
     right: -23%;
+  }
+
+  .effective-ad img {
+    width: 65px;
+    margin-top: 4px;
+  }
+
+  .effective-ad {
+    top: -50px;
+    left: 35px;
+  }
+
+  .whyChoose-section,
+  .scaleAd-section,
+  .step-section,
+  .benefit-section {
+    padding-bottom: 80px;
+  }
+
+  .testimonial-section {
+    padding-bottom: 100px;
   }
 }
 
