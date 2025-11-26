@@ -6,74 +6,69 @@ import { resetState } from "../../state/store";
 import { useSession } from "../../hooks/session/useSession";
 import { getDecodedToken } from "../../utils/auth";
 
-
-
-
 const PageEffects = () => {
-    const location = useLocation();
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
+  const location = useLocation();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-    const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
-    const { fetchSession, fetchAdminSession } = useSession();
+  const isAuthenticated = useSelector(
+    (state: RootState) => state.auth.isAuthenticated
+  );
+  const { fetchSession, fetchAdminSession } = useSession();
 
-     const decoded = getDecodedToken(localStorage.getItem("token"));
+  const decoded = getDecodedToken(localStorage.getItem("token"));
 
+  // Design Effects
 
+  useEffect(() => {
+    const pageClasses: Record<string, string> = {
+      "/login": "login-bg",
+      "/signup": "login-bg",
+    };
 
-    // Design Effects
+    const bodyClass = isAuthenticated
+      ? "home-bg"
+      : pageClasses[location.pathname] || "landing-bg";
 
-    useEffect(() => {
-        const pageClasses: Record<string, string> = {
-            "/login": "login-bg",
-            "/signup": "login-bg",
-        };
+    document.body.classList.remove("home-bg", "login-bg", "landing-bg");
+    document.body.classList.add(bodyClass);
 
-        const bodyClass = isAuthenticated ? "home-bg" : pageClasses[location.pathname] || "landing-bg";
+    return () => {
+      document.body.classList.remove(bodyClass);
+    };
+  }, [location, isAuthenticated]);
 
-        document.body.classList.remove("home-bg", "login-bg", "landing-bg");
-        document.body.classList.add(bodyClass);
+  // Background API Calls
 
-        return () => {
-            document.body.classList.remove(bodyClass);
-        };
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token && isAuthenticated) {
+      if (decoded?.isSuperAdmin) {
+        // Admin Background api calls
 
-    }, [location, isAuthenticated]);
+        fetchAdminSession();
+      } else {
+        // API calls for user session
 
+        fetchSession();
+      }
+    }
+  }, [isAuthenticated, decoded]);
 
+  // Logout Effects
 
-    // Background API Calls
+  useEffect(() => {
+    const handleLogout = () => {
+      dispatch(resetState());
+      navigate("/login", { replace: true });
+    };
+    window.addEventListener("logoutEvent", handleLogout);
+    return () => {
+      window.removeEventListener("logoutEvent", handleLogout);
+    };
+  }, []);
 
-    useEffect(() => {
-        const token = localStorage.getItem("token");
-        if (token && isAuthenticated) {
-            if (decoded?.isSuperAdmin) {
-                // Admin Background api calls
-
-                fetchAdminSession()
-
-            } else {
-                // API calls for user session
-
-                fetchSession()
-            }
-        }
-    }, [isAuthenticated,decoded]);
-
-    // Logout Effects
-
-    useEffect(() => {
-        const handleLogout = () => {
-            dispatch(resetState());
-            navigate("/login", { replace: true });
-        };
-        window.addEventListener("logoutEvent", handleLogout);
-        return () => {
-            window.removeEventListener("logoutEvent", handleLogout);
-        };
-    }, []);
-
-    return null;
+  return null;
 };
 
 export default PageEffects;

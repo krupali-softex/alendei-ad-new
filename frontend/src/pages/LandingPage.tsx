@@ -35,7 +35,7 @@ const LandingPage: React.FC = () => {
         <div className="hero-section">
           <div className="container">
             <div className="row g-4 align-items-center">
-              <div className="col-lg-6 text-center text-md-start">
+              <div className="col-xl-6 text-center text-md-start">
                 <div className="hero-content">
                   <h2 className="text-capitalize mb-3">
                     Where Advertising Turns
@@ -60,12 +60,10 @@ const LandingPage: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-lg-6 text-center hero-carousel position-relative">
-                <div className="effective-ad">
+              <div className="col-xl-6 text-center hero-carousel position-relative">
+                <div className="effective-ad d-flex align-items-center flex-column">
                   Do you run ad fast and effectively?
-                  <div className="mt-12">
-                    <img src="/assets/images/hero-arrow-blue.svg" />
-                  </div>
+                  <img src="/assets/images/hero-arrow-blue.svg" />
                 </div>
 
                 <div className="hero-carousel-robot">
