@@ -88,7 +88,7 @@ const WorkspacesList: React.FC<WorkspacesListProps> = ({
   };
 
   return (
-    <div className="workspace-container mt-5 mt-lg-0">
+    <div className="workspace-container">
       {/* <div className="d-flex justify-content-between align-items-center flex-wrap mb-4">
         <h1 className="mb-0 section-title gradient-primary">Your Workspaces</h1>
       </div> */}

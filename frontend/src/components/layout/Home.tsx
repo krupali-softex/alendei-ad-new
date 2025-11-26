@@ -51,7 +51,7 @@ const Home: React.FC = () => {
               set them manually by entering your own data.
             </p>
 
-            <div className="d-flex gap-4 mb-5">
+            <div className="d-flex flex-wrap gap-4 mb-5">
               <Link
                 to="/home/create-ad-with-AI"
                 className={`btn btn-ad-ai ${

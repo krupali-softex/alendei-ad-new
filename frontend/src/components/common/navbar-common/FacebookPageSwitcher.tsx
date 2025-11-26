@@ -8,17 +8,17 @@ const FacebookPageSwitcher: React.FC = () => {
   return (
     <>
       <div
-        className="dropdown-menu dropdown-caret dropdown-menu-end"
+        className="dropdown-menu dropdown-caret dropdown-menu-end mt-1"
         aria-labelledby="navbarDropdownWorkspace"
       >
         <h6 className="dropdown-header text-muted sticky-top bg-white" style={{ zIndex: 1 }}>Facebook Pages</h6>
 
-        <div style={{ maxHeight: '250px', overflowY: 'auto' }}>
+        <div>
           {linkedPages && linkedPages?.length > 0 &&
             linkedPages.map((fbPage) => (
               <button
                 key={fbPage.pageId}
-                className={`dropdown-item d-flex align-items-center gap-3 px-4 py-3 border-bottom-grey ${fbPage.pageId === linkedPages[0].pageId ? "active" : ""
+                className={`dropdown-item d-flex align-items-center gap-3 px-3 py-2 border-bottom-grey ${fbPage.pageId === linkedPages[0].pageId ? "active" : ""
                   }`}
               >
                 <img
