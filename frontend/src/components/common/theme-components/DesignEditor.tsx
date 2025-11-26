@@ -835,7 +835,7 @@ const DesignsDetails: React.FC<DesignsDetailsProps> = ({}) => {
                     </button> */}
 
                     <button
-                      className="btn btn-outline-primary"
+                      className="btn btn-light"
                       onClick={handlePreviewAd}
                       data-bs-target="#adPreviewModal"
                     >
