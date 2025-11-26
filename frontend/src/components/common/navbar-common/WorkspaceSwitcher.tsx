@@ -15,12 +15,12 @@ const WorkspaceSwitcher: React.FC = () => {
   return (
     <>
       <div
-        className="dropdown-menu dropdown-caret dropdown-menu-end"
+        className="dropdown-menu dropdown-caret dropdown-menu-end p-0 mt-1"
         aria-labelledby="navbarDropdownWorkspace"
       >
         {/* <h6 className="dropdown-header text-muted sticky-top bg-white" style={{ zIndex: 1 }}>Workspaces</h6> */}
 
-        <div style={{ maxHeight: "250px", overflowY: "auto" }}>
+        <div>
           {workspaces?.length > 0 &&
             workspaces.map((ws) => (
               <button

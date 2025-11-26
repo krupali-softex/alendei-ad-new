@@ -650,10 +650,8 @@ body.landing-bg .btn-primary {
 }
 
 .btn-gradient {
-  --bs-btn-padding-y: 14.625px;
+  --bs-btn-padding-y: 12px;
   --bs-btn-border-radius: 6px;
-  font-size: 18px;
-  line-height: 24px;
   font-family: "Manrope-Bold";
   color: #fff !important;
   background: linear-gradient(90deg, #0f6be3 0%, #5898ed 50%, #0f6be3 100%);
@@ -666,14 +664,17 @@ body.landing-bg .btn-primary {
   position: relative;
   z-index: 1;
   transition: all 0.3s ease;
-
 }
 
 .btn-gradient:hover {
   /* background: linear-gradient(90deg, #0f6be3 0%, #0f6be3 50%, #0f6be3 100%); */
-  background: linear-gradient(90deg, rgba(15, 107, 227, 0.55) 0%, rgba(88, 152, 237, 0.55) 50%, rgba(15, 107, 227, 0.55) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(15, 107, 227, 0.55) 0%,
+    rgba(88, 152, 237, 0.55) 50%,
+    rgba(15, 107, 227, 0.55) 100%
+  );
   color: #fff;
-
 
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
@@ -1682,11 +1683,11 @@ a.forgotPassword,
 }
 
 .dropdown-menu.dropdown-caret.dropdown-menu-end .dropdown-item img {
-  border: 1px solid #96d9c2;
+  border: 1px solid var(--bs-primary);
   border-radius: 50%;
   object-fit: cover;
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
 }
 
 .dropdown-menu,
@@ -1839,7 +1840,7 @@ footer>.container {
 
 footer p,
 .whyChoose-quality {
-  max-width: 467px;
+  max-width: 500px;
 }
 
 footer p {
@@ -1930,6 +1931,10 @@ h2.modal-title {
   max-width: 467px;
   margin-right: auto;
   margin-left: auto;
+}
+
+.content-box-sm.benifit-content {
+  max-width: 620px;
 }
 
 .hero-content .button-group {
@@ -2255,10 +2260,10 @@ table.dataTable.display tbody td {
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-link:focus {
   color: #1079d5;
-  border: 1.5px solid #1178d5;
-  border-radius: 12px;
-  padding: 11px 25px;
-  box-shadow: 0px 0px 18.8px 0px #1079d566;
+  border-color: #1178d5;
+  /* border-radius: 12px;
+  padding: 11px 25px; */
+  box-shadow: 0px 0px 18.8px 0px #1079d566 !important;
 }
 
 /* .nav-tabs .nav-link.active:before {
@@ -3390,7 +3395,8 @@ label.radio-card .card-content-wrapper img {
 }
 
 .hero-section {
-  padding-bottom: 100px;
+  /* padding-bottom: 100px; */
+  padding-bottom: 70px;
   min-height: calc(100vh - 96px);
   display: flex;
   align-items: center;
@@ -3400,7 +3406,7 @@ label.radio-card .card-content-wrapper img {
 .scaleAd-section,
 .step-section,
 .benefit-section {
-  padding-bottom: 150px;
+  padding-bottom: 90px;
 }
 
 .testimonial-section {
@@ -3483,7 +3489,7 @@ label.radio-card .card-content-wrapper img {
 }
 
 .whyChoose-quality:not(:last-child) {
-  margin-bottom: 78px;
+  margin-bottom: 60px;
 }
 
 .qualityTitle {
@@ -3653,8 +3659,8 @@ label.radio-card .card-content-wrapper img {
 
 .slick-dots li.slick-active button:before {
   opacity: 1;
-  color: #d8d8d8;
-  background: #d8d8d8;
+  color: #b0b0b0;
+  background: #b0b0b0;
 }
 
 .login-form {
@@ -4035,6 +4041,7 @@ h3.username {
   line-height: 26.16px;
   letter-spacing: -2%;
   text-transform: capitalize;
+  color: #1079d5;
 }
 
 p.user-location {
@@ -4049,7 +4056,7 @@ p.user-location {
 .business-details .nav,
 .design-details .nav,
 .taskspace-details .nav {
-  padding: 20px 24px;
+  padding: 16px 18px;
   --bs-nav-link-padding-x: 0;
   --bs-nav-link-padding-y: 0;
   background: #f8fcff;
@@ -4059,7 +4066,7 @@ p.user-location {
   --bs-nav-tabs-link-active-color: #1079d5;
   --bs-nav-link-disabled-color: var(--bs-secondary-color);
   --bs-nav-tabs-link-active-bg: transparent;
-  gap: 40px;
+  gap: 15px;
   align-items: baseline;
 }
 
@@ -4077,6 +4084,9 @@ p.user-location {
   line-height: 17.44px;
   color: #d0e6f9;
   height: 100%;
+  border: 1.5px solid transparent;
+  padding: 11px 25px;
+  border-radius: 12px;
 }
 
 .business-details .nav li.nav-item,
@@ -4729,8 +4739,8 @@ input[type="color"] {
 }
 
 .workspace-dropdown .dropdown-menu {
-  --bs-dropdown-min-width: 14rem;
-  max-height: 350px;
+  --bs-dropdown-min-width: 10rem;
+  /* max-height: 350px; */
   overflow: hidden;
 }
 
@@ -4921,7 +4931,7 @@ input[type="color"] {
 }
 
 .hero-carousel {
-  margin-top: 70px;
+  margin-top: 170px;
 }
 
 .hero-carousel .landing-carousel-container {
@@ -5197,7 +5207,7 @@ a#navbarDropdownNotification {
   z-index: 1;
 }
 
-.login-carousel~.social-wrapper {
+.login-carousel ~ .social-wrapper {
   width: 100%;
   /* background: aqua; */
   height: 100%;
@@ -5528,7 +5538,7 @@ ease-in-out infinite; */
 
 .bg-profile {
   background: url(/assets/images/bg-profile.png) no-repeat;
-  background-size: auto;
+  background-size: cover;
   background-position: center;
 }
 
@@ -5554,7 +5564,6 @@ ease-in-out infinite; */
 
 /*---------------- START: Responsive CSS ----------------*/
 @media (min-width: 1600px) {
-
   .container,
   .container-lg,
   .container-md,
@@ -5669,7 +5678,7 @@ ease-in-out infinite; */
   .scaleAd-section,
   .step-section,
   .benefit-section {
-    padding-bottom: 100px;
+    padding-bottom: 70px;
   }
 
   .testimonial-section {
@@ -5702,8 +5711,19 @@ ease-in-out infinite; */
     min-width: unset;
   }
 
-  .benefit-sectionImg img {
+  .hero-content {
+    max-width: unset;
+    text-align: center;
+  }
+
+  /* .benefit-sectionImg img {
     width: 100%;
+  } */
+}
+
+@media (max-width: 1123px) {
+  .top-nav .nav-link.active span.nav-text {
+    top: 60%;
   }
 }
 
@@ -5794,7 +5814,7 @@ ease-in-out infinite; */
   }
 
   .benifit-content h3.subtitle {
-    font-size: 28px;
+    font-size: 24px;
     line-height: 28px;
   }
 
@@ -5805,11 +5825,26 @@ ease-in-out infinite; */
   footer h5 {
     margin-bottom: 30px;
   }
+
+  .fb-box {
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 12px 20px;
+  }
+
+  #design-area {
+    width: 400px;
+    height: 400px;
+  }
 }
 
 @media (min-width: 992px) {
   .modal-lg {
     --bs-modal-width: 680px;
+  }
+
+  .w-lg-100 {
+    width: 100%;
   }
 
   .navbar-expand-lg .navbar-nav {
@@ -5860,7 +5895,9 @@ ease-in-out infinite; */
 @media (max-width: 991px) {
 
   .login-form h3,
-  .signup-form h3 {
+  .signup-form h3,
+  .benifit-content h3.subtitle,
+  .benifit-content p.text-body-secondary {
     text-align: center;
   }
 
@@ -5934,18 +5971,19 @@ ease-in-out infinite; */
   }
 
   h1.section-title {
-    font-size: 38px;
-    line-height: 48px;
+    font-size: 30px;
+    line-height: 36px;
   }
 
   h2.section-title {
-    font-size: 26px;
+    font-size: 22px;
+    line-height: 34px;
   }
 
   h4.subtitle,
   .hero-content p,
   .subheading-text {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 26px;
   }
 
@@ -5964,9 +6002,10 @@ ease-in-out infinite; */
     margin-bottom: 20px !important;
   }
 
-  .hero-content h2 {
-    font-size: 42px;
-    line-height: 48px;
+  .hero-content h2,
+  .hero-content h1 {
+    font-size: 30px;
+    line-height: 36px;
   }
 
   .gradient-title {
@@ -5980,7 +6019,7 @@ ease-in-out infinite; */
   .step-section,
   .benefit-section,
   .testimonial-section {
-    padding-bottom: 80px;
+    padding-bottom: 50px;
   }
 
   .form-title {
@@ -6043,6 +6082,24 @@ ease-in-out infinite; */
   .ai-ad-chat h1.section-title {
     font-size: 30px;
   }
+
+  .top-nav .nav-link.active span.nav-text {
+    top: 50%;
+  }
+
+  .home-page-sections h2.section-title,
+  .home-page-sections p.subheading-text,
+  .home-page-sections p.fb-text {
+    text-align: center;
+  }
+
+  .fb-sections {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 150px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -6062,16 +6119,6 @@ ease-in-out infinite; */
   .hero-content,
   .benifit-content {
     text-align: center;
-  }
-
-  .hero-content h2 {
-    font-size: 32px;
-    line-height: 40px;
-  }
-
-  .hero-content h1 {
-    font-size: 44px;
-    line-height: 54px;
   }
 
   h3.subtitle {
@@ -6115,7 +6162,7 @@ ease-in-out infinite; */
   .step-section,
   .benefit-section,
   .testimonial-section {
-    padding-bottom: 60px;
+    padding-bottom: 40px;
   }
 
   .step-card h3.subtitle {
@@ -6184,14 +6231,14 @@ ease-in-out infinite; */
   }
 
   .hero-content h1 {
-    font-size: 38px;
-    line-height: 44px;
+    font-size: 30px;
+    line-height: 36px;
     padding-bottom: 4px;
   }
 
   .hero-content h2 {
-    font-size: 24px;
-    line-height: 30px;
+    font-size: 20px;
+    line-height: 26px;
     margin-bottom: 10px !important;
   }
 

@@ -29,7 +29,7 @@ const ConfirmDeleteModal: React.FC<Props> = ({
       onClose={onClose}
       title="Confirm Delete Workspace"
       centered
-      size="sm"
+      size="lg"
       role="dialog"
       disableBackdropClose
     >

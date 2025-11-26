@@ -306,7 +306,7 @@ const Navbar: React.FC = () => {
                   className="facebook-logo rounded-circle me-2"
                 />
                 <div>
-                  <span className="text-black text-capitalize f-12">page </span>
+                  <span className="text-black text-capitalize f-12">page</span>
                   <div className="d-flex align-items-center">
                     <span className="ff-semibold text-black me-2 lh-1">
                       {defaultWorkspace.linkedPages &&

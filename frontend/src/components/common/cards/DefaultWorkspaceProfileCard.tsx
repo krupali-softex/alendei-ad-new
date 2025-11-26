@@ -17,17 +17,23 @@ import ConfirmDeleteModal from "../ui-common/ConfirmDeleteModal";
 
 type defaultWorkspaceProps = {
   defaultWorkspace: DefaultWorkspace;
-}
+};
 
-const DefaultWorkspaceProfile: React.FC<defaultWorkspaceProps> = ({ defaultWorkspace }) => {
+const DefaultWorkspaceProfile: React.FC<defaultWorkspaceProps> = ({
+  defaultWorkspace,
+}) => {
   const dispatch = useDispatch();
   const { fetchSession } = useSession();
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const { SwitchToNewWorkspaceWithRes } = useWorkspaceSwitcher();
   const [isEditing, setIsEditing] = useState(false);
-  const [image, setImage] = useState<string>("https://ads.alendei.com/images/workspace.webp");
+  const [image, setImage] = useState<string>(
+    "https://ads.alendei.com/images/workspace.webp"
+  );
   const [imageFile, setImageFile] = useState<File | null>(null);
-  const [selectedWorkspaceId, setSelectedWorkspaceId] = useState<string | null>(null);
+  const [selectedWorkspaceId, setSelectedWorkspaceId] = useState<string | null>(
+    null
+  );
 
   const initialValues = {
     workspaceName: defaultWorkspace?.name || "",
@@ -38,7 +44,6 @@ const DefaultWorkspaceProfile: React.FC<defaultWorkspaceProps> = ({ defaultWorks
       setImage(defaultWorkspace.imageUrl);
     }
   }, [defaultWorkspace]);
-
 
   const saveChanges = async (data: Types.DefaultWorkspaceFormData) => {
     let isSessionNeedsUpdate = false;
@@ -51,7 +56,9 @@ const DefaultWorkspaceProfile: React.FC<defaultWorkspaceProps> = ({ defaultWorks
             setImage(res.imageUrl);
           }
         }
-        const res = await updateWorkspace({ workspace_name: data.workspaceName });
+        const res = await updateWorkspace({
+          workspace_name: data.workspaceName,
+        });
         if (res.success) {
           toast.success("Workspace updated successfully.");
           isSessionNeedsUpdate = true;
@@ -60,20 +67,21 @@ const DefaultWorkspaceProfile: React.FC<defaultWorkspaceProps> = ({ defaultWorks
         }
       } catch (error: any) {
         console.error("Error updating workspace:", error);
-        toast.error(error.response?.data?.message || "Error while updating profile.");
+        toast.error(
+          error.response?.data?.message || "Error while updating profile."
+        );
       }
-
     } finally {
       dispatch(setLoading(false));
       imageFile && setImageFile(null);
       setIsEditing(false);
       isSessionNeedsUpdate && fetchSession();
-
     }
   };
 
-
-  const handleImageChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleImageChange = async (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
     if (event.target.files && event.target.files[0]) {
       const imgURL = URL.createObjectURL(event.target.files[0]);
       setImage(imgURL);
@@ -81,13 +89,11 @@ const DefaultWorkspaceProfile: React.FC<defaultWorkspaceProps> = ({ defaultWorks
     }
   };
 
-
   const validationSchema = Yup.object({
     workspaceName: Yup.string()
       .min(3, "Name must be at least 3 characters")
       .max(50, "Name must be less than 50 characters")
       .required("Name is required"),
-
   });
   const confirmDelete = () => {
     if (!selectedWorkspaceId) return;
@@ -99,7 +105,9 @@ const DefaultWorkspaceProfile: React.FC<defaultWorkspaceProps> = ({ defaultWorks
       dispatch(setLoading(true));
       const res = await deleteWorkspace(workspaceId);
       if (res.success) {
-        toast.success(res.message ? res.message : "Workspace deleted successfully.");
+        toast.success(
+          res.message ? res.message : "Workspace deleted successfully."
+        );
         if (res.defaultWorkspace) {
           SwitchToNewWorkspaceWithRes(res);
         } else {
@@ -109,16 +117,18 @@ const DefaultWorkspaceProfile: React.FC<defaultWorkspaceProps> = ({ defaultWorks
         toast.error(res.message ? res.message : "Oops! Something went wrong.");
       }
     } catch (error: any) {
-      toast.error(error.response.data.message ? error.response.data.message : "Oops! Something went wrong.");
+      toast.error(
+        error.response.data.message
+          ? error.response.data.message
+          : "Oops! Something went wrong."
+      );
     } finally {
       dispatch(setLoading(false));
     }
-  }
+  };
   return (
     <>
-      <div
-        className="p-5 bg-profile table-card text-center"
-      >
+      <div className="p-5 bg-profile table-card text-center">
         <h3 className="card-subtitle mb-40">Workspace Settings</h3>
         <div className="user-profile position-relative mb-30">
           <img src={image} alt="user" />
@@ -153,13 +163,24 @@ const DefaultWorkspaceProfile: React.FC<defaultWorkspaceProps> = ({ defaultWorks
                   <Field
                     type="text"
                     name="workspaceName"
-                    className={`form-control text-center ${touched.workspaceName && errors.workspaceName ? "is-invalid" : ""}`}
+                    className={`form-control text-center ${
+                      touched.workspaceName && errors.workspaceName
+                        ? "is-invalid"
+                        : ""
+                    }`}
                     placeholder="Enter Name"
                   />
-                  <ErrorMessage name="workspaceName" component="div" className="invalid-feedback" />
+                  <ErrorMessage
+                    name="workspaceName"
+                    component="div"
+                    className="invalid-feedback"
+                  />
                 </div>
 
-                <button type="submit" className="btn btn-sm btn-outline-primary d-inline-flex align-items-center w-30p h-30p">
+                <button
+                  type="submit"
+                  className="btn btn-sm btn-outline-primary d-inline-flex align-items-center w-30p h-30p"
+                >
                   <i className="bi bi-check"></i>
                 </button>
 
@@ -167,11 +188,17 @@ const DefaultWorkspaceProfile: React.FC<defaultWorkspaceProps> = ({ defaultWorks
                   onClick={() => setIsEditing(false)}
                   className="btn btn-sm btn-outline-danger d-inline-flex align-items-center w-30p h-30p ms-2"
                 >
-                  <i className="bi bi-x" onClick={() =>{ 
-                    setImage(defaultWorkspace.imageUrl || "https://ads.alendei.com/images/workspace.webp");
-                    setIsEditing(false)}} ></i>
+                  <i
+                    className="bi bi-x"
+                    onClick={() => {
+                      setImage(
+                        defaultWorkspace.imageUrl ||
+                          "https://ads.alendei.com/images/workspace.webp"
+                      );
+                      setIsEditing(false);
+                    }}
+                  ></i>
                 </button>
-
               </Form>
             )}
           </Formik>
@@ -187,20 +214,18 @@ const DefaultWorkspaceProfile: React.FC<defaultWorkspaceProps> = ({ defaultWorks
           </div>
         )}
 
+        <div className="text-center mt-4">
+          <button
+            className="btn btn-outline-danger d-inline-block mt-3"
+            onClick={() => {
+              setSelectedWorkspaceId(defaultWorkspace.id);
+              setShowDeleteModal(true);
+            }}
+          >
+            Delete WorkSpace
+          </button>
+        </div>
       </div>
-
-      <div className="text-center mt-4">
-        <button
-          className="btn btn-outline-danger d-inline-block mt-3"
-          onClick={() => {
-            setSelectedWorkspaceId(defaultWorkspace.id);
-            setShowDeleteModal(true);
-          }}
-        >
-          Delete WorkSpace
-        </button>
-      </div>
-
 
       {/* Render the modal outside the map */}
       <ConfirmDeleteModal
