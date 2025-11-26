@@ -663,14 +663,17 @@ body.landing-bg .btn-primary {
   position: relative;
   z-index: 1;
   transition: all 0.3s ease;
-
 }
 
 .btn-gradient:hover {
   /* background: linear-gradient(90deg, #0f6be3 0%, #0f6be3 50%, #0f6be3 100%); */
-  background: linear-gradient(90deg, rgba(15, 107, 227, 0.55) 0%, rgba(88, 152, 237, 0.55) 50%, rgba(15, 107, 227, 0.55) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(15, 107, 227, 0.55) 0%,
+    rgba(88, 152, 237, 0.55) 50%,
+    rgba(15, 107, 227, 0.55) 100%
+  );
   color: #fff;
-
 
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
@@ -1863,7 +1866,7 @@ footer > .container {
 
 footer p,
 .whyChoose-quality {
-  max-width: 467px;
+  max-width: 500px;
 }
 
 footer p {
@@ -1960,7 +1963,7 @@ h2.modal-title {
   margin-left: auto;
 }
 
-.content-box-sm.benifit-content  {
+.content-box-sm.benifit-content {
   max-width: 620px;
 }
 
@@ -3456,7 +3459,8 @@ label.radio-card .card-content-wrapper img {
 }
 
 .hero-section {
-  padding-bottom: 100px;
+  /* padding-bottom: 100px; */
+  padding-bottom: 70px;
   min-height: calc(100vh - 96px);
   display: flex;
   align-items: center;
@@ -3466,7 +3470,7 @@ label.radio-card .card-content-wrapper img {
 .scaleAd-section,
 .step-section,
 .benefit-section {
-  padding-bottom: 150px;
+  padding-bottom: 90px;
 }
 
 .testimonial-section {
@@ -3549,7 +3553,7 @@ label.radio-card .card-content-wrapper img {
 }
 
 .whyChoose-quality:not(:last-child) {
-  margin-bottom: 78px;
+  margin-bottom: 60px;
 }
 
 .qualityTitle {
@@ -3725,8 +3729,8 @@ label.radio-card .card-content-wrapper img {
 
 .slick-dots li.slick-active button:before {
   opacity: 1;
-  color: #d8d8d8;
-  background: #d8d8d8;
+  color: #b0b0b0;
+  background: #b0b0b0;
 }
 
 .login-form {
@@ -5265,7 +5269,7 @@ a#navbarDropdownNotification {
   z-index: 1;
 }
 
-.login-carousel~.social-wrapper {
+.login-carousel ~ .social-wrapper {
   width: 100%;
   /* background: aqua; */
   height: 100%;
@@ -5618,7 +5622,6 @@ ease-in-out infinite; */
 
 /*---------------- START: Responsive CSS ----------------*/
 @media (min-width: 1600px) {
-
   .container,
   .container-lg,
   .container-md,
@@ -5732,7 +5735,7 @@ ease-in-out infinite; */
   .scaleAd-section,
   .step-section,
   .benefit-section {
-    padding-bottom: 100px;
+    padding-bottom: 70px;
   }
 
   .testimonial-section {
@@ -5763,6 +5766,11 @@ ease-in-out infinite; */
 @media (max-width: 1199px) {
   .btn-primary {
     min-width: unset;
+  }
+
+  .hero-content {
+    max-width: unset;
+    text-align: center;
   }
 
   /* .benefit-sectionImg img {
@@ -6065,7 +6073,7 @@ ease-in-out infinite; */
   .step-section,
   .benefit-section,
   .testimonial-section {
-    padding-bottom: 80px;
+    padding-bottom: 50px;
   }
 
   .form-title {
@@ -6132,6 +6140,20 @@ ease-in-out infinite; */
   .top-nav .nav-link.active span.nav-text {
     top: 50%;
   }
+
+  .home-page-sections h2.section-title,
+  .home-page-sections p.subheading-text,
+  .home-page-sections p.fb-text {
+    text-align: center;
+  }
+
+  .fb-sections {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 150px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -6194,7 +6216,7 @@ ease-in-out infinite; */
   .step-section,
   .benefit-section,
   .testimonial-section {
-    padding-bottom: 60px;
+    padding-bottom: 40px;
   }
 
   .step-card h3.subtitle {
@@ -6263,14 +6285,14 @@ ease-in-out infinite; */
   }
 
   .hero-content h1 {
-    font-size: 38px;
-    line-height: 44px;
+    font-size: 30px;
+    line-height: 36px;
     padding-bottom: 4px;
   }
 
   .hero-content h2 {
-    font-size: 24px;
-    line-height: 30px;
+    font-size: 20px;
+    line-height: 26px;
     margin-bottom: 10px !important;
   }
 

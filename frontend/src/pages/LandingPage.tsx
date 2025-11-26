@@ -35,7 +35,7 @@ const LandingPage: React.FC = () => {
         <div className="hero-section">
           <div className="container">
             <div className="row g-4 align-items-center">
-              <div className="col-xl-6 text-center text-md-start">
+              <div className="col-xl-6">
                 <div className="hero-content">
                   <h2 className="text-capitalize mb-3">
                     Where Advertising Turns

@@ -154,7 +154,7 @@ const Taskspace: React.FC<TaskspaceProps> = ({}) => {
                       {user && <UserProfile user={user} />}
                     </div>
                     <div className="col-lg-9">
-                      <div className="d-flex align-items-center justify-content-between mb-4">
+                      <div className="d-flex align-items-center justify-content-between flex-wrap mb-4">
                         <h3 className="card-subtitle">Your Workspaces</h3>
                         <button
                           className={`btn d-flex align-items-center w-20 h-20 ${
@@ -297,7 +297,7 @@ const Taskspace: React.FC<TaskspaceProps> = ({}) => {
                                 </div>
                               </div>
 
-                              <div className="mt-5 d-flex align-items-center flex-wrap gap-3">
+                              <div className="mt-3 d-flex align-items-center flex-wrap gap-3">
                                 <button
                                   type="submit"
                                   className="btn btn-primary"
