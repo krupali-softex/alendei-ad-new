@@ -668,12 +668,10 @@ body.landing-bg .btn-primary {
 
 .btn-gradient:hover {
   /* background: linear-gradient(90deg, #0f6be3 0%, #0f6be3 50%, #0f6be3 100%); */
-  background: linear-gradient(
-    90deg,
-    rgba(15, 107, 227, 0.55) 0%,
-    rgba(88, 152, 237, 0.55) 50%,
-    rgba(15, 107, 227, 0.55) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(15, 107, 227, 0.55) 0%,
+      rgba(88, 152, 237, 0.55) 50%,
+      rgba(15, 107, 227, 0.55) 100%);
   color: #fff;
 
   backdrop-filter: blur(15px);
@@ -1836,6 +1834,10 @@ footer>.container {
 
 .footer-list li:not(:last-child) {
   margin-bottom: 18px;
+}
+
+.footer-list a:hover {
+  color: #d1e2fc;
 }
 
 footer p,
@@ -3282,6 +3284,25 @@ p.text-secondary.active span {
   height: auto;
   overflow: visible;
 }
+
+#TermsConditionTab .title-hide,
+#PrivacyPolicyTab .title-hide {
+  display: none;
+}
+
+#TermsConditionTab .content.p-0.my-5,
+#PrivacyPolicyTab .content.p-0.my-5 {
+  margin: 0 !important;
+}
+
+#TermsConditionTab .table-card.p-4,
+#PrivacyPolicyTab .table-card.p-4 {
+  padding: 0 !important;
+  border: none;
+  background: unset;
+  border-radius: 0;
+}
+
 
 /* ******************* Main Styeles : Radio Card */
 label.radio-card {
@@ -5207,7 +5228,7 @@ a#navbarDropdownNotification {
   z-index: 1;
 }
 
-.login-carousel ~ .social-wrapper {
+.login-carousel~.social-wrapper {
   width: 100%;
   /* background: aqua; */
   height: 100%;
@@ -5564,6 +5585,7 @@ ease-in-out infinite; */
 
 /*---------------- START: Responsive CSS ----------------*/
 @media (min-width: 1600px) {
+
   .container,
   .container-lg,
   .container-md,
