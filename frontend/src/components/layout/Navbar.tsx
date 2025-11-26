@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import StickyHeader from "../StickeyHeader";
 import { logout } from "../../state/slices/authSlice";
@@ -28,6 +28,8 @@ const Navbar: React.FC = () => {
     navigate("/login", { replace: true });
     dispatch(resetState());
   };
+
+  const [active, setActive] = useState(0);
 
   return (
     <>
@@ -304,7 +306,7 @@ const Navbar: React.FC = () => {
                   className="facebook-logo rounded-circle me-2"
                 />
                 <div>
-                  <span className="text-black text-capitalize f-12">page </span>
+                  <span className="text-black text-capitalize f-12">page</span>
                   <div className="d-flex align-items-center">
                     <span className="ff-semibold text-black me-2 lh-1">
                       {defaultWorkspace.linkedPages &&

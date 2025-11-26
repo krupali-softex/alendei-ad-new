@@ -5,7 +5,6 @@ import "react-toastify/dist/ReactToastify.css";
 import Loader from "./components/common/ui-common/Loader.tsx";
 import PageEffects from "./components/common/PageEffects";
 
-
 const AppRoutes = () => {
   return useRoutes(routes);
 };

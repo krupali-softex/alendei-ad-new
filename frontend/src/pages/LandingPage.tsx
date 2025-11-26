@@ -35,7 +35,7 @@ const LandingPage: React.FC = () => {
         <div className="hero-section">
           <div className="container">
             <div className="row g-4 align-items-center">
-              <div className="col-xl-6 text-center text-md-start">
+              <div className="col-xl-6">
                 <div className="hero-content">
                   <h2 className="text-capitalize mb-3">
                     Where Advertising Turns
@@ -258,7 +258,7 @@ const LandingPage: React.FC = () => {
               </p>
             </div>
             <div className="row g-20">
-              <div className="col-md-4">
+              <div className="col-lg-4 col-12">
                 <div className="card step-card h-100 shadow-sm">
                   <span className="step-badge">Step 1</span>
                   <h3 className="text-primary mb-20 ff-semibold">
@@ -277,7 +277,7 @@ const LandingPage: React.FC = () => {
                   </Link>
                 </div>
               </div>
-              <div className="col-md-4">
+              <div className="col-lg-4 col-12">
                 <div className="card step-card h-100 shadow-sm">
                   <span className="step-badge">Step 2</span>
                   <h3 className="text-primary mb-20 ff-semibold">
@@ -297,7 +297,7 @@ const LandingPage: React.FC = () => {
                   </Link>
                 </div>
               </div>
-              <div className="col-md-4">
+              <div className="col-lg-4 col-12">
                 <div className="card step-card h-100 shadow-sm">
                   <span className="step-badge">Step 3</span>
                   <h3 className="text-primary mb-20 ff-semibold">
@@ -330,8 +330,9 @@ const LandingPage: React.FC = () => {
                 marketing technology.
               </p>
             </div>
+           
             <div className="row g-4 g-md-5 align-items-center">
-              <div className="col-md-6">
+              <div className="col-lg-6 col-12 order-1 order-lg-0">
                 <div className="benefit-sectionImg text-center">
                   <img
                     src="/assets/images/benifit-img1.webp"
@@ -340,9 +341,9 @@ const LandingPage: React.FC = () => {
                   />
                 </div>
               </div>
-              <div className="col-md-6">
+              <div className="col-lg-6 col-12 ">
                 <div className="content-box-sm benifit-content">
-                  <h3 className="subtitle gradient-title mb-3">
+                  <h3 className="subtitle gradient-title mb-lg-3 mb-1">
                     AI Makes Setting Up Campaigns Smarter & Faster
                   </h3>
                   <p className="text-body-secondary">
@@ -356,18 +357,18 @@ const LandingPage: React.FC = () => {
             </div>
 
             <div className="row g-4 g-md-5 align-items-center">
-              <div className="col-md-6 order-1 order-md-2">
+              <div className="col-lg-6 col-12 order-1 mt-0 mt-lg-4">
                 <div className="benefit-sectionImg text-center">
                   <img
                     src="https://ads.alendei.com/images/benifit-img2.webp"
                     alt="Multiple platforms Ads"
-                    className=""
+                    className="w-100"
                   />
                 </div>
               </div>
-              <div className="col-md-6 order-2 order-md-1">
+              <div className="col-lg-6 col-12">
                 <div className="content-box-sm benifit-content">
-                  <h3 className="subtitle gradient-title mb-3">
+                  <h3 className="subtitle gradient-title mb-lg-3 mb-1">
                     Multiple platforms Ads Publishing
                   </h3>
                   <p className="text-body-secondary">
@@ -379,7 +380,7 @@ const LandingPage: React.FC = () => {
             </div>
 
             <div className="row g-4 g-md-5 align-items-center">
-              <div className="col-md-6">
+              <div className="col-lg-6 col-12 order-1 order-lg-0 mt-3 mt-lg-0">
                 <div className="benefit-sectionImg text-center">
                   <img
                     src="/assets/images/benifit-img3.webp"
@@ -388,9 +389,9 @@ const LandingPage: React.FC = () => {
                   />
                 </div>
               </div>
-              <div className="col-md-6">
+              <div className="col-lg-6 col-12">
                 <div className="content-box-sm benifit-content">
-                  <h3 className="subtitle gradient-title mb-3">
+                  <h3 className="subtitle gradient-title mb-lg-3 mb-1">
                     Better Performance with Alendei ai
                   </h3>
                   <p className="text-body-secondary">
