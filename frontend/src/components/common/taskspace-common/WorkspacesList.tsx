@@ -140,8 +140,8 @@ const WorkspacesList: React.FC<WorkspacesListProps> = ({
             className="col-lg-6 col-md-6 col-xl-4 col-xxl-3 mb-4"
             key={workspace.id}
           >
-            <div className="card text-center p-3 h-100 workspace-card">
-              <div className="d-flex justify-content-center align-items-center mb-3">
+            <div className="card text-center h-100 workspace-card">
+              <div className="d-flex justify-content-center align-items-center mb-4">
                 <div className="logo-wrapper bg-white">
                   <img
                     src={
@@ -154,26 +154,42 @@ const WorkspacesList: React.FC<WorkspacesListProps> = ({
                 </div>
               </div>
               <h5 className="fw-bold mb-1">{workspace.name}</h5>
-              <p className="text-primary mb-3 text-capitalize">
+              <p className="text-primary mb-4 text-capitalize">
                 {workspace.role}
               </p>
 
-              <button
-                className="btn btn-outline-success fw-semibold mb-2 text-primary"
-                onClick={() => handleSwitchWorkspace(workspace.id)}
-              >
-                Open Workspace <span className="ms-1">▸</span>
-              </button>
+              <div className="d-flex align-items-center justify-content-center gap-2 mb-1">
+                <button
+                  className="btn btn-outline-success fw-semibold text-primary"
+                  onClick={() => handleSwitchWorkspace(workspace.id)}
+                >
+                  Open{" "}
+                  <span className="ms-3">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="8"
+                      height="13"
+                      viewBox="0 0 8 13"
+                      fill="none"
+                    >
+                      <path
+                        d="M0.000908787 1.4879L4.83395 6.3315L0.000908363 11.1751L1.48881 12.663L7.82031 6.3315L1.48881 -2.76759e-07L0.000908787 1.4879Z"
+                        fill="var(--bs-primary)"
+                      />
+                    </svg>
+                  </span>
+                </button>
 
-              <button
-                className="btn text-danger fw-semibold text-decoration-underline"
-                onClick={() => {
-                  setSelectedWorkspace(workspace);
-                  setShowDeleteModal(true);
-                }}
-              >
-                Delete
-              </button>
+                <button
+                  className="btn btn-outline-success px-3"
+                  onClick={() => {
+                    setSelectedWorkspace(workspace);
+                    setShowDeleteModal(true);
+                  }}
+                >
+                  <img src="/assets/images/delete-icon.svg" alt="delete" />
+                </button>
+              </div>
             </div>
           </div>
         ))}
