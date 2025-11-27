@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import DefaultWorkspaceProfileCard from "../components/common/cards/DefaultWorkspaceProfileCard";
 import { useSelector } from "react-redux";
 import { RootState } from "../state/store";
@@ -71,13 +71,25 @@ const Taskspace: React.FC<TaskspaceProps> = ({}) => {
 
   const [showAddForm, setShowAddForm] = useState(false);
 
+  useEffect(() => {
+    const tabs = document.querySelectorAll(".nav-tabs .nav-link");
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("shown.bs.tab", function () {
+        const glider = document.querySelector(".glider");
+        const index = this.getAttribute("data-index");
+        glider.style.transform = `translateX(${index * 195}px)`;
+      });
+    });
+  }, []);
+
   return (
     <div className="content p-0 my-5">
       <div className="container">
         <div className="row g-20">
           <div className="col-md-12">
             <div className="taskspace-details">
-              <ul className=" nav nav-tabs" role="tablist">
+              {/* <ul className=" nav nav-tabs" role="tablist">
                 <li className="nav-item" role="presentation">
                   <button
                     className="nav-link active"
@@ -88,12 +100,12 @@ const Taskspace: React.FC<TaskspaceProps> = ({}) => {
                       <img
                         src="assets/images/profile.svg"
                         className="icon-default"
-                        style={{ height: "32px", width: "32px"}}
+                        style={{ height: "26px", width: "32px" }}
                       />
                       <img
                         src="assets/images/profile-hover.svg"
                         className="icon-hover"
-                        style={{ height: "32px", width: "32px"}}
+                        style={{ height: "26px", width: "32px" }}
                       />
                     </span>
                     Profile
@@ -110,12 +122,12 @@ const Taskspace: React.FC<TaskspaceProps> = ({}) => {
                       <img
                         src="assets/images/members.svg"
                         className="icon-default"
-                        style={{ height: "32px", width: "32px"}}
+                        style={{ height: "26px", width: "32px" }}
                       />
                       <img
                         src="assets/images/members-hover.svg"
                         className="icon-hover"
-                        style={{ height: "32px", width: "32px"}}
+                        style={{ height: "26px", width: "32px" }}
                       />
                     </span>
                     Members
@@ -132,25 +144,98 @@ const Taskspace: React.FC<TaskspaceProps> = ({}) => {
                       <img
                         src="assets/images/settings.svg"
                         className="icon-default"
-                        style={{ height: "32px", width: "32px"}}
+                        style={{ height: "26px", width: "32px" }}
                       />
                       <img
                         src="assets/images/settings-hover.svg"
                         className="icon-hover"
-                        style={{ height: "32px", width: "32px"}}
+                        style={{ height: "26px", width: "32px" }}
                       />
                     </span>
                     Settings
                   </button>
                 </li>
-              </ul>
+              </ul> */}
+
+              <div className="tabs-wrapper position-relative">
+                <ul className="nav nav-tabs custom-tabs" role="tablist">
+                  <li className="nav-item" role="presentation">
+                    <button
+                      className="nav-link active"
+                      data-index="0"
+                      data-bs-toggle="tab"
+                      data-bs-target="#ProfileTab"
+                    >
+                      <span className="nav-link-icon me-2">
+                        <img
+                          src="assets/images/profile.svg"
+                          className="icon-default"
+                          style={{ height: "26px", width: "32px" }}
+                        />
+                        <img
+                          src="assets/images/profile-hover.svg"
+                          className="icon-hover"
+                          style={{ height: "26px", width: "32px" }}
+                        />
+                      </span>
+                      Profile
+                    </button>
+                  </li>
+
+                  <li className="nav-item" role="presentation">
+                    <button
+                      className="nav-link"
+                      data-index="1"
+                      data-bs-toggle="tab"
+                      data-bs-target="#MembersTab"
+                    >
+                      <span className="nav-link-icon me-2">
+                        <img
+                          src="assets/images/members.svg"
+                          className="icon-default"
+                          style={{ height: "26px", width: "32px" }}
+                        />
+                        <img
+                          src="assets/images/members-hover.svg"
+                          className="icon-hover"
+                          style={{ height: "26px", width: "32px" }}
+                        />
+                      </span>
+                      Members
+                    </button>
+                  </li>
+
+                  <li className="nav-item" role="presentation">
+                    <button
+                      className="nav-link"
+                      data-index="2"
+                      data-bs-toggle="tab"
+                      data-bs-target="#SettingsTab"
+                    >
+                      <span className="nav-link-icon me-2">
+                        <img
+                          src="assets/images/settings.svg"
+                          className="icon-default"
+                          style={{ height: "26px", width: "32px" }}
+                        />
+                        <img
+                          src="assets/images/settings-hover.svg"
+                          className="icon-hover"
+                          style={{ height: "26px", width: "32px" }}
+                        />
+                      </span>
+                      Settings
+                    </button>
+                  </li>
+                  <span className="glider"></span>
+                </ul>
+              </div>
 
               <div className="tab-content">
                 {/* Profile Tab */}
                 <div className="tab-pane active" id="ProfileTab">
                   <div className="row g-20">
                     <div className="col-lg-3">
-                     
                       {user && <UserProfile user={user} />}
                     </div>
                     <div className="col-lg-9">
@@ -158,9 +243,7 @@ const Taskspace: React.FC<TaskspaceProps> = ({}) => {
                         <h3 className="card-subtitle">Your Workspaces</h3>
                         <button
                           className={`btn d-flex align-items-center w-20 h-20 ${
-                            showAddForm
-                              ? "btn-outline-danger"
-                              : "btn-primary"
+                            showAddForm ? "btn-outline-danger" : "btn-primary"
                           }`}
                           onClick={() => setShowAddForm(!showAddForm)}
                         >

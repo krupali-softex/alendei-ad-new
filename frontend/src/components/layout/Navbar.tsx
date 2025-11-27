@@ -67,7 +67,7 @@ const Navbar: React.FC = () => {
                       location.pathname.startsWith("/admin") ? "active" : ""
                     }`}
                   >
-                    <span>
+                    <span className="icon">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="32"
@@ -94,7 +94,7 @@ const Navbar: React.FC = () => {
                       location.pathname.startsWith("/home") ? "active" : ""
                     }`}
                   >
-                    <span>
+                    <span className="icon">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="30"
@@ -118,7 +118,7 @@ const Navbar: React.FC = () => {
                       location.pathname.startsWith("/designs") ? "active" : ""
                     }`}
                   >
-                    <span>
+                    <span className="icon">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="30"
@@ -142,7 +142,7 @@ const Navbar: React.FC = () => {
                       location.pathname.startsWith("/grow") ? "active" : ""
                     }`}
                   >
-                    <span>
+                    <span className="icon">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="30"
@@ -166,7 +166,7 @@ const Navbar: React.FC = () => {
                       location.pathname.startsWith("/leads") ? "active" : ""
                     }`}
                   >
-                    <span>
+                    <span className="icon">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="30"
@@ -190,7 +190,7 @@ const Navbar: React.FC = () => {
                       location.pathname.startsWith("/business") ? "active" : ""
                     }`}
                   >
-                    <span>
+                    <span className="icon">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="30"
@@ -226,7 +226,7 @@ const Navbar: React.FC = () => {
                       location.pathname.startsWith("/taskspace") ? "active" : ""
                     }`}
                   >
-                    <span>
+                    <span className="icon">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="30"
@@ -251,7 +251,7 @@ const Navbar: React.FC = () => {
             )}
           </div>
 
-          <ul className="navbar-nav flex-row align-items-center gap-12">
+          <ul className="navbar-nav flex-row align-items-center gap-12 flex-1 justify-content-end">
             <li className="nav-item dropdown workspace-dropdown">
               <div
                 className="nav-link p-0 d-flex align-items-center p-1 rounded-pill"
