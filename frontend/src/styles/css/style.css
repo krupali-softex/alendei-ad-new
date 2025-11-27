@@ -1460,7 +1460,7 @@ h3.card-subtitle {
   font-family: "Manrope";
   font-size: 24px;
   line-height: 24.03px;
-  letter-spacing: -0.03em;
+
 }
 
 .login-img {
@@ -1919,7 +1919,7 @@ h2.modal-title {
   font-family: "Manrope-Medium";
   font-size: 55px;
   line-height: 110.00000000000001%;
-  letter-spacing: -0.03em;
+
 }
 
 .hero-content p,
@@ -5130,54 +5130,84 @@ a#navbarDropdownNotification {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  /* position: relative; */
-  z-index: 1;
+  position: relative;
+
+  border-radius: 60px;
+  transition: 0.5s;
+}
+
+.top-nav .nav-link:hover {
+  width: 120px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0);
 }
 
 .top-nav .nav-link.active {
   background: radial-gradient(50% 50% at 50% 50%, #5986e5 0%, #205dad 100%);
 }
 
-/* .top-nav .nav-link::before {
+.top-nav .icon {
   position: absolute;
-  content: "";
-  display: flex;
-  width: 58px;
-  height: 58px;
-  background: transparent;
-  z-index: 0;
-  border-radius: 50%;
-  transition: all 0.25s ease-in-out;
 }
-
-.top-nav .nav-link.active:before {
-  transform: translateX(78px);
-  background: radial-gradient(50% 50% at 50% 50%, #5986e5 0%, #205dad 100%);
-} */
-
-
 
 .top-nav svg {
   width: 38px;
   height: 38px;
+  transition: 0.5s;
+  transition-delay: 0.25s;
+}
+
+.top-nav .nav-link:hover svg {
+  transform: scale(0);
+  color: #fff;
+  transition-delay: 0s;
 }
 
 .top-nav span.nav-text {
   font-family: "Manrope-Bold";
   font-size: 14px;
   line-height: 100%;
-  letter-spacing: -0.03em;
-  text-align: center;
-  color: #2a3f4d;
-  position: absolute;
-  top: auto;
-  bottom: -5px;
-  display: none;
+  text-transform: uppercase;
+  color: #fff;
+  transform: scale(0);
+  transition: 0.5s;
+  transition-delay: 0s;
 }
 
-.top-nav .nav-link.active span.nav-text {
-  display: block;
+.top-nav .nav-link:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 60px;
+  background: radial-gradient(50% 50% at 50% 50%, #5986e5 0%, #205dad 100%);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.top-nav .nav-link:after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  height: 100%;
+  border-radius: 60px;
+  background: radial-gradient(50% 50% at 50% 50%, #5986e5 0%, #205dad 100%);
+  transition: 0.5s;
+  filter: blur(15px);
+  z-index: -1;
+  opacity: 0;
+}
+
+.top-nav .nav-link:hover .nav-text {
+  transform: scale(1);
+  transition-delay: 0.15s;
+}
+
+.top-nav .nav-link:hover:before {
+  opacity: 1;
+}
+
+.top-nav .nav-link:hover:after {
+  opacity: 0.5;
 }
 
 .robot-img {
