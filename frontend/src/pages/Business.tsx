@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import TermsAndConditions from "./TermsAndConditions";
 import PrivacyPolicy from "./PrivacyPolicy";
 import CampaignSettingTab from "../components/common/businesstab-page/CampaignSettingTab";
@@ -6,162 +6,185 @@ import CampaignSettingTab from "../components/common/businesstab-page/CampaignSe
 type BusinessProps = {};
 
 const Business: React.FC<BusinessProps> = ({}) => {
+  useEffect(() => {
+    const tabs = document.querySelectorAll(".nav-tabs .nav-link");
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("shown.bs.tab", function () {
+        const glider = document.querySelector(".glider");
+        const index = this.getAttribute("data-index");
+        glider.style.transform = `translateX(${index * 195}px)`;
+      });
+    });
+  }, []);
+
   return (
     <div className="content p-0 my-5">
       <div className="container">
         <div className="row g-20">
           <div className="col-md-12">
             <div className="business-details">
-              <ul className=" nav nav-tabs" role="tablist">
-                <li className="nav-item" role="presentation">
-                  <button
-                    className="nav-link active"
-                    data-bs-toggle="tab"
-                    data-bs-target="#CampaignSettingTab"
-                  >
-                    <span className="nav-link-icon me-2">
-                      <img
-                        src="assets/images/campaign.svg"
-                        className="icon-default"
-                        style={{ height: "32px", width: "32px"}}
-                      />
-                      <img
-                        src="assets/images/campaign-hover.svg"
-                        className="icon-hover"
-                        style={{ height: "32px", width: "32px"}}
-                      />
-                    </span>
-                    Campaign Setting
-                  </button>
-                </li>
-                <li className="nav-item" role="presentation">
-                  <button
-                    className="nav-link"
-                    data-bs-toggle="tab"
-                    data-bs-target="#BillingDetailsTab"
-                  >
-                    <span className="nav-link-icon me-2">
-                      <img
-                        src="assets/images/billing.svg"
-                        className="icon-default"
-                        style={{ height: "32px", width: "32px"}}
-                      />
-                      <img
-                        src="assets/images/billing-hover.svg"
-                        className="icon-hover"
-                        style={{ height: "32px", width: "32px"}}
-                      />
-                    </span>
-                    Billing Details
-                  </button>
-                </li>
-                <li className="nav-item" role="presentation">
-                  <button
-                    className="nav-link"
-                    data-bs-toggle="tab"
-                    data-bs-target="#PaymentInvoicesTab"
-                  >
-                    <span className="nav-link-icon me-2">
-                      <img
-                        src="assets/images/payement-invoice.svg
+              <div className="tabs-wrapper position-relative">
+                <ul className=" nav nav-tabs  custom-tabs" role="tablist">
+                  <li className="nav-item" role="presentation">
+                    <button
+                      className="nav-link active"
+                      data-index="0"
+                      data-bs-toggle="tab"
+                      data-bs-target="#CampaignSettingTab"
+                    >
+                      <span className="nav-link-icon me-2">
+                        <img
+                          src="assets/images/campaign.svg"
+                          className="icon-default"
+                          style={{ height: "26px", width: "32px" }}
+                        />
+                        <img
+                          src="assets/images/campaign-hover.svg"
+                          className="icon-hover"
+                          style={{ height: "26px", width: "32px" }}
+                        />
+                      </span>
+                      Campaign Setting
+                    </button>
+                  </li>
+                  <li className="nav-item" role="presentation">
+                    <button
+                      className="nav-link"
+                      data-index="1"
+                      data-bs-toggle="tab"
+                      data-bs-target="#BillingDetailsTab"
+                    >
+                      <span className="nav-link-icon me-2">
+                        <img
+                          src="assets/images/billing.svg"
+                          className="icon-default"
+                          style={{ height: "26px", width: "32px" }}
+                        />
+                        <img
+                          src="assets/images/billing-hover.svg"
+                          className="icon-hover"
+                          style={{ height: "26px", width: "32px" }}
+                        />
+                      </span>
+                      Billing Details
+                    </button>
+                  </li>
+                  <li className="nav-item" role="presentation">
+                    <button
+                      className="nav-link"
+                      data-index="2"
+                      data-bs-toggle="tab"
+                      data-bs-target="#PaymentInvoicesTab"
+                    >
+                      <span className="nav-link-icon me-2">
+                        <img
+                          src="assets/images/payement-invoice.svg
                         "
-                        className="icon-default"
-                        style={{ height: "32px", width: "32px"}}
-                      />
-                      <img
-                        src="assets/images/payement-invoice-hover.svg"
-                        className="icon-hover"
-                        style={{ height: "32px", width: "32px"}}
-                      />
-                    </span>
-                    Payment & Invoices
-                  </button>
-                </li>
-                <li className="nav-item" role="presentation">
-                  <button
-                    className="nav-link"
-                    data-bs-toggle="tab"
-                    data-bs-target="#SupportTab"
-                  >
-                    <span className="nav-link-icon me-2">
-                      <img
-                        src="assets/images/support.svg"
-                        className="icon-default"
-                        style={{ height: "32px", width: "32px"}}
-                      />
-                      <img
-                        src="assets/images/support-hover.svg"
-                        className="icon-hover"
-                        style={{ height: "32px", width: "32px"}}
-                      />
-                    </span>
-                    Support
-                  </button>
-                </li>
-                <li className="nav-item" role="presentation">
-                  <button
-                    className="nav-link"
-                    data-bs-toggle="tab"
-                    data-bs-target="#NotificationTab"
-                  >
-                    <span className="nav-link-icon me-2">
-                      <img
-                        src="assets/images/notification.svg"
-                        className="icon-default"
-                        style={{ height: "32px", width: "32px"}}
-                      />
-                      <img
-                        src="assets/images/notification-hover.svg"
-                        className="icon-hover"
-                        style={{ height: "32px", width: "32px"}}
-                      />
-                    </span>
-                    Notification
-                  </button>
-                </li>
-                <li className="nav-item" role="presentation">
-                  <button
-                    className="nav-link"
-                    data-bs-toggle="tab"
-                    data-bs-target="#TermsConditionTab"
-                  >
-                    <span className="nav-link-icon me-2">
-                      <img
-                        src="assets/images/terms.svg"
-                        className="icon-default"
-                        style={{ height: "32px", width: "32px"}}
-                      />
-                      <img
-                        src="assets/images/terms-hover.svg"
-                        className="icon-hover"
-                        style={{ height: "32px", width: "32px"}}
-                      />
-                    </span>
-                    Terms & Conditions
-                  </button>
-                </li>
-                <li className="nav-item" role="presentation">
-                  <button
-                    className="nav-link"
-                    data-bs-toggle="tab"
-                    data-bs-target="#PrivacyPolicyTab"
-                  >
-                    <span className="nav-link-icon me-2">
-                      <img
-                        src="assets/images/privacy.svg"
-                        className="icon-default"
-                        style={{ height: "32px", width: "32px"}}
-                      />
-                      <img
-                        src="assets/images/privacy-hover.svg"
-                        className="icon-hover"
-                        style={{ height: "32px", width: "32px"}}
-                      />
-                    </span>
-                    Privacy Policy
-                  </button>
-                </li>
-              </ul>
+                          className="icon-default"
+                          style={{ height: "26px", width: "32px" }}
+                        />
+                        <img
+                          src="assets/images/payement-invoice-hover.svg"
+                          className="icon-hover"
+                          style={{ height: "26px", width: "32px" }}
+                        />
+                      </span>
+                      Payment & Invoices
+                    </button>
+                  </li>
+                  <li className="nav-item" role="presentation">
+                    <button
+                      className="nav-link"
+                      data-index="3"
+                      data-bs-toggle="tab"
+                      data-bs-target="#SupportTab"
+                    >
+                      <span className="nav-link-icon me-2">
+                        <img
+                          src="assets/images/support.svg"
+                          className="icon-default"
+                          style={{ height: "26px", width: "32px" }}
+                        />
+                        <img
+                          src="assets/images/support-hover.svg"
+                          className="icon-hover"
+                          style={{ height: "26px", width: "32px" }}
+                        />
+                      </span>
+                      Support
+                    </button>
+                  </li>
+                  <li className="nav-item" role="presentation">
+                    <button
+                      className="nav-link"
+                      data-index="4"
+                      data-bs-toggle="tab"
+                      data-bs-target="#NotificationTab"
+                    >
+                      <span className="nav-link-icon me-2">
+                        <img
+                          src="assets/images/notification.svg"
+                          className="icon-default"
+                          style={{ height: "26px", width: "32px" }}
+                        />
+                        <img
+                          src="assets/images/notification-hover.svg"
+                          className="icon-hover"
+                          style={{ height: "26px", width: "32px" }}
+                        />
+                      </span>
+                      Notification
+                    </button>
+                  </li>
+                  <li className="nav-item" role="presentation">
+                    <button
+                      className="nav-link"
+                      data-index="5"
+                      data-bs-toggle="tab"
+                      data-bs-target="#TermsConditionTab"
+                    >
+                      <span className="nav-link-icon me-2">
+                        <img
+                          src="assets/images/terms.svg"
+                          className="icon-default"
+                          style={{ height: "26px", width: "32px" }}
+                        />
+                        <img
+                          src="assets/images/terms-hover.svg"
+                          className="icon-hover"
+                          style={{ height: "26px", width: "32px" }}
+                        />
+                      </span>
+                      Terms & Conditions
+                    </button>
+                  </li>
+                  <li className="nav-item" role="presentation">
+                    <button
+                      className="nav-link"
+                      data-index="6"
+                      data-bs-toggle="tab"
+                      data-bs-target="#PrivacyPolicyTab"
+                    >
+                      <span className="nav-link-icon me-2">
+                        <img
+                          src="assets/images/privacy.svg"
+                          className="icon-default"
+                          style={{ height: "26px", width: "32px" }}
+                        />
+                        <img
+                          src="assets/images/privacy-hover.svg"
+                          className="icon-hover"
+                          style={{ height: "26px", width: "32px" }}
+                        />
+                      </span>
+                      Privacy Policy
+                    </button>
+                  </li>
+                  <span className="glider"></span>
+                </ul>
+              </div>
+
               <div className="tab-content">
                 <div className="tab-pane active" id="CampaignSettingTab">
                   <CampaignSettingTab />
